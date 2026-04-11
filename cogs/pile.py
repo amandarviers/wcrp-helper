@@ -3,7 +3,7 @@ from discord.ext import commands
 
 # <required arg>
 # [optional arg]
-command_guide = "!pile <action> <clan> [item]"
+command_guide = "!pile <action> <group> [item]"
 
 class Pile(commands.Cog):
     def __init__(self, bot):
@@ -24,33 +24,33 @@ class Pile(commands.Cog):
     
 
     @pile_group.command(name="view")
-    async def pile_view(self, ctx, clan):
+    async def pile_view(self, ctx, group):
         try:
-            with open(f"./data/piles/{clan}.txt", "r") as file:
+            with open(f"./data/piles/{group}.txt", "r") as file:
                 lines = file.readlines()
                 pile_contents = "".join(lines).replace("\n", " ")
-            await ctx.send(f"Viewing {clan} pile: {pile_contents}")
+            await ctx.send(f"Viewing {group} pile: {pile_contents}")
         except FileNotFoundError:
-            await ctx.send(f"{clan} is not a valid clan/group")
+            await ctx.send(f"{group} is not a valid group")
     
     @pile_group.command(name="add")
-    async def pile_add(self, ctx, clan, item):
-        with open(f"./data/piles/{clan}.txt", "a") as file:
+    async def pile_add(self, ctx, group, item):
+        with open(f"./data/piles/{group}.txt", "a") as file:
             file.write(f"{item}\n")
-        await ctx.send(f"Adding {item} to {clan} pile")
+        await ctx.send(f"Adding {item} to {group} pile")
     
     @pile_group.command(name="take")
-    async def pile_take(self, ctx, clan, item):
+    async def pile_take(self, ctx, group, item):
         removed = False
-        with open(f"./data/piles/{clan}.txt", "r") as file:
+        with open(f"./data/piles/{group}.txt", "r") as file:
             lines = file.readlines()
-        with open(f"./data/piles/{clan}.txt", "w") as file:
+        with open(f"./data/piles/{group}.txt", "w") as file:
             for line in lines:
                 if not removed and line.strip() == item:
                     removed = True
                     continue
                 file.write(line)
-        await ctx.send(f"Taking {item} from {clan} pile")
+        await ctx.send(f"Taking {item} from {group} pile")
 
 async def setup(bot):
     await bot.add_cog(Pile(bot))

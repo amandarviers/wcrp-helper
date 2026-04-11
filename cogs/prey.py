@@ -3,7 +3,7 @@ from discord.ext import commands
 
 # <required arg>
 # [optional arg]
-command_guide = "!prey <clan> <rank> "
+command_guide = "!prey <area> <rank> "
 
 areas = [ "thunder", "river", "wind", "shadow", "sky", "kinship" ]
 
