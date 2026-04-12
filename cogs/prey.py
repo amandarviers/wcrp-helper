@@ -32,15 +32,15 @@ def calc_success(skill):
 
     if roll >= 20:
         return "perfect kill"
-    elif roll >= 15:
+    elif roll >= 18:
         return "clean kill"
-    elif roll >= 10:
+    elif roll >= 13:
         return "messy kill"
-    elif roll >= 8:
+    elif roll >= 10:
         return "hit but no kill"
-    elif roll >= 6:
+    elif roll >= 7:
         return "almost hit but no kill"
-    elif roll >= 2:
+    elif roll >= 4:
         return "miss"
     else:
         return "total miss"
