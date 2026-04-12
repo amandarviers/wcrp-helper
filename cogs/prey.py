@@ -6,10 +6,10 @@ import json
 # <required arg>
 # [optional arg]
 command_guide = "!prey <area> <skill> <attempts>"
-hiberate = False
+hibernate = False
 
 skills_dict = {
-    "kit": -1,
+    "kit": -2,
     "novice": -1,
     "low": 0,
     "medium": 1,
@@ -49,7 +49,7 @@ def find_prey(area):
     candidates = []
 
     for animal, info in data[area].items():
-        if hiberate and info["hibernate"]:
+        if hibernate and info["hibernate"]:
             continue
         weight = info["weight"]
         candidates.extend([animal] * weight)
@@ -81,6 +81,9 @@ class Prey(commands.Cog):
             return
         if attempts > 3 or attempts == 0:
             await ctx.send(f"<:error:1492739840230428829> Attempts must be between 1 and 3")
+            return
+        if skill == "kit" and area != "camp":
+            await ctx.send(f"<:error:1492739840230428829> Kits can only hunt in camp!")
             return
 
         success_message = ""

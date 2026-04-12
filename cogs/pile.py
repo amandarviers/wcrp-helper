@@ -1,9 +1,13 @@
 import discord
 from discord.ext import commands
+import json
 
 # <required arg>
 # [optional arg]
 command_guide = "!pile <action> <group> [item]"
+
+with open("./data/prey_list_final.json", "r") as f:
+    data = json.load(f)
 
 class Pile(commands.Cog):
     def __init__(self, bot):
@@ -39,6 +43,18 @@ class Pile(commands.Cog):
     
     @pile_group.command(name="add")
     async def pile_add(self, ctx, group, item):
+        valid_item = False
+        for _, animals in data.items():
+            for animal in animals:
+                if item == animal:
+                    valid_item = True
+                    break
+            if valid_item:
+                break
+
+        if not valid_item: 
+            await ctx.send(f"<:error:1492739840230428829> {item.capitalize()} is not a valid item")
+            return
         with open(f"./data/piles/{group}.txt", "a") as file:
             file.write(f"{item}\n")
         
@@ -52,6 +68,19 @@ class Pile(commands.Cog):
     
     @pile_group.command(name="take")
     async def pile_take(self, ctx, group, item):
+        valid_item = False
+        for _, animals in data.items():
+            for animal in animals:
+                if item == animal:
+                    valid_item = True
+                    break
+            if valid_item:
+                break
+
+        if not valid_item: 
+            await ctx.send(f"<:error:1492739840230428829> {item.capitalize()} is not a valid item")
+            return
+
         removed = False
         with open(f"./data/piles/{group}.txt", "r") as file:
             lines = file.readlines()

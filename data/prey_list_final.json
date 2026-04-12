@@ -671,6 +671,14 @@
     "moss ball": {
       "hibernate": false,
       "weight": 8
+    },
+    "dragonfly": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "butterfly": {
+      "hibernate": true,
+      "weight": 6
     }
   }
 }
