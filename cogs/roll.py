@@ -22,7 +22,7 @@ class Roll(commands.Cog):
     @commands.command()
     async def roll(self, ctx, dice):
         dice_split = dice.split("d")
-        number_of_dice = int(dice_split[0])
+        number_of_dice = int(dice_split[0]) or 1
         type_of_dice = int(dice_split[1])
 
         rolls = [random.randint(1, type_of_dice) for _ in range(number_of_dice)]

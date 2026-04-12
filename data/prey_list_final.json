@@ -1,0 +1,676 @@
+{
+  "forest": {
+    "bat": {
+      "hibernate": false,
+      "weight": 1
+    },
+    "blackbird": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "blue jay": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "bushtit": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "cardinal": {
+      "hibernate": false,
+      "weight": 5
+    },
+    "chaffinch": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "chickadee": {
+      "hibernate": false,
+      "weight": 9
+    },
+    "chipmunk": {
+      "hibernate": true,
+      "weight": 8
+    },
+    "dormouse": {
+      "hibernate": false,
+      "weight": 5
+    },
+    "dove": {
+      "hibernate": false,
+      "weight": 2
+    },
+    "finch": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "gartner snake": {
+      "hibernate": true,
+      "weight": 2
+    },
+    "hedgehog": {
+      "hibernate": true,
+      "weight": 2
+    },
+    "jay": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "lizard": {
+      "hibernate": true,
+      "weight": 3
+    },
+    "magpie": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "mockingbird": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "mole": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "mouse": {
+      "hibernate": false,
+      "weight": 10
+    },
+    "pigeon": {
+      "hibernate": false,
+      "weight": 5
+    },
+    "rabbit": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "rat": {
+      "hibernate": false,
+      "weight": 1
+    },
+    "robin": {
+      "hibernate": false,
+      "weight": 7
+    },
+    "shrew": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "skink": {
+      "hibernate": true,
+      "weight": 2
+    },
+    "sparrow": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "squirrel": {
+      "hibernate": false,
+      "weight": 9
+    },
+    "thrush": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "titmouse": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "vole": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "warbler": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "woodpecker": {
+      "hibernate": false,
+      "weight": 2
+    },
+    "woodrat": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "wren": {
+      "hibernate": false,
+      "weight": 6
+    }
+  },
+  "rocky": {
+    "adder": {
+      "hibernate": true,
+      "weight": 2
+    },
+    "anole": {
+      "hibernate": true,
+      "weight": 5
+    },
+    "grass snake": {
+      "hibernate": true,
+      "weight": 5
+    },
+    "jay": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "lizard": {
+      "hibernate": true,
+      "weight": 7
+    },
+    "pigeon": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "skink": {
+      "hibernate": true,
+      "Weight": 6
+    }
+  },
+  "moor": {
+    "adder": {
+      "hibernate": true,
+      "weight": 1
+    },
+    "blackbird": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "chaffinch": {
+      "hibernate": false,
+      "weight": 5
+    },
+    "dove": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "gopher": {
+      "hibernate": false,
+      "weight": 2
+    },
+    "grackle": {
+      "hibernate": false,
+      "weight": 5
+    },
+    "hare": {
+      "hibernate": false,
+      "weight": 2
+    },
+    "magpie": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "mole": {
+      "hibernate": false,
+      "weight": 7
+    },
+    "mouse": {
+      "hibernate": false,
+      "weight": 5
+    },
+    "pheasant": {
+      "hibernate": false,
+      "weight": 1
+    },
+    "rabbit": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "sparrow": {
+      "hibernate": false,
+      "weight": 5
+    },
+    "titmouse": {
+      "hibernate": false,
+      "weight": 6
+    }
+  },
+  "meadow": {
+    "adder": {
+      "hibernate": true,
+      "weight": 1
+    },
+    "blackbird": {
+      "hibernate": false,
+      "weight": 7
+    },
+    "blue jay": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "cardinal": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "chipmunk": {
+      "hibernate": true,
+      "weight": 6
+    },
+    "dove": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "finch": {
+      "hibernate": false,
+      "weight": 7
+    },
+    "garter snake": {
+      "hibernate": true,
+      "weight": 3
+    },
+    "grackle": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "grass snake": {
+      "hibernate": true,
+      "weight": 4
+    },
+    "hedgehog": {
+      "hibernate": true,
+      "weight": 2
+    },
+    "magpie": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "mole": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "mouse": {
+      "hibernate": false,
+      "weight": 9
+    },
+    "pheasant": {
+      "hibernate": false,
+      "weight": 1
+    },
+    "pigeon": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "rabbit": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "shrew": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "sparrow": {
+      "hibernate": false,
+      "weight": 7
+    },
+    "squirrel": {
+      "hibernate": false,
+      "weight": 5
+    },
+    "titmouse": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "wren": {
+      "hibernate": false,
+      "weight": 5
+    }
+  },
+  "pines": {
+    "anole": {
+      "hibernate": true,
+      "weight": 6
+    },
+    "blue jay": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "bushtit": {
+      "hibernate": false,
+      "weight": 7
+    },
+    "chaffinch": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "finch": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "garter snake": {
+      "hibernate": true,
+      "weight": 5
+    },
+    "gecko": {
+      "hibernate": true,
+      "weight": 5
+    },
+    "grackle": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "grass snake": {
+      "hibernate": true,
+      "weight": 4
+    },
+    "jay": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "lizard": {
+      "hibernate": true,
+      "weight": 8
+    },
+    "mouse": {
+      "hibernate": false,
+      "weight": 7
+    },
+    "rat": {
+      "hibernate": false,
+      "weight": 2
+    },
+    "shrew": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "skink": {
+      "hibernate": true,
+      "weight": 5
+    },
+    "sparrow": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "squirrel": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "swift": {
+      "hibernate": false,
+      "weight": 5
+    },
+    "thrush": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "toad": {
+      "hibernate": true,
+      "weight": 5
+    },
+    "warbler": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "woodpecker": {
+      "hibernate": false,
+      "weight": 2
+    },
+    "wren": {
+      "hibernate": false,
+      "weight": 5
+    }
+  },
+  "twolegplace": {
+    "blackbird": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "blue jay": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "bushtit": {
+      "hibernate": false,
+      "weight": 7
+    },
+    "chickadee": {
+      "hibernate": false,
+      "weight": 9
+    },
+    "dove": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "finch": {
+      "hibernate": false,
+      "weight": 9
+    },
+    "garden shrew": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "garden vole": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "kittypet food": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "magpie": {
+      "hibernate": false,
+      "weight": 2
+    },
+    "mouse": {
+      "hibernate": false,
+      "weight": 9
+    },
+    "pigeon": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "rat": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "squirrel": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "twoleg food": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "twoleg trash": {
+      "hibernate": false,
+      "weight": 9
+    }
+  },
+  "river": {
+    "bream": {
+      "hibernate": false,
+      "weight": 1
+    },
+    "brown trout": {
+      "hibernate": false,
+      "weight": 7
+    },
+    "chub": {
+      "hibernate": false,
+      "weight": 9
+    },
+    "minnow": {
+      "hibernate": false,
+      "weight": 10
+    },
+    "perch": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "pike": {
+      "hibernate": false,
+      "weight": 2
+    },
+    "salmon": {
+      "hibernate": false,
+      "weight": 5
+    },
+    "shad": {
+      "hibernate": false,
+      "weight": 7
+    },
+    "sunear": {
+      "hibernate": false,
+      "weight": 5
+    }
+  },
+  "lake": {
+    "bream": {
+      "hibernate": false,
+      "weight": 2
+    },
+    "brown trout": {
+      "hibernate": false,
+      "weight": 5
+    },
+    "carp": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "loach": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "minnow": {
+      "hibernate": false,
+      "weight": 10
+    },
+    "perch": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "pike": {
+      "hibernate": false,
+      "weight": 1
+    },
+    "sunear": {
+      "hibernate": false,
+      "weight": 5
+    }
+  },
+  "stream": {
+    "brown trout": {
+      "hibernate": false,
+      "weight": 6
+    },
+    "chub": {
+      "hibernate": false,
+      "weight": 9
+    },
+    "minnow": {
+      "hibernate": false,
+      "weight": 10
+    }
+  },
+  "marsh": {
+    "bullfrog": {
+      "hibernate": true,
+      "weight": 4
+    },
+    "cardinal": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "chickadee": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "frog": {
+      "hibernate": true,
+      "weight": 8
+    },
+    "grackle": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "moorhen": {
+      "hibernate": false,
+      "weight": 1
+    },
+    "mouse": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "pheasant": {
+      "hibernate": false,
+      "weight": 1
+    },
+    "shrew": {
+      "hibernate": false,
+      "weight": 8
+    },
+    "toad": {
+      "hibernate": true,
+      "weight": 5
+    },
+    "water vole": {
+      "hibernate": false,
+      "weight": 9
+    }
+  },
+  "shore": {
+    "bullfrog": {
+      "hibernate": true,
+      "weight": 4
+    },
+    "frog": {
+      "hibernate": true,
+      "weight": 9
+    },
+    "moorhen": {
+      "hibernate": false,
+      "weight": 1
+    },
+    "water vole": {
+      "hibernate": false,
+      "weight": 9
+    }
+  },
+  "barn": {
+    "finch": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "kittypet food": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "mouse": {
+      "hibernate": false,
+      "weight": 10
+    },
+    "rat": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "swift": {
+      "hibernate": false,
+      "weight": 4
+    }
+  },
+  "camp": {
+    "ladybug": {
+      "hibernate": true,
+      "weight": 5
+    },
+    "cricket": {
+      "hibernate": true,
+      "weight": 5
+    },
+    "leaf": {
+      "hibernate": false,
+      "weight": 10
+    },
+    "twig": {
+      "hibernate": false,
+      "weight": 10
+    },
+    "pebble": {
+      "hibernate": false,
+      "weight": 10
+    },
+    "moss ball": {
+      "hibernate": false,
+      "weight": 8
+    }
+  }
+}

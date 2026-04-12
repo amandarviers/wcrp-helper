@@ -1,19 +1,26 @@
 import discord
 from discord.ext import commands
 import random
+import json
 
 # <required arg>
 # [optional arg]
 command_guide = "!prey <area> <skill> <attempts>"
+hiberate = False
 
 skills_dict = {
+    "kit": -1,
     "novice": -1,
     "low": 0,
     "medium": 1,
     "high": 2,
     "expert": 3
 }
-areas = [ "thunder", "river", "wind", "shadow", "sky", "kinship" ]
+
+with open("./data/prey_list_final.json", "r") as f:
+    data = json.load(f)
+
+areas = list(data.keys())
 
 def calc_success(skill):
     roll = (random.randint(1, 20)) + skills_dict[skill]
@@ -38,8 +45,18 @@ def calc_success(skill):
     else:
         return "total miss"
 
-def find_prey(): 
-    return
+def find_prey(area): 
+    candidates = []
+
+    for animal, info in data[area].items():
+        if hiberate and info["hibernate"]:
+            continue
+        weight = info["weight"]
+        candidates.extend([animal] * weight)
+
+    candidates.extend(["none"] * 3)
+
+    return random.choice(candidates)
 
 class Prey(commands.Cog):
     def __init__(self, bot):
@@ -68,7 +85,11 @@ class Prey(commands.Cog):
 
         success_message = ""
         for _ in range(attempts):
-            msg = calc_success(skill)
+            success_msg = calc_success(skill)
+            prey = find_prey(area)
+            msg = f"{success_msg.capitalize()} on a {prey}"
+            if prey == "none":
+                msg = "Nothing found"
             success_message += f"\n{msg}"
 
         prey_embed = discord.Embed(title="Prey Catcher", description=f"{ctx.author.mention} ({attempts} attempts)\n{success_message}", color=discord.Color.dark_purple())

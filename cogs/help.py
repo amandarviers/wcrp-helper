@@ -1,9 +1,15 @@
 import discord
 from discord.ext import commands
+import json
 
 # <required arg>
 # [optional arg]
 command_guide = "!help"
+
+with open("./data/prey_list_final.json", "r") as f:
+    data = json.load(f)
+
+areas = list(data.keys())
 
 class Help(commands.Cog):
     def __init__(self, bot):
@@ -14,7 +20,7 @@ class Help(commands.Cog):
 
     @commands.group(name="help", invoke_without_command=True)
     async def help_group(self, ctx):
-        help_embed = discord.Embed(title="Need Help From The Ancestors?", description="You stand in a clearing on a clear night, looking up at the glittering stars of Silverpelt. You exhale, then send a prayer to your ancestors for guidance.", color=discord.Color.dark_teal())
+        help_embed = discord.Embed(title="Need Help From The Ancestors?", description="You stand in a clearing on a clear night, looking up at the glittering stars of Silverpelt. You exhale, then send a prayer to your ancestors for guidance.\n<:twinkle:1492982993667756163> <:twinkle:1492982993667756163> <:twinkle:1492982993667756163>", color=discord.Color.dark_teal())
         help_embed.add_field(name="`!roll <dice>`", value="Use to roll dice.", inline=False)
         help_embed.add_field(name="`!prey <area> <skill> <attempts>`", value="Use when hunting to catch prey", inline=False)
         help_embed.add_field(name="`!pile <action> <group> [item]`", value="Use when interacting with the prey piles.", inline=False)
@@ -33,7 +39,7 @@ class Help(commands.Cog):
     @help_group.command(name="prey")
     async def help_prey(self, ctx):
         help_prey_embed = discord.Embed(title="How To: Prey Catcher", description="`!prey <area> <skill> <attempts>`", color=discord.Color.dark_teal())
-        help_prey_embed.add_field(name="Area", value="Refers to the biome. Valid areas are: ....", inline=False)
+        help_prey_embed.add_field(name="Area", value=f"Refers to the biome. Valid areas are { ', '.join(areas) }", inline=False)
         help_prey_embed.add_field(name="Skill", value="Adds a modifier to the roll based on skill. Valid skills are novice, low, medium, high, and expert.", inline=False)
         help_prey_embed.add_field(name="Attempts", value="Will make the specified number of attempts to hunt and return all the results. Can only be a number between 1 and 3.", inline=False)
 
