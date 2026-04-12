@@ -16,6 +16,7 @@ class Pile(commands.Cog):
     async def cog_command_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
             await ctx.send(f"Missing required information: `{command_guide}`")
+            return
     
     @commands.group(name="pile", invoke_without_command=True)
     async def pile_group(self, ctx):

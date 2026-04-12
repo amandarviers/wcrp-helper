@@ -17,6 +17,7 @@ class Roll(commands.Cog):
     async def cog_command_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
             await ctx.send(f"Missing required information: `{command_guide}`")
+            return
 
     @commands.command()
     async def roll(self, ctx, dice):
@@ -28,7 +29,9 @@ class Roll(commands.Cog):
 
         total = sum(rolls)
 
-        await ctx.send(f"Total: {total}")
+        roll_embed = discord.Embed(title="Dice Roller", description=f"{ctx.author.mention} rolled {dice}\n**Result:** {total}", color=discord.Color.blurple())
+
+        await ctx.send(embed=roll_embed)
 
 async def setup(bot):
     await bot.add_cog(Roll(bot))
