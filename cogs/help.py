@@ -19,6 +19,7 @@ class Help(commands.Cog):
         help_embed.add_field(name="`!prey <area> <skill> <attempts>`", value="Use when hunting to catch prey", inline=False)
         help_embed.add_field(name="`!pile <action> <group> [item]`", value="Use when interacting with the prey piles.", inline=False)
         help_embed.add_field(name="`!herb`", value="wip", inline=False)
+        help_embed.set_footer(text="Use !help <command> for detailed assistance on any of these", icon_url=None)
 
         await ctx.send(embed = help_embed)
     

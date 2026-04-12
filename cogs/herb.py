@@ -14,7 +14,7 @@ class Herb(commands.Cog):
     
     async def cog_command_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send(f"Missing required information: `{command_guide}`")
+            await ctx.send(f"<:error:1492739840230428829> Missing required information: `{command_guide}`")
             return
 
     @commands.command()

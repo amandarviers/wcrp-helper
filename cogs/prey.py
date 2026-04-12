@@ -51,19 +51,19 @@ class Prey(commands.Cog):
     # missing required args
     async def cog_command_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send(f"Missing required information: `{command_guide}`")
+            await ctx.send(f"<:error:1492739840230428829> Missing required information: `{command_guide}`")
 
 
     @commands.command()
     async def prey(self, ctx, area, skill, attempts: int):
         if area not in areas:
-            await ctx.send(f"Invalid area. Choose from: { ', '.join(areas)}")
+            await ctx.send(f"<:error:1492739840230428829> Invalid area. Choose from: { ', '.join(areas)}")
             return
         if skill not in skills_dict:
-            await ctx.send(f"Invalid skill level. Choose from: { ', '.join(skills_dict)}")
+            await ctx.send(f"<:error:1492739840230428829> Invalid skill level. Choose from: { ', '.join(skills_dict)}")
             return
         if attempts > 3 or attempts == 0:
-            await ctx.send(f"Attempts must be between 1 and 3")
+            await ctx.send(f"<:error:1492739840230428829> Attempts must be between 1 and 3")
             return
 
         success_message = ""
@@ -71,7 +71,7 @@ class Prey(commands.Cog):
             msg = calc_success(skill)
             success_message += f"\n{msg}"
 
-        prey_embed = discord.Embed(title="Prey Catcher", description=f"{ctx.author.mention} - {attempts} attempts\n{success_message}", color=discord.Color.dark_purple())
+        prey_embed = discord.Embed(title="Prey Catcher", description=f"{ctx.author.mention} ({attempts} attempts)\n{success_message}", color=discord.Color.dark_purple())
 
         await ctx.send(embed=prey_embed)
 
