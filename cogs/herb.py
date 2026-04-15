@@ -1,9 +1,18 @@
 import discord
 from discord.ext import commands
+import json
+import random
 
 # <required arg>
 # [optional arg]
-command_guide = "!herb"
+command_guide = "!herb <area> <attempts>"
+
+with open("./data/herbs.json", "r") as f:
+    data = json.load(f)
+
+areas = list(data.keys())
+
+error_embed = discord.Embed(title="<:error:1492739840230428829> Error", description="Error", color=discord.Color.red())
 
 class Herb(commands.Cog):
     def __init__(self, bot):
@@ -14,12 +23,30 @@ class Herb(commands.Cog):
     
     async def cog_command_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send(f"<:error:1492739840230428829> Missing required information: `{command_guide}`")
+            error_embed.description = f"Missing required information: `{command_guide}`"
+            await ctx.send(embed=error_embed)
             return
 
     @commands.command()
-    async def herb(self, ctx):
-        await ctx.send("wip")
+    async def herb(self, ctx, area, attempts: int):
+        if area not in areas:
+            error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"
+            await ctx.send(embed=error_embed)
+            return
+        if attempts > 5 or attempts == 0:
+            error_embed.description = f"Attempts must be between 1 and 5"
+            await ctx.send(embed=error_embed)
+            return
+        
+        herbs_found = ""
+        for _ in range(attempts):
+            herb = random.choice(data[area])
+            herbs_found += f"\n{herb}"
+        
+        herb_embed = discord.Embed(title="Herb Finder", description=f"{ctx.author.mention} ({attempts} attempts)\n{herbs_found}", color=discord.Color.dark_green())
+
+        await ctx.send(embed=herb_embed)
+
 
 async def setup(bot):
     await bot.add_cog(Herb(bot))

@@ -6,9 +6,9 @@ Running the moors
 Stalking through the shadows
 Jumping tree-to-tree
 Running from a monster
-Racing a rabbit
+Racing with a rabbit
 Cleaning the elder's den
-Restocking herb
+Restocking herbs
 Watching the kits play
 Chasing butterflies
 Rolling in flowers
@@ -18,4 +18,4 @@ Catching a fish
 Playing mossball
 Listening to stories
 Watching over the Clans
-Giving Prophecies
+Giving cryptic prophecies

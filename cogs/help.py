@@ -40,7 +40,7 @@ class Help(commands.Cog):
     async def help_prey(self, ctx):
         help_prey_embed = discord.Embed(title="How To: Prey Catcher", description="`!prey <area> <skill> <attempts>`", color=discord.Color.dark_teal())
         help_prey_embed.add_field(name="Area", value=f"Refers to the biome. Valid areas are { ', '.join(areas) }", inline=False)
-        help_prey_embed.add_field(name="Skill", value="Adds a modifier to the roll based on skill. Valid skills are novice, low, medium, high, and expert.", inline=False)
+        help_prey_embed.add_field(name="Skill", value="Adds a modifier to the roll based on skill. Valid skills are kit, novice, low, medium, high, and expert.", inline=False)
         help_prey_embed.add_field(name="Attempts", value="Will make the specified number of attempts to hunt and return all the results. Can only be a number between 1 and 3.", inline=False)
 
         await ctx.send(embed = help_prey_embed)

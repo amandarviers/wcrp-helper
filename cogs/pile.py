@@ -9,6 +9,8 @@ command_guide = "!pile <action> <group> [item]"
 with open("./data/prey_list_final.json", "r") as f:
     data = json.load(f)
 
+error_embed = discord.Embed(title="<:error:1492739840230428829> Error", description="Error", color=discord.Color.red())
+
 class Pile(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -19,13 +21,15 @@ class Pile(commands.Cog):
     # missing required args
     async def cog_command_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send(f"<:error:1492739840230428829> Missing required information: `{command_guide}`")
+            error_embed.description = f"Missing required information: `{command_guide}`"
+            await ctx.send(embed=error_embed)
             return
     
     @commands.group(name="pile", invoke_without_command=True)
     async def pile_group(self, ctx):
         if ctx.invoked_subcommand is None:
-            await ctx.send(f"<:error:1492739840230428829> Invalid command. `{command_guide}`")
+            error_embed.description = f"Invalid command. `{command_guide}`"
+            await ctx.send(embed=error_embed)
     
 
     @pile_group.command(name="view")
@@ -39,7 +43,8 @@ class Pile(commands.Cog):
 
             await ctx.send(embed=pile_view_embed)
         except FileNotFoundError:
-            await ctx.send(f"{group} is not a valid group")
+            error_embed.description = f"{group.capitalize()} is not a valid group."
+            await ctx.send(embed=error_embed)
     
     @pile_group.command(name="add")
     async def pile_add(self, ctx, group, item):
@@ -53,7 +58,8 @@ class Pile(commands.Cog):
                 break
 
         if not valid_item: 
-            await ctx.send(f"<:error:1492739840230428829> {item.capitalize()} is not a valid item")
+            error_embed.description = f"{item.capitalize()} is not a valid item"
+            await ctx.send(embed=error_embed)
             return
         with open(f"./data/piles/{group}.txt", "a") as file:
             file.write(f"{item}\n")
@@ -78,7 +84,8 @@ class Pile(commands.Cog):
                 break
 
         if not valid_item: 
-            await ctx.send(f"<:error:1492739840230428829> {item.capitalize()} is not a valid item")
+            error_embed.description = f"{item.capitalize()} is not a valid item"
+            await ctx.send(embed=error_embed)
             return
 
         removed = False

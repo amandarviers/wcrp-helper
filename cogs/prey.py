@@ -8,6 +8,8 @@ import json
 command_guide = "!prey <area> <skill> <attempts>"
 hibernate = False
 
+error_embed = discord.Embed(title="<:error:1492739840230428829> Error", description="Error", color=discord.Color.red())
+
 skills_dict = {
     "kit": -2,
     "novice": -1,
@@ -68,22 +70,27 @@ class Prey(commands.Cog):
     # missing required args
     async def cog_command_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send(f"<:error:1492739840230428829> Missing required information: `{command_guide}`")
+            error_embed.description = f"Missing required information: `{command_guide}`"
+            await ctx.send(embed=error_embed)
 
 
     @commands.command()
     async def prey(self, ctx, area, skill, attempts: int):
         if area not in areas:
-            await ctx.send(f"<:error:1492739840230428829> Invalid area. Choose from: { ', '.join(areas)}")
+            error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"
+            await ctx.send(embed=error_embed)
             return
         if skill not in skills_dict:
-            await ctx.send(f"<:error:1492739840230428829> Invalid skill level. Choose from: { ', '.join(skills_dict)}")
+            error_embed.description = f"Invalid skill level. Choose from: { ', '.join(skills_dict)}"
+            await ctx.send(embed=error_embed)
             return
         if attempts > 3 or attempts == 0:
-            await ctx.send(f"<:error:1492739840230428829> Attempts must be between 1 and 3")
+            error_embed.description = f"Attempts must be between 1 and 3"
+            await ctx.send(embed=error_embed)
             return
         if skill == "kit" and area != "camp":
-            await ctx.send(f"<:error:1492739840230428829> Kits can only hunt in camp!")
+            error_embed.description = f"Kits can only hunt in camp"
+            await ctx.send(embed=error_embed)
             return
 
         success_message = ""

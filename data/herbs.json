@@ -1,0 +1,117 @@
+{
+  "forest": [
+    "alder bark",
+    "blackberry leaves",
+    "burdock",
+    "catchweed",
+    "celandine",
+    "chickweed",
+    "cob nuts",
+    "comfrey",
+    "elder leaves",
+    "ivy leaves",
+    "lungwort",
+    "raspberry leaves",
+    "stinging nettle",
+    "willow bark",
+    "willow leaves",
+    "yarrow",
+    "fennel",
+    "chervil",
+    "broom",
+    "tree sap",
+    "bright eye",
+    "honey"
+  ],
+  "rocky": [
+    "broom",
+    "thyme",
+    "rosemary",
+    "lavender",
+    "hawkweed",
+    "tormentil",
+    "sorrel"
+  ],
+  "moor": [
+    "heather nectar",
+    "ragwort leaves",
+    "tansy",
+    "yarrow",
+    "broom",
+    "sheep sorrel"
+  ],
+  "meadow": [
+    "borage leaves",
+    "burnet",
+    "chamomile",
+    "daisy",
+    "dandelion",
+    "dock",
+    "feverfew",
+    "goldenrod",
+    "lamb's ear",
+    "lovage",
+    "marigold",
+    "mint",
+    "parsley",
+    "poppy seeds",
+    "sorrel",
+    "sweet sedge",
+    "thyme",
+    "goatweed",
+    "ragweed",
+    "honey"
+  ],
+  "pines": [
+    "juniper berries",
+    "rosemary",
+    "ivy leaves",
+    "willowherb",
+    "stinging nettle",
+    "tree sap"
+  ],
+  "river": [
+    "comfrey",
+    "mint",
+    "watermint",
+    "willow bark",
+    "willow leaves",
+    "horsetail",
+    "rush",
+    "dock"
+  ],
+  "lake": [
+    "watermint",
+    "horsetail",
+    "rush",
+    "sweet sedge",
+    "dock",
+    "willow leaves",
+    "willow bark"
+  ],
+  "streams": [
+    "horsetail",
+    "mint",
+    "watermint",
+    "rush",
+    "comfrey",
+    "willow bark",
+    "willow leaves"
+  ],
+  "marsh": [
+    "rush",
+    "horsetail",
+    "sweet sedge",
+    "ragwort leaves",
+    "willowherb",
+    "dock"
+  ],
+  "shore": ["dock", "rush", "goldenrod", "willowherb", "ragweed"],
+  "twolegplace": [
+    "catmint",
+    "chamomile",
+    "raspberry leaves",
+    "blackberry leaves",
+    "mint"
+  ]
+}

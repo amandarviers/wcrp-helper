@@ -6,6 +6,8 @@ import random
 # [optional arg]
 command_guide = "!roll <dice>"
 
+error_embed = discord.Embed(title="<:error:1492739840230428829> Error", description="Error", color=discord.Color.red())
+
 class Roll(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -16,7 +18,8 @@ class Roll(commands.Cog):
     # missing required args
     async def cog_command_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send(f"<:error:1492739840230428829> Missing required information: `{command_guide}`")
+            error_embed.description = f"Missing required information: `{command_guide}`"
+            await ctx.send(embed=error_embed)
             return
 
     @commands.command()
