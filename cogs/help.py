@@ -6,10 +6,15 @@ import json
 # [optional arg]
 command_guide = "!help"
 
-with open("./data/prey_list_final.json", "r") as f:
-    data = json.load(f)
+with open("./data/prey_list_final.json", "r") as pf:
+    prey_data = json.load(pf)
 
-areas = list(data.keys())
+prey_areas = list(prey_data.keys())
+
+with open("./data/herbs.json", "r") as hf:
+    herb_data = json.load(hf)
+
+herb_areas = list(herb_data.keys())
 
 class Help(commands.Cog):
     def __init__(self, bot):
@@ -24,7 +29,7 @@ class Help(commands.Cog):
         help_embed.add_field(name="`!roll <dice>`", value="Use to roll dice.", inline=False)
         help_embed.add_field(name="`!prey <area> <skill> <attempts>`", value="Use when hunting to catch prey", inline=False)
         help_embed.add_field(name="`!pile <action> <group> [item]`", value="Use when interacting with the prey piles.", inline=False)
-        help_embed.add_field(name="`!herb`", value="wip", inline=False)
+        help_embed.add_field(name="`!herb <area> <attempts>`", value="Use when searching for herbs", inline=False)
         help_embed.set_footer(text="Use !help <command> for detailed assistance on any of these", icon_url=None)
 
         await ctx.send(embed = help_embed)
@@ -39,7 +44,7 @@ class Help(commands.Cog):
     @help_group.command(name="prey")
     async def help_prey(self, ctx):
         help_prey_embed = discord.Embed(title="How To: Prey Catcher", description="`!prey <area> <skill> <attempts>`", color=discord.Color.dark_teal())
-        help_prey_embed.add_field(name="Area", value=f"Refers to the biome. Valid areas are { ', '.join(areas) }", inline=False)
+        help_prey_embed.add_field(name="Area", value=f"Refers to the habitat. Valid areas are { ', '.join(prey_areas) }", inline=False)
         help_prey_embed.add_field(name="Skill", value="Adds a modifier to the roll based on skill. Valid skills are kit, novice, low, medium, high, and expert.", inline=False)
         help_prey_embed.add_field(name="Attempts", value="Will make the specified number of attempts to hunt and return all the results. Can only be a number between 1 and 3.", inline=False)
 
@@ -56,8 +61,9 @@ class Help(commands.Cog):
 
     @help_group.command(name="herb")
     async def help_herb(self, ctx):
-        help_herb_embed = discord.Embed(title="How To: Herb Finder", description="`!herb`", color=discord.Color.dark_teal())
-        help_herb_embed.add_field(name="wip", value="wip", inline=False)
+        help_herb_embed = discord.Embed(title="How To: Herb Finder", description="`!herb <area> <attempts>`", color=discord.Color.dark_teal())
+        help_herb_embed.add_field(name="Area", value=f"Refers to the habitat. Valid areas are { ', '.join(herb_areas) }", inline=False)
+        help_herb_embed.add_field(name="Attempts", value="Will make the specified number of attempts to hunt and return all the results. Can only be a number between 1 and 5.", inline=False)
 
         await ctx.send(embed = help_herb_embed)
 

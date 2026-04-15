@@ -47,7 +47,7 @@ class Pile(commands.Cog):
             await ctx.send(embed=error_embed)
     
     @pile_group.command(name="add")
-    async def pile_add(self, ctx, group, item):
+    async def pile_add(self, ctx, group, *, item:str):
         valid_item = False
         for _, animals in data.items():
             for animal in animals:
@@ -73,7 +73,7 @@ class Pile(commands.Cog):
         await ctx.send(embed=pile_add_embed)
     
     @pile_group.command(name="take")
-    async def pile_take(self, ctx, group, item):
+    async def pile_take(self, ctx, group, *, item:str):
         valid_item = False
         for _, animals in data.items():
             for animal in animals:
