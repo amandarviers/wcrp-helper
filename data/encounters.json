@@ -12,6 +12,48 @@
     "category": "danger"
   },
   {
+    "title": "Fox Attack",
+    "description": "A familiar smell reaches you on the wind, but by the time you recognize it, a fox charges out of a bush!",
+    "habitat": [
+      "camp",
+      "forest",
+      "marsh",
+      "meadow",
+      "moor",
+      "pines",
+      "shore",
+      "twolegplace"
+    ],
+    "category": "danger"
+  },
+  {
+    "title": "Badger Attack",
+    "description": "A large, black and white creature lumbers through the brush on large paws. You quickly recognize it as a badger!",
+    "habitat": [
+      "camp",
+      "forest",
+      "marsh",
+      "meadow",
+      "moor",
+      "pines",
+      "shore",
+      "twolegplace"
+    ],
+    "category": "danger"
+  },
+  {
+    "title": "Snake Attack",
+    "description": "A strange hissing sounds alerts you to the presence of a snake, and it sounds angry!",
+    "habitat": ["rocky", "pines"],
+    "category": "danger"
+  },
+  {
+    "title": "Mink Attack",
+    "description": "A long, dark black creature slides out of the water. The mink's dark beedy eyes lock onto you, ready to lunge.",
+    "habitat": ["lake", "stream", "shore", "river"],
+    "category": "danger"
+  },
+  {
     "title": "Cat Trap",
     "description": "Something smells really good, better even than fresh prey. One problem: it's inside of a box with silver bars. It seems safe, though. Will you try to get it out?\nRoll a 15 or higher with `!roll 1d20` to successfully get the food out!",
     "habitat": ["twolegplace", "forest", "barn"],
