@@ -49,7 +49,6 @@ class Encounter(commands.Cog):
 
         candidates = []
         roll = random.randint(1,20)
-        count = 0
 
         if "hunt" in category:
             for candidate in data:
@@ -58,7 +57,6 @@ class Encounter(commands.Cog):
                 if area not in candidate["habitat"]:
                     continue
                 candidates.append(candidate)
-                count += 1
         else:
             if roll > 5:
                 for candidate in data:
@@ -67,9 +65,6 @@ class Encounter(commands.Cog):
                     if area not in candidate["habitat"]:
                         continue
                     candidates.append(candidate)
-                    count += 1
-        
-        print(f"{count} in {category}")
 
         if candidates:
             encounter = random.choice(candidates)
