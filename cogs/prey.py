@@ -38,9 +38,9 @@ def calc_success(roll, area):
         return "messy kill"
     elif roll >= 9:
         return "hit but no kill"
-    elif roll >= 7:
+    elif roll >= 5:
         return "almost hit but no kill"
-    elif roll >= 4:
+    elif roll >= 2:
         return "miss"
     else:
         return "total miss"

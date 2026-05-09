@@ -21,7 +21,12 @@
     "broom",
     "tree sap",
     "bright eye",
-    "honey"
+    "honey",
+    "tansy",
+    "bindweed",
+    "birch sap",
+    "wild garlic",
+    "wood sorrel"
   ],
   "rocky": [
     "broom",
@@ -60,7 +65,10 @@
     "thyme",
     "goatweed",
     "ragweed",
-    "honey"
+    "honey",
+    "tansy",
+    "bindweed",
+    "coltsfoot"
   ],
   "pines": [
     "juniper berries",
@@ -68,7 +76,9 @@
     "ivy leaves",
     "willowherb",
     "stinging nettle",
-    "tree sap"
+    "tree sap",
+    "birch sap",
+    "wild garlic"
   ],
   "river": [
     "comfrey",
@@ -78,7 +88,8 @@
     "willow leaves",
     "horsetail",
     "rush",
-    "dock"
+    "dock",
+    "mallow"
   ],
   "lake": [
     "watermint",
@@ -96,7 +107,8 @@
     "rush",
     "comfrey",
     "willow bark",
-    "willow leaves"
+    "willow leaves",
+    "mallow"
   ],
   "marsh": [
     "rush",
@@ -104,7 +116,9 @@
     "sweet sedge",
     "ragwort leaves",
     "willowherb",
-    "dock"
+    "dock",
+    "birch sap",
+    "coltsfoot"
   ],
   "shore": ["dock", "rush", "goldenrod", "willowherb", "ragweed"],
   "twolegplace": [
@@ -112,6 +126,7 @@
     "chamomile",
     "raspberry leaves",
     "blackberry leaves",
-    "mint"
+    "mint",
+    "rhubarb"
   ]
 }
