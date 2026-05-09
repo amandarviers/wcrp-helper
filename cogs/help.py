@@ -30,6 +30,7 @@ class Help(commands.Cog):
         help_embed.add_field(name="`!prey <area> <skill> <attempts>`", value="Use when hunting to catch prey", inline=False)
         help_embed.add_field(name="`!pile <action> <group> [item]`", value="Use when interacting with the prey piles.", inline=False)
         help_embed.add_field(name="`!herb <area> <attempts>`", value="Use when searching for herbs", inline=False)
+        help_embed.add_field(name="`!encounter <area> <type>`", value="Use to get a random encounter", inline=False)
         help_embed.set_footer(text="Use !help <command> for detailed assistance on any of these", icon_url=None)
 
         await ctx.send(embed = help_embed)
@@ -66,6 +67,14 @@ class Help(commands.Cog):
         help_herb_embed.add_field(name="Attempts", value="Will make the specified number of attempts to hunt and return all the results. Can only be a number between 1 and 5.", inline=False)
 
         await ctx.send(embed = help_herb_embed)
+    
+    @help_group.command(name="encounter")
+    async def help_encounter(self, ctx):
+        help_encounter_embed = discord.Embed(title="How To: Encounters", description="`!encounter <area> <type>`", color=discord.Color.dark_teal())
+        help_encounter_embed.add_field(name="Area", value=f"Refers to the habitat. Valid areas are { ', '.join(prey_areas) }", inline=False)
+        help_encounter_embed.add_field(name="Type", value="Refers to the type of encounter. Valid types are danger (requires approval from Crew), random (could be positive, neutral, or negative events), vigil, pos-hunt (only for crit success on hunting), neg-hunt (only for crit fail on hunting)", inline=False)
+
+        await ctx.send(embed = help_encounter_embed)
 
 async def setup(bot):
     await bot.add_cog(Help(bot))

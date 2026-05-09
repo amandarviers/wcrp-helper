@@ -24,21 +24,19 @@ with open("./data/prey_list_final.json", "r") as f:
 
 areas = list(data.keys())
 
-def calc_success(skill):
-    roll = (random.randint(1, 20)) + skills_dict[skill]
-
+def calc_success(roll, area):
     if roll == 1:
-        return "critical failure!"
+        return f"Critical failure! Run `!encounter {area} neg-hunt` to see what happened."
     if roll == 20:
-        return "critical success!"
+        return f"Critical success! Run `!encounter {area} pos-hunt` to see what happened."
 
-    if roll >= 20:
+    if roll >= 19:
         return "perfect kill"
-    elif roll >= 18:
+    elif roll >= 17:
         return "clean kill"
-    elif roll >= 13:
+    elif roll >= 12:
         return "messy kill"
-    elif roll >= 10:
+    elif roll >= 9:
         return "hit but no kill"
     elif roll >= 7:
         return "almost hit but no kill"
@@ -95,14 +93,20 @@ class Prey(commands.Cog):
 
         success_message = ""
         for _ in range(attempts):
-            success_msg = calc_success(skill)
+            roll = (random.randint(1, 20)) + skills_dict[skill]
+            success_msg = calc_success(roll, area)
             prey = find_prey(area)
-            msg = f"{success_msg.capitalize()} on a {prey}"
-            if prey == "none":
-                msg = "Nothing found"
+            if roll == 1 or roll == 20:
+                msg = f"- {success_msg}"
+            elif prey == "none":
+                msg = "- Nothing found"
+            else:
+                msg = f"- {success_msg.capitalize()} on a {prey}"
             success_message += f"\n{msg}"
 
-        prey_embed = discord.Embed(title="Prey Catcher", description=f"{ctx.author.mention} ({attempts} attempts)\n{success_message}", color=discord.Color.dark_purple())
+        prey_embed = discord.Embed(title="Prey Catcher", description=f"{success_message}", color=discord.Color.dark_purple())
+
+        prey_embed.set_footer(text=f"{ctx.author.display_name} made {attempts} hunting attempts", icon_url=ctx.author.display_avatar.url)
 
         await ctx.send(embed=prey_embed)
 

@@ -41,9 +41,10 @@ class Herb(commands.Cog):
         herbs_found = ""
         for _ in range(attempts):
             herb = random.choice(data[area])
-            herbs_found += f"\n{herb}"
+            herbs_found += f"\n- {herb}"
         
-        herb_embed = discord.Embed(title="Herb Finder", description=f"{ctx.author.mention} ({attempts} attempts)\n{herbs_found}", color=discord.Color.dark_green())
+        herb_embed = discord.Embed(title="Herb Finder", description=f"{herbs_found}", color=discord.Color.dark_green())
+        herb_embed.set_footer(text=f"{ctx.author.display_name} made {attempts} attempts to find herbs", icon_url=ctx.author.display_avatar.url)
 
         await ctx.send(embed=herb_embed)
 

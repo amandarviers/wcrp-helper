@@ -1,0 +1,322 @@
+[
+  {
+    "title": "Loose Horse",
+    "description": "A horse has escaped from the horseplace and is running in a frenzy. Prey is scared away, and a twoleg might appear soon to catch it.\nRoll an 8 or higher with `!roll 1d20` to avoid its hooves!",
+    "habitat": ["moor"],
+    "category": "danger"
+  },
+  {
+    "title": "Falling Tree",
+    "description": "Due to wind, weather, or age, a tree is collapsing.\nRoll an 8 or higher with `!roll 1d20` to avoid it!\n*Note: If this is WindClan camp, disregard and try again.*",
+    "habitat": ["forest", "pines", "camp"],
+    "category": "danger"
+  },
+  {
+    "title": "Cat Trap",
+    "description": "Something smells really good, better even than fresh prey. One problem: it's inside of a box with silver bars. It seems safe, though. Will you try to get it out?\nRoll a 15 or higher with `!roll 1d20` to successfully get the food out!",
+    "habitat": ["twolegplace", "forest", "barn"],
+    "category": "danger"
+  },
+  {
+    "title": "Monster",
+    "description": "As you approach the Thunderpath, it suddenly starts rumbling.\nRoll a 6 or higher with `!roll 1d20` to get out of its way.",
+    "habitat": ["forest", "twolegplace"],
+    "category": "danger"
+  },
+  {
+    "title": "Mother Goose",
+    "description": "These parents aren't happy about how close you are to their nest/hatchlings. They act hostile. Do you leave or try to get a meal?",
+    "habitat": ["lake", "shore", "meadow"],
+    "category": "random"
+  },
+  {
+    "title": "Hooked Fish",
+    "description": "A fish that you've caught has a sharp, shiny attachment in its mouth and a strong piece of cobweb that seems to have snapped. Be careful handling and eating!",
+    "habitat": ["lake", "river", "stream"],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Tripping Over Yourself",
+    "description": "You see a big, juicy piece of prey ahead and quickly stalk it. But you're too focused on how hungry you are and your attempt to catch it is thwarted by a hole or a rock that you trip on.\nRoll an 8 or higher with `!roll 1d20` to avoid a sprain.",
+    "habitat": ["shore", "forest", "rocky", "moor", "meadow", "pines", "marsh"],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Tripping Over Yourself",
+    "description": "You see a tempting feather up ahead and quickly stalk it. But you're too focused on how exciting this is and your attempt to catch it is thwarted by a stick you trip on. Hopefully no one saw that!",
+    "habitat": ["camp"],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Fuzz in Mouse Clothing",
+    "description": "What you thought was a nice, big mouse turns out to be a clump of someone's fur.",
+    "habitat": [
+      "camp",
+      "barn",
+      "forest",
+      "shore",
+      "rocky",
+      "moor",
+      "meadow",
+      "pines",
+      "twolegplace",
+      "marsh"
+    ],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Fish Are Rude",
+    "description": "You get low to the water in preparation to snag a fish as it swims by, but instead one jumps out of the water and smacks you in the face before quickly swimming away.",
+    "habitat": ["river", "lake", "stream"],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Poisoned Prey",
+    "description": "This prey ate something that it shouldn't have. Be careful if you choose to eat it!",
+    "habitat": ["twolegplace", "barn"],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Angry Squirrels",
+    "description": "An angry squirrel throws sticks and stones at you as you walk through the forest, alerting all other prey of your presence. Hopefully you didn't intend on hunting!",
+    "habitat": ["forest", "pines"],
+    "category": "random"
+  },
+  {
+    "title": "That's Not a Rabbit",
+    "description": "You run at a rabbit, but instead of running, it turns to face you. It turns out the rabbit is a hare, and its angry.",
+    "habitat": ["moor"],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Bombs Away",
+    "description": "A bird soars overhead and lets loose droppings that hit you on the head.",
+    "habitat": [
+      "camp",
+      "meadow",
+      "moor",
+      "twolegplace",
+      "forest",
+      "pines",
+      "rocky"
+    ],
+    "category": "random"
+  },
+  {
+    "title": "Tree Fort",
+    "description": "Some twoleg kits are playing nearby, moving and bending twigs and branches to create a strange structure that stays up after they leave.",
+    "habitat": ["forest", "pines"],
+    "category": "random"
+  },
+  {
+    "title": "Sheep Herding",
+    "description": "The twolegs are moving the sheep to new grazing areas! There's a couple dogs barking and guiding them, but they seem focused on their work.",
+    "habitat": ["moor", "barn", "meadow"],
+    "category": "random"
+  },
+  {
+    "title": "Colorful Skies",
+    "description": "The twolegs seem to be running around holding strong cobweb attached to brightly-colored shapes that fly above in the sky.",
+    "habitat": ["twolegplace", "meadow", "moor", "shore"],
+    "category": "random"
+  },
+  {
+    "title": "Whosits and Whatsits Galore",
+    "description": "You find a strange object on the ground. It's silvery and reflects the sky in a rounded shape attached to a longer piece. It smells vaguely of Twolegs.",
+    "habitat": [
+      "barn",
+      "forest",
+      "lake",
+      "marsh",
+      "meadow",
+      "moor",
+      "pines",
+      "river",
+      "rocky",
+      "shore",
+      "stream",
+      "twolegplace"
+    ],
+    "category": "random"
+  },
+  {
+    "title": "Down With the Ship",
+    "description": "A couple Twolegs are riding in their water monsters when suddenly you hear a crash and it starts to sink under the water. Maybe it got sick? You're not sure, but the Twolegs are now swimming to shore.",
+    "habitat": ["shore", "lake"],
+    "category": "random"
+  },
+  {
+    "title": "Butterfly Swarm",
+    "description": "A traveling group of butterflies swarms around you. They flutter around for a while before continuing on their way.",
+    "habitat": [
+      "camp",
+      "forest",
+      "moor",
+      "marsh",
+      "barn",
+      "meadow",
+      "pines",
+      "shore",
+      "twolegplace"
+    ],
+    "category": "vigil"
+  },
+  {
+    "title": "Shallow Pool",
+    "description": "Some fish have gotten stuck in a small pool of water and have nowhere to hide!\nUse `!roll 1d4` to see how many you catch.",
+    "habitat": ["shore", "river", "stream", "lake"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Catnip Patch",
+    "description": "You find a lush patch of intoxicating plants. You have an overwhelming desire to roll in them. You can feel your stress melting away. Wait, what were you doing again?",
+    "habitat": ["twolegplace", "meadow", "moor"],
+    "category": "random"
+  },
+  {
+    "title": "Mayday",
+    "description": "A sparrow flies right into the clear ice on the side of twoleg den and falls.",
+    "habitat": ["twolegplace", "barn"],
+    "category": "random"
+  },
+  {
+    "title": "Rabbit Burrow",
+    "description": "You come upon a small burrow of baby rabbits, and the mother is away.\nUse `!roll 1d4` to see how many you catch!",
+    "habitat": ["moor", "forest"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Salmon Run",
+    "description": "A bunch of salmon are tired from swimming upriver.\nUse `!roll 1d4` to see how many you catch!",
+    "habitat": ["river"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Frog Went a-Courting",
+    "description": "Frogs carelessly sing loudly, unaware of the danger of your presence.\nUse `!roll 1d4` to see how many you catch!",
+    "habitat": ["marsh", "shore"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "It's Raining Leaves",
+    "description": "A flurry of leaves fall from the sky.\nUse `!roll 1d4` to see how many you catch!",
+    "habitat": ["camp"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Unexpected Visitor",
+    "description": "A couple dragonflies are hanging out nearby, seemingly unaware of your presence.\nUse `!roll 1d4` to see how many you catch!",
+    "habitat": ["camp"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Mouse Nest",
+    "description": "You find a small nest filled with mice.\nUse `!roll 1d4` to see how many you catch!",
+    "habitat": [
+      "barn",
+      "twolegplace",
+      "forest",
+      "pines",
+      "meadow",
+      "marsh",
+      "rocky"
+    ],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Lizard Scramble",
+    "description": "You find a bunch of lizards sunning themselves on a rock.\nUse `!roll 1d4` to see how many you catch!",
+    "habitat": ["rocky"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "A Feast",
+    "description": "The Twolegs left food out for the loners in the area.\nUse `!roll 1d4` to see how much you find!",
+    "habitat": ["barn", "twolegplace"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Fallen Nest",
+    "description": "A bird nest fell out of a tree nearby.\nUse `!roll 1d4` to see how many eggs or birds you find!",
+    "habitat": ["forest", "twolegplace", "pines"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Rapid Currents",
+    "description": "The water is moving quickly and a couple fish have accidentally jumped out.\nUse `!roll 1d4` to see how many you catch!",
+    "habitat": ["lake", "river", "stream"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Gust of Wind",
+    "description": "A strong gust of wind knocked some young birds down.\nUse `!roll 1d4` to see how many you catch!",
+    "habitat": ["moor", "meadow"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Strange Treasures",
+    "description": "You find a small, squishy, brightly colored ball. It smells of Twolegs, but something about it makes you want to bat it around.",
+    "habitat": [
+      "barn",
+      "twolegplace",
+      "shore",
+      "forest",
+      "moor",
+      "meadow",
+      "pines"
+    ],
+    "category": "random"
+  },
+  {
+    "title": "Natural Treasures",
+    "description": "You find a brightly colored shell that almost gleams in the sunlight, with an intricate swirl pattern.",
+    "habitat": ["lake", "river", "stream"],
+    "category": "random"
+  },
+  {
+    "title": "Natural Treasures",
+    "description": "You find a bright, fluffy feather lazily blowing around in the breeze.",
+    "habitat": [
+      "camp",
+      "shore",
+      "forest",
+      "rocky",
+      "moor",
+      "meadow",
+      "pines",
+      "twolegplace",
+      "marsh"
+    ],
+    "category": "random"
+  },
+  {
+    "title": "Inspiring Skies",
+    "description": "You look up at the sky and see a cloud that resembles a cat. It reminds you of a loved one, making you feel watched over and cared for.",
+    "habitat": [
+      "camp",
+      "forest",
+      "lake",
+      "marsh",
+      "meadow",
+      "moor",
+      "pines",
+      "river",
+      "rocky",
+      "shore",
+      "stream"
+    ],
+    "category": "random"
+  },
+  {
+    "title": "Spooked",
+    "description": "While sitting vigil, you hear the cracking of foliage. It's getting louder, closer, faster. Just when its about to reach you it suddenly stops. You don't hear it again.",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "Jumped",
+    "description": "Its quiet, too quiet. You feel relaxed, that is until something jumps on your back! After reacting, you notice a frog jumping away in a hurry.",
+    "habitat": ["camp"],
+    "category": "vigil"
+  }
+]

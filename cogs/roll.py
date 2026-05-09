@@ -32,7 +32,8 @@ class Roll(commands.Cog):
 
         total = sum(rolls)
 
-        roll_embed = discord.Embed(title="Dice Roller", description=f"<:d20:1492740388371304648> {ctx.author.mention} rolled {dice}\n**Result:** {total}", color=discord.Color.blurple())
+        roll_embed = discord.Embed(title="Dice Roller", description=f"<:d20:1492740388371304648> **Result:** {total}", color=discord.Color.blurple())
+        roll_embed.set_footer(text=f"{ctx.author.display_name} rolled {dice}", icon_url=ctx.author.display_avatar.url)
 
         await ctx.send(embed=roll_embed)
 

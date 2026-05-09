@@ -41,6 +41,8 @@ class Pile(commands.Cog):
 
             pile_view_embed = discord.Embed(title=f"{group.capitalize()} Prey Pile", description=f"{pile_contents}", color=discord.Color.green())
 
+            pile_view_embed.set_footer(text=f"{ctx.author.display_name} viewed the {group.capitalize()} pile", icon_url=ctx.author.display_avatar.url)
+
             await ctx.send(embed=pile_view_embed)
         except FileNotFoundError:
             error_embed.description = f"{group.capitalize()} is not a valid group."
@@ -68,7 +70,9 @@ class Pile(commands.Cog):
                 lines = file.readlines()
                 pile_contents = "".join(lines).replace("\n", ", ")[:-2] or "nothing"
 
-        pile_add_embed = discord.Embed(title=f"{group.capitalize()} Prey Pile", description=f"{ctx.author.mention} added a {item} to the pile\nPile now contains {pile_contents}", color=discord.Color.green())
+        pile_add_embed = discord.Embed(title=f"{group.capitalize()} Prey Pile", description=f"Pile now contains: {pile_contents}", color=discord.Color.green())
+
+        pile_add_embed.set_footer(text=f"{ctx.author.display_name} added {item} to the {group.capitalize()} pile", icon_url=ctx.author.display_avatar.url)
 
         await ctx.send(embed=pile_add_embed)
     
@@ -105,7 +109,8 @@ class Pile(commands.Cog):
                 lines = file.readlines()
                 pile_contents = "".join(lines).replace("\n", ", ")[:-2] or "nothing"
         
-        pile_take_embed = discord.Embed(title=f"{group.capitalize()} Prey Pile", description=f"{ctx.author.mention} took a {item} from the pile\nPile now contains {pile_contents}", color=discord.Color.green())
+        pile_take_embed = discord.Embed(title=f"{group.capitalize()} Prey Pile", description=f"Pile now contains: {pile_contents}", color=discord.Color.green())
+        pile_take_embed.set_footer(text=f"{ctx.author.display_name} took {item} from the {group.capitalize()} pile", icon_url=ctx.author.display_avatar.url)
 
         await ctx.send(embed=pile_take_embed)
 
