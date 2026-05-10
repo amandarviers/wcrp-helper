@@ -7,6 +7,8 @@ import json
 # [optional arg]
 command_guide = "!prey <area> <skill> <attempts>"
 hibernate = False
+global_modifier = 5
+prey_scarcity = 15
 
 error_embed = discord.Embed(title="<:error:1492739840230428829> Error", description="Error", color=discord.Color.red())
 
@@ -50,11 +52,13 @@ def find_prey(area):
 
     for animal, info in data[area].items():
         if hibernate and info["hibernate"]:
-            continue
-        weight = info["weight"]
+            weight = info["weight"] - 5 - global_modifier
+        else:
+            weight = info["weight"] - global_modifier
+        
         candidates.extend([animal] * weight)
 
-    candidates.extend(["none"] * 3)
+    candidates.extend(["none"] * prey_scarcity)
 
     return random.choice(candidates)
 

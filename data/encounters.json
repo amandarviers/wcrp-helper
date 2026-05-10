@@ -205,7 +205,7 @@
   },
   {
     "title": "Shallow Pool",
-    "description": "Some fish have gotten stuck in a small pool of water and have nowhere to hide!\nUse `!roll 1d4` to see how many you catch.",
+    "description": "Some brown trout have gotten stuck in a small pool of water and have nowhere to hide!\nUse `!roll 1d4` to see how many you catch.",
     "habitat": ["shore", "river", "stream", "lake"],
     "category": "pos-hunt"
   },
@@ -273,25 +273,25 @@
   },
   {
     "title": "A Feast",
-    "description": "The Twolegs left food out for the loners in the area.\nUse `!roll 1d4` to see how much you find!",
+    "description": "The Twolegs left kittypet food out for the loners in the area.\nUse `!roll 1d4` to see how much you find!",
     "habitat": ["barn", "twolegplace"],
     "category": "pos-hunt"
   },
   {
     "title": "Fallen Nest",
-    "description": "A bird nest fell out of a tree nearby.\nUse `!roll 1d4` to see how many eggs or birds you find!",
+    "description": "A finch nest fell out of a tree nearby.\nUse `!roll 1d4` to see how many birds you find!",
     "habitat": ["forest", "twolegplace", "pines"],
     "category": "pos-hunt"
   },
   {
     "title": "Rapid Currents",
-    "description": "The water is moving quickly and a couple fish have accidentally jumped out.\nUse `!roll 1d4` to see how many you catch!",
+    "description": "The water is moving quickly and a couple sunear have accidentally jumped out.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["lake", "river", "stream"],
     "category": "pos-hunt"
   },
   {
     "title": "Gust of Wind",
-    "description": "A strong gust of wind knocked some young birds down.\nUse `!roll 1d4` to see how many you catch!",
+    "description": "A strong gust of wind knocked some young chickadees down.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["moor", "meadow"],
     "category": "pos-hunt"
   },
