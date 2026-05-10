@@ -58,7 +58,7 @@ class Encounter(commands.Cog):
                     continue
                 candidates.append(candidate)
         else:
-            if roll > 5:
+            if roll > 8:
                 for candidate in data:
                     if candidate["category"] != category:
                         continue
