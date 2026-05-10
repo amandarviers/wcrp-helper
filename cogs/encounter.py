@@ -50,7 +50,7 @@ class Encounter(commands.Cog):
         candidates = []
         roll = random.randint(1,20)
 
-        if "hunt" in category:
+        if "hunt" in category or category == "danger":
             for candidate in data:
                 if candidate["category"] != category:
                     continue
