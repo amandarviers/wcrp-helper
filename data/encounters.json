@@ -56,7 +56,8 @@
   {
     "title": "Hawk Attack",
     "description": "A large hawk circles above, watching your movements closely. On the next circle, it dives down, talons outstretched.",
-    "habitat": ["forest", "meadow", "moor", "pines", "rocky"]
+    "habitat": ["forest", "meadow", "moor", "pines", "rocky"],
+    "category": "danger"
   },
   {
     "title": "Cat Trap",
