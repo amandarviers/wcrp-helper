@@ -2,6 +2,9 @@ import discord
 from discord.ext import commands
 import json
 import random
+import logging
+
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 # <required arg>
 # [optional arg]
@@ -19,7 +22,7 @@ class Herb(commands.Cog):
         self.bot = bot
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f"herb.py is ready")
+        logging.info(f"herb.py is ready")
     
     async def cog_command_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
@@ -29,6 +32,7 @@ class Herb(commands.Cog):
 
     @commands.command()
     async def herb(self, ctx, area, attempts: int):
+        logging.info(f"{ctx.author.display_name} used !herb {area} {attempts}")
         if area not in areas:
             error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"
             await ctx.send(embed=error_embed)

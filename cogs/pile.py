@@ -1,6 +1,9 @@
 import discord
 from discord.ext import commands
 import json
+import logging
+
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 # <required arg>
 # [optional arg]
@@ -16,7 +19,7 @@ class Pile(commands.Cog):
         self.bot = bot
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f"prey.py is ready")
+        logging.info(f"prey.py is ready")
     
     # missing required args
     async def cog_command_error(self, ctx, error):
@@ -27,6 +30,7 @@ class Pile(commands.Cog):
     
     @commands.group(name="pile", invoke_without_command=True)
     async def pile_group(self, ctx):
+        logging.info(f"{ctx.author.display_name} used !pile")
         if ctx.invoked_subcommand is None:
             error_embed.description = f"Invalid command. `{command_guide}`"
             await ctx.send(embed=error_embed)
@@ -34,6 +38,7 @@ class Pile(commands.Cog):
 
     @pile_group.command(name="view")
     async def pile_view(self, ctx, group):
+        logging.info(f"{ctx.author.display_name} used !pile view {group}")
         try:
             with open(f"./data/piles/{group}.txt", "r") as file:
                 lines = file.readlines()
@@ -50,6 +55,7 @@ class Pile(commands.Cog):
     
     @pile_group.command(name="add")
     async def pile_add(self, ctx, group, *, item:str):
+        logging.info(f"{ctx.author.display_name} used !pile add {group} {item}")
         valid_item = False
         for _, animals in data.items():
             for animal in animals:
@@ -78,6 +84,7 @@ class Pile(commands.Cog):
     
     @pile_group.command(name="take")
     async def pile_take(self, ctx, group, *, item:str):
+        logging.info(f"{ctx.author.display_name} used !pile take {group} {item}")
         valid_item = False
         for _, animals in data.items():
             for animal in animals:

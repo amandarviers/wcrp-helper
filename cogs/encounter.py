@@ -2,6 +2,9 @@ import discord
 from discord.ext import commands
 import json
 import random
+import logging
+
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 # <required arg>
 # [optional arg]
@@ -24,7 +27,7 @@ class Encounter(commands.Cog):
         self.bot = bot
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f"encounter.py is ready")
+        logging.info(f"encounter.py is ready")
     
     async def cog_command_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
@@ -34,6 +37,7 @@ class Encounter(commands.Cog):
     
     @commands.command()
     async def encounter(self, ctx, area, category):
+        logging.info(f"{ctx.author.display_name} used !encounter {area} {category}")
         if area not in areas:
             error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"
             await ctx.send(embed=error_embed)
@@ -49,6 +53,7 @@ class Encounter(commands.Cog):
 
         candidates = []
         roll = random.randint(1,20)
+        count = 0
 
         if "hunt" in category or category == "danger":
             for candidate in data:
@@ -57,6 +62,7 @@ class Encounter(commands.Cog):
                 if area not in candidate["habitat"]:
                     continue
                 candidates.append(candidate)
+                count += 1
         else:
             if roll > 8:
                 for candidate in data:
@@ -65,7 +71,9 @@ class Encounter(commands.Cog):
                     if area not in candidate["habitat"]:
                         continue
                     candidates.append(candidate)
+                    count += 1
 
+        logging.info(f"{ctx.author.display_name} used !encounter {area} {category} - {count} results")
         if candidates:
             encounter = random.choice(candidates)
             title = encounter["title"]

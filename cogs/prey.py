@@ -2,6 +2,9 @@ import discord
 from discord.ext import commands
 import random
 import json
+import logging
+
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 # <required arg>
 # [optional arg]
@@ -67,7 +70,7 @@ class Prey(commands.Cog):
         self.bot = bot
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f"prey.py is ready")
+        logging.info(f"prey.py is ready")
     
     # missing required args
     async def cog_command_error(self, ctx, error):
@@ -78,6 +81,7 @@ class Prey(commands.Cog):
 
     @commands.command()
     async def prey(self, ctx, area, skill, attempts: int):
+        logging.info(f"{ctx.author.display_name} used !prey {area} {skill} {attempts}")
         if area not in areas:
             error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"
             await ctx.send(embed=error_embed)

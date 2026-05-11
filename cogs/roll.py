@@ -1,6 +1,9 @@
 import discord
 from discord.ext import commands
 import random
+import logging
+
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
 # <required arg>
 # [optional arg]
@@ -13,7 +16,7 @@ class Roll(commands.Cog):
         self.bot = bot
     @commands.Cog.listener()
     async def on_ready(self):
-        print(f"roll.py is ready")
+        logging.info(f"roll.py is ready")
     
     # missing required args
     async def cog_command_error(self, ctx, error):
@@ -24,11 +27,14 @@ class Roll(commands.Cog):
 
     @commands.command()
     async def roll(self, ctx, dice):
+        logging.info(f"{ctx.author.display_name} used !roll {dice}")
         dice_split = dice.split("d")
         number_of_dice = int(dice_split[0]) or 1
         type_of_dice = int(dice_split[1])
 
         rolls = [random.randint(1, type_of_dice) for _ in range(number_of_dice)]
+
+        logging.info(f"{ctx.author.display_name} roll results: {rolls}")
 
         total = sum(rolls)
 
