@@ -54,6 +54,11 @@
     "category": "danger"
   },
   {
+    "title": "Hawk Attack",
+    "description": "A large hawk circles above, watching your movements closely. On the next circle, it dives down, talons outstretched.",
+    "habitat": ["forest", "meadow", "moor", "pines", "rocky"]
+  },
+  {
     "title": "Cat Trap",
     "description": "Something smells really good, better even than fresh prey. One problem: it's inside of a box with silver bars. It seems safe, though. Will you try to get it out?\nRoll a 15 or higher with `!roll 1d20` to successfully get the food out!",
     "habitat": ["twolegplace", "forest", "barn"],
@@ -116,6 +121,12 @@
     "title": "Poisoned Prey",
     "description": "This prey ate something that it shouldn't have. Be careful if you choose to eat it!",
     "habitat": ["twolegplace", "barn"],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Snatched",
+    "description": "A small mouse nibbles at some food nearby, focused entirely on what its doing and unaware of your approach. Seconds before you prepare to make your pounce, a large hawk swoops down and snatches it off the ground.",
+    "habitat": ["forest", "marsh", "meadow", "moor", "pines", "rocky", "shore"],
     "category": "neg-hunt"
   },
   {
