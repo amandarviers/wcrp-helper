@@ -21,6 +21,7 @@ class Roll(commands.Cog):
     # missing required args
     async def cog_command_error(self, ctx, error):
         if isinstance(error, commands.MissingRequiredArgument):
+            logging.info(f"{ctx.author.display_name} used !roll but there was an error: {error}")
             error_embed.description = f"Missing required information: `{command_guide}`"
             await ctx.send(embed=error_embed)
             return
@@ -29,10 +30,10 @@ class Roll(commands.Cog):
     async def roll(self, ctx, dice):
         logging.info(f"{ctx.author.display_name} used !roll {dice}")
         dice_split = dice.split("d")
-        number_of_dice = int(dice_split[0]) or 1
-        type_of_dice = int(dice_split[1])
+        number_of_dice = dice_split[0] or 1
+        type_of_dice = dice_split[1]
 
-        rolls = [random.randint(1, type_of_dice) for _ in range(number_of_dice)]
+        rolls = [random.randint(1, int(type_of_dice)) for _ in range(int(number_of_dice))]
 
         logging.info(f"{ctx.author.display_name} roll results: {rolls}")
 
