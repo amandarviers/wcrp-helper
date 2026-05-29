@@ -164,7 +164,7 @@
     },
     "skink": {
       "hibernate": true,
-      "Weight": 6
+      "weight": 6
     }
   },
   "moor": {
