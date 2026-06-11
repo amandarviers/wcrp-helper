@@ -14,6 +14,13 @@ with open("./data/prey_list_final.json", "r") as f:
 
 error_embed = discord.Embed(title="<:error:1492739840230428829> Error", description="Error", color=discord.Color.red())
 
+def get_file_contents(group):
+    with open(f"./data/piles/{group}.txt", "r") as file:
+            lines = file.readlines()
+            pile_contents = "".join(lines).replace("\n", ", ")[:-2] or "nothing"
+
+    return pile_contents
+
 class Pile(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
@@ -72,9 +79,7 @@ class Pile(commands.Cog):
         with open(f"./data/piles/{group}.txt", "a") as file:
             file.write(f"{item}\n")
         
-        with open(f"./data/piles/{group}.txt", "r") as file:
-                lines = file.readlines()
-                pile_contents = "".join(lines).replace("\n", ", ")[:-2] or "nothing"
+        pile_contents = get_file_contents(group)
 
         pile_add_embed = discord.Embed(title=f"{group.capitalize()} Prey Pile", description=f"Pile now contains: {pile_contents}", color=discord.Color.green())
 
@@ -112,14 +117,26 @@ class Pile(commands.Cog):
                     continue
                 file.write(line)
         
-        with open(f"./data/piles/{group}.txt", "r") as file:
-                lines = file.readlines()
-                pile_contents = "".join(lines).replace("\n", ", ")[:-2] or "nothing"
+        pile_contents = get_file_contents(group)
         
         pile_take_embed = discord.Embed(title=f"{group.capitalize()} Prey Pile", description=f"Pile now contains: {pile_contents}", color=discord.Color.green())
         pile_take_embed.set_footer(text=f"{ctx.author.display_name} took {item} from the {group.capitalize()} pile", icon_url=ctx.author.display_avatar.url)
 
         await ctx.send(embed=pile_take_embed)
+
+    @pile_group.command(name="empty")
+    async def pile_empty(self, ctx, group):
+        logging.info(f"{ctx.author.display_name} used !pile empty {group}")
+
+        with open(f"./data/piles/{group}.txt", "w"):
+            pass
+
+        pile_contents = get_file_contents(group)
+        
+        pile_empty_embed = discord.Embed(title=f"{group.capitalize()} Prey Pile", description=f"Pile now contains: {pile_contents}", color=discord.Color.green())
+        pile_empty_embed.set_footer(text=f"{ctx.author.display_name} emptied the {group.capitalize()} pile", icon_url=ctx.author.display_avatar.url)
+
+        await ctx.send(embed=pile_empty_embed)
 
 async def setup(bot):
     await bot.add_cog(Pile(bot))
