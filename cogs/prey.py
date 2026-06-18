@@ -104,10 +104,10 @@ class Prey(commands.Cog):
             base_roll = random.randint(1, 20)
             if base_roll == 1:
                 success_msg = f"Critical failure! Run `!encounter {area} neg-hunt` to see what happened."
-                logging.info(f"{ctx.author.display_name} rolled {base_roll} -- {success_msg}")
+                logging.info(f"{ctx.author.display_name} rolled {base_roll} -- crit fail")
             if base_roll == 20:
                 success_msg = f"Critical success! Run `!encounter {area} pos-hunt` to see what happened."
-                logging.info(f"{ctx.author.display_name} rolled {base_roll} -- {success_msg}")
+                logging.info(f"{ctx.author.display_name} rolled {base_roll} -- crit success")
             else:
                 roll = base_roll + skills_dict[skill]
                 success_msg = calc_success(roll, area)
