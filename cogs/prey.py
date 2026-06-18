@@ -3,6 +3,7 @@ from discord.ext import commands
 import random
 import json
 import logging
+import string
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
@@ -29,12 +30,7 @@ with open("./data/prey_list_final.json", "r") as f:
 
 areas = list(data.keys())
 
-def calc_success(roll, area):
-    if roll == 1:
-        return f"Critical failure! Run `!encounter {area} neg-hunt` to see what happened."
-    if roll == 20:
-        return f"Critical success! Run `!encounter {area} pos-hunt` to see what happened."
-
+def calc_success(roll):
     if roll >= 19:
         return "perfect kill"
     elif roll >= 17:
@@ -63,7 +59,7 @@ def find_prey(area):
 
     candidates.extend(["none"] * prey_scarcity)
 
-    return random.choice(candidates)
+    return candidates
 
 class Prey(commands.Cog):
     def __init__(self, bot):
@@ -81,7 +77,9 @@ class Prey(commands.Cog):
 
     @commands.command()
     async def prey(self, ctx, area, skill, attempts: int):
-        logging.info(f"{ctx.author.display_name} used !prey {area} {skill} {attempts}")
+        alphabet = string.ascii_letters + string.digits
+        interaction_id = ''.join(random.choices(alphabet, k=32))
+        logging.info(f"{interaction_id} - {ctx.author.display_name} used !prey {area} {skill} {attempts}")
         if area not in areas:
             error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"
             await ctx.send(embed=error_embed)
@@ -100,26 +98,26 @@ class Prey(commands.Cog):
             return
 
         success_message = ""
+        candidates = find_prey(area)
+        prey = random.choice(candidates)
+        logging.info(f"{interaction_id} - {len(candidates)} prey candidates")
         for _ in range(attempts):
             base_roll = random.randint(1, 20)
             if base_roll == 1:
-                success_msg = f"Critical failure! Run `!encounter {area} neg-hunt` to see what happened."
-                logging.info(f"{ctx.author.display_name} rolled {base_roll} -- crit fail")
-            if base_roll == 20:
-                success_msg = f"Critical success! Run `!encounter {area} pos-hunt` to see what happened."
-                logging.info(f"{ctx.author.display_name} rolled {base_roll} -- crit success")
+                msg = f"- Critical failure! Run `!encounter {area} neg-hunt` to see what happened."
+                logging.info(f"{interaction_id} - rolled nat {base_roll}")
+            elif base_roll == 20:
+                msg = f"- Critical success! Run `!encounter {area} pos-hunt` to see what happened."
+                logging.info(f"{interaction_id} - rolled nat {base_roll}")
             else:
                 roll = base_roll + skills_dict[skill]
-                success_msg = calc_success(roll, area)
-                logging.info(f"{ctx.author.display_name} rolled {base_roll} + {skills_dict[skill]} modifier -- {success_msg}")
-
-            prey = find_prey(area)
-            if roll == 1 or roll == 20:
-                msg = f"- {success_msg}"
-            elif prey == "none":
-                msg = "- Nothing found"
-            else:
-                msg = f"- {success_msg.capitalize()} on a {prey}"
+                logging.info(f"{interaction_id} - rolled {roll}")
+                success_msg = calc_success(roll)
+                if prey == "none":
+                    msg = "- Nothing found"
+                else:
+                    msg = f"- {success_msg.capitalize()} on a {prey}"
+                
             success_message += f"\n{msg}"
 
         prey_embed = discord.Embed(title="Prey Catcher", description=f"{success_message}", color=discord.Color.dark_purple())
