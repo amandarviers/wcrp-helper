@@ -101,8 +101,18 @@ class Prey(commands.Cog):
 
         success_message = ""
         for _ in range(attempts):
-            roll = (random.randint(1, 20)) + skills_dict[skill]
-            success_msg = calc_success(roll, area)
+            base_roll = random.randint(1, 20)
+            if base_roll == 1:
+                success_msg = f"Critical failure! Run `!encounter {area} neg-hunt` to see what happened."
+                logging.info(f"{ctx.author.display_name} rolled {base_roll} -- {success_msg}")
+            if base_roll == 20:
+                success_msg = f"Critical success! Run `!encounter {area} pos-hunt` to see what happened."
+                logging.info(f"{ctx.author.display_name} rolled {base_roll} -- {success_msg}")
+            else:
+                roll = base_roll + skills_dict[skill]
+                success_msg = calc_success(roll, area)
+                logging.info(f"{ctx.author.display_name} rolled {base_roll} + {skills_dict[skill]} modifier -- {success_msg}")
+
             prey = find_prey(area)
             if roll == 1 or roll == 20:
                 msg = f"- {success_msg}"

@@ -26,7 +26,7 @@ class Pile(commands.Cog):
         self.bot = bot
     @commands.Cog.listener()
     async def on_ready(self):
-        logging.info(f"prey.py is ready")
+        logging.info(f"pile.py is ready")
     
     # missing required args
     async def cog_command_error(self, ctx, error):
