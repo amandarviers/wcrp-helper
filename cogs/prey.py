@@ -99,7 +99,6 @@ class Prey(commands.Cog):
 
         success_message = ""
         candidates = find_prey(area)
-        prey = random.choice(candidates)
         logging.info(f"{interaction_id} - {len(candidates)} prey candidates")
         for _ in range(attempts):
             base_roll = random.randint(1, 20)
@@ -113,6 +112,7 @@ class Prey(commands.Cog):
                 roll = base_roll + skills_dict[skill]
                 logging.info(f"{interaction_id} - rolled {roll}")
                 success_msg = calc_success(roll)
+                prey = random.choice(candidates)
                 if prey == "none":
                     msg = "- Nothing found"
                 else:
