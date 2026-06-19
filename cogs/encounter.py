@@ -3,6 +3,7 @@ from discord.ext import commands
 import json
 import random
 import logging
+import string
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
@@ -37,7 +38,9 @@ class Encounter(commands.Cog):
     
     @commands.command()
     async def encounter(self, ctx, area, category):
-        logging.info(f"{ctx.author.display_name} used !encounter {area} {category}")
+        alphabet = string.ascii_letters + string.digits
+        interaction_id = ''.join(random.choices(alphabet, k=32))
+        logging.info(f"{interaction_id} - {ctx.author.display_name} used !encounter {area} {category}")
         if area not in areas:
             error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"
             await ctx.send(embed=error_embed)
@@ -73,7 +76,7 @@ class Encounter(commands.Cog):
                     candidates.append(candidate)
                     count += 1
 
-        logging.info(f"{ctx.author.display_name} used !encounter {area} {category} - {count} results")
+        logging.info(f"{interaction_id} - {count} possible encounters")
         if candidates:
             encounter = random.choice(candidates)
             title = encounter["title"]
