@@ -11,8 +11,8 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=lo
 # [optional arg]
 command_guide = "!prey <area> <skill> <attempts>"
 hibernate = False
-global_modifier = 5
-prey_scarcity = 8
+global_modifier = 6
+prey_scarcity = 10
 
 error_embed = discord.Embed(title="<:error:1492739840230428829> Error", description="Error", color=discord.Color.red())
 
