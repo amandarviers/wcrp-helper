@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import random
 import logging
+import string
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
@@ -28,17 +29,20 @@ class Roll(commands.Cog):
 
     @commands.command()
     async def roll(self, ctx, dice):
-        logging.info(f"{ctx.author.display_name} used !roll {dice}")
+        alphabet = string.ascii_letters + string.digits
+        interaction_id = ''.join(random.choices(alphabet, k=16))
+        logging.info(f"{interaction_id} - {ctx.author.display_name} used !roll {dice}")
         dice_split = dice.split("d")
         number_of_dice = dice_split[0] or 1
         type_of_dice = dice_split[1]
 
         rolls = [random.randint(1, int(type_of_dice)) for _ in range(int(number_of_dice))]
 
-        logging.info(f"{ctx.author.display_name} roll results: {rolls}")
+        logging.info(f"{interaction_id} - {ctx.author.display_name} roll results: {rolls}")
 
         total = sum(rolls)
 
+        
         roll_embed = discord.Embed(title="Dice Roller", description=f"<:d20:1492740388371304648> **Result:** {total}", color=discord.Color.blurple())
         roll_embed.set_footer(text=f"{ctx.author.display_name} rolled {dice}", icon_url=ctx.author.display_avatar.url)
 

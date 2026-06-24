@@ -2,6 +2,8 @@ import discord
 from discord.ext import commands
 import json
 import logging
+import string
+import random
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
@@ -37,7 +39,9 @@ class Pile(commands.Cog):
     
     @commands.group(name="pile", invoke_without_command=True)
     async def pile_group(self, ctx):
-        logging.info(f"{ctx.author.display_name} used !pile")
+        alphabet = string.ascii_letters + string.digits
+        interaction_id = ''.join(random.choices(alphabet, k=16))
+        logging.info(f"{interaction_id} - {ctx.author.display_name} used !pile")
         if ctx.invoked_subcommand is None:
             error_embed.description = f"Invalid command. `{command_guide}`"
             await ctx.send(embed=error_embed)
@@ -45,7 +49,9 @@ class Pile(commands.Cog):
 
     @pile_group.command(name="view")
     async def pile_view(self, ctx, group):
-        logging.info(f"{ctx.author.display_name} used !pile view {group}")
+        alphabet = string.ascii_letters + string.digits
+        interaction_id = ''.join(random.choices(alphabet, k=16))
+        logging.info(f"{interaction_id} - {ctx.author.display_name} used !pile view {group}")
         try:
             with open(f"./data/piles/{group}.txt", "r") as file:
                 lines = file.readlines()
@@ -62,7 +68,9 @@ class Pile(commands.Cog):
     
     @pile_group.command(name="add")
     async def pile_add(self, ctx, group, *, item:str):
-        logging.info(f"{ctx.author.display_name} used !pile add {group} {item}")
+        alphabet = string.ascii_letters + string.digits
+        interaction_id = ''.join(random.choices(alphabet, k=16))
+        logging.info(f"{interaction_id} - {ctx.author.display_name} used !pile add {group} {item}")
         valid_item = False
         for _, animals in data.items():
             for animal in animals:
@@ -89,7 +97,9 @@ class Pile(commands.Cog):
     
     @pile_group.command(name="take")
     async def pile_take(self, ctx, group, *, item:str):
-        logging.info(f"{ctx.author.display_name} used !pile take {group} {item}")
+        alphabet = string.ascii_letters + string.digits
+        interaction_id = ''.join(random.choices(alphabet, k=16))
+        logging.info(f"{interaction_id} - {ctx.author.display_name} used !pile take {group} {item}")
         valid_item = False
         for _, animals in data.items():
             for animal in animals:
@@ -126,7 +136,9 @@ class Pile(commands.Cog):
 
     @pile_group.command(name="empty")
     async def pile_empty(self, ctx, group):
-        logging.info(f"{ctx.author.display_name} used !pile empty {group}")
+        alphabet = string.ascii_letters + string.digits
+        interaction_id = ''.join(random.choices(alphabet, k=16))
+        logging.info(f"{interaction_id} - {ctx.author.display_name} used !pile empty {group}")
 
         with open(f"./data/piles/{group}.txt", "w"):
             pass

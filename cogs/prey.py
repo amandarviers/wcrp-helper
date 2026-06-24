@@ -11,8 +11,8 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=lo
 # [optional arg]
 command_guide = "!prey <area> <skill> <attempts>"
 hibernate = False
-global_modifier = 8
-prey_scarcity = 10
+global_modifier = 7
+prey_scarcity = 8
 
 error_embed = discord.Embed(title="<:error:1492739840230428829> Error", description="Error", color=discord.Color.red())
 
@@ -78,7 +78,7 @@ class Prey(commands.Cog):
     @commands.command()
     async def prey(self, ctx, area, skill, attempts: int):
         alphabet = string.ascii_letters + string.digits
-        interaction_id = ''.join(random.choices(alphabet, k=32))
+        interaction_id = ''.join(random.choices(alphabet, k=16))
         logging.info(f"{interaction_id} - {ctx.author.display_name} used !prey {area} {skill} {attempts}")
         if area not in areas:
             error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"

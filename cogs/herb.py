@@ -3,6 +3,7 @@ from discord.ext import commands
 import json
 import random
 import logging
+import string
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
@@ -32,7 +33,9 @@ class Herb(commands.Cog):
 
     @commands.command()
     async def herb(self, ctx, area, attempts: int):
-        logging.info(f"{ctx.author.display_name} used !herb {area} {attempts}")
+        alphabet = string.ascii_letters + string.digits
+        interaction_id = ''.join(random.choices(alphabet, k=16))
+        logging.info(f"{interaction_id} - {ctx.author.display_name} used !herb {area} {attempts}")
         if area not in areas:
             error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"
             await ctx.send(embed=error_embed)

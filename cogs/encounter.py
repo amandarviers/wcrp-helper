@@ -39,7 +39,7 @@ class Encounter(commands.Cog):
     @commands.command()
     async def encounter(self, ctx, area, category):
         alphabet = string.ascii_letters + string.digits
-        interaction_id = ''.join(random.choices(alphabet, k=32))
+        interaction_id = ''.join(random.choices(alphabet, k=16))
         logging.info(f"{interaction_id} - {ctx.author.display_name} used !encounter {area} {category}")
         if area not in areas:
             error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"
