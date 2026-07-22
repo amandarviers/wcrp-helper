@@ -72,12 +72,6 @@
     "category": "danger"
   },
   {
-    "title": "Mother Goose",
-    "description": "These parents aren't happy about how close you are to their nest/hatchlings. They act hostile. Do you leave or try to get a meal?",
-    "habitat": ["lake", "shore", "meadow"],
-    "category": "random"
-  },
-  {
     "title": "Hooked Fish",
     "description": "A fish that you've caught has a sharp, shiny attachment in its mouth and a strong piece of cobweb that seems to have snapped. Be careful handling and eating!",
     "habitat": ["lake", "river", "stream"],
@@ -131,107 +125,16 @@
     "category": "neg-hunt"
   },
   {
-    "title": "Angry Squirrels",
-    "description": "An angry squirrel throws sticks and stones at you as you walk through the forest, alerting all other prey of your presence. Hopefully you didn't intend on hunting!",
-    "habitat": ["forest", "pines"],
-    "category": "random"
-  },
-  {
     "title": "That's Not a Rabbit",
     "description": "You run at a rabbit, but instead of running, it turns to face you. It turns out the rabbit is a hare, and its angry.",
     "habitat": ["moor"],
     "category": "neg-hunt"
   },
   {
-    "title": "Bombs Away",
-    "description": "A bird soars overhead and lets loose droppings that hit you on the head.",
-    "habitat": [
-      "camp",
-      "meadow",
-      "moor",
-      "twolegplace",
-      "forest",
-      "pines",
-      "rocky"
-    ],
-    "category": "random"
-  },
-  {
-    "title": "Tree Fort",
-    "description": "Some twoleg kits are playing nearby, moving and bending twigs and branches to create a strange structure that stays up after they leave.",
-    "habitat": ["forest", "pines"],
-    "category": "random"
-  },
-  {
-    "title": "Sheep Herding",
-    "description": "The twolegs are moving the sheep to new grazing areas! There's a couple dogs barking and guiding them, but they seem focused on their work.",
-    "habitat": ["moor", "barn", "meadow"],
-    "category": "random"
-  },
-  {
-    "title": "Colorful Skies",
-    "description": "The twolegs seem to be running around holding strong cobweb attached to brightly-colored shapes that fly above in the sky.",
-    "habitat": ["twolegplace", "meadow", "moor", "shore"],
-    "category": "random"
-  },
-  {
-    "title": "Whosits and Whatsits Galore",
-    "description": "You find a strange object on the ground. It's silvery and reflects the sky in a rounded shape attached to a longer piece. It smells vaguely of Twolegs.",
-    "habitat": [
-      "barn",
-      "forest",
-      "lake",
-      "marsh",
-      "meadow",
-      "moor",
-      "pines",
-      "river",
-      "rocky",
-      "shore",
-      "stream",
-      "twolegplace"
-    ],
-    "category": "random"
-  },
-  {
-    "title": "Down With the Ship",
-    "description": "A couple Twolegs are riding in their water monsters when suddenly you hear a crash and it starts to sink under the water. Maybe it got sick? You're not sure, but the Twolegs are now swimming to shore.",
-    "habitat": ["shore", "lake"],
-    "category": "random"
-  },
-  {
-    "title": "Butterfly Swarm",
-    "description": "A traveling group of butterflies swarms around you. They flutter around for a while before continuing on their way.",
-    "habitat": [
-      "camp",
-      "forest",
-      "moor",
-      "marsh",
-      "barn",
-      "meadow",
-      "pines",
-      "shore",
-      "twolegplace"
-    ],
-    "category": "vigil"
-  },
-  {
     "title": "Shallow Pool",
     "description": "Some brown trout have gotten stuck in a small pool of water and have nowhere to hide!\nUse `!roll 1d4` to see how many you catch.",
     "habitat": ["shore", "river", "stream", "lake"],
     "category": "pos-hunt"
-  },
-  {
-    "title": "Catnip Patch",
-    "description": "You find a lush patch of intoxicating plants. You have an overwhelming desire to roll in them. You can feel your stress melting away. Wait, what were you doing again?",
-    "habitat": ["twolegplace", "meadow", "moor"],
-    "category": "random"
-  },
-  {
-    "title": "Mayday",
-    "description": "A sparrow flies right into the clear ice on the side of twoleg den and falls.",
-    "habitat": ["twolegplace", "barn"],
-    "category": "random"
   },
   {
     "title": "Rabbit Burrow",
@@ -308,6 +211,75 @@
     "category": "pos-hunt"
   },
   {
+    "title": "Easy Catch",
+    "description": "A fat squirrel falls out of a tree right in front of you and is too stunned to realize you're there.",
+    "habitat": ["pines", "forest", "twolegplace"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Bombs Away",
+    "description": "A bird soars overhead and lets loose droppings that hit you on the head.",
+    "habitat": [
+      "camp",
+      "meadow",
+      "moor",
+      "twolegplace",
+      "forest",
+      "pines",
+      "rocky"
+    ],
+    "category": "random"
+  },
+  {
+    "title": "Angry Squirrels",
+    "description": "An angry squirrel throws sticks and stones at you as you walk through the forest, alerting all other prey of your presence. Hopefully you didn't intend on hunting!",
+    "habitat": ["forest", "pines"],
+    "category": "random"
+  },
+  {
+    "title": "Tree Fort",
+    "description": "Some twoleg kits are playing nearby, moving and bending twigs and branches to create a strange structure that stays up after they leave.",
+    "habitat": ["forest", "pines"],
+    "category": "random"
+  },
+  {
+    "title": "Sheep Herding",
+    "description": "The twolegs are moving the sheep to new grazing areas! There's a couple dogs barking and guiding them, but they seem focused on their work.",
+    "habitat": ["moor", "barn", "meadow"],
+    "category": "random"
+  },
+  {
+    "title": "Colorful Skies",
+    "description": "The twolegs seem to be running around holding strong cobweb attached to brightly-colored shapes that fly above in the sky.",
+    "habitat": ["twolegplace", "meadow", "moor", "shore"],
+    "category": "random"
+  },
+  {
+    "title": "Whosits and Whatsits Galore",
+    "description": "You find a strange object on the ground. It's silvery and reflects the sky in a rounded shape attached to a longer piece. It smells vaguely of Twolegs.",
+    "habitat": [
+      "barn",
+      "forest",
+      "lake",
+      "marsh",
+      "meadow",
+      "moor",
+      "pines",
+      "river",
+      "rocky",
+      "shore",
+      "stream",
+      "twolegplace"
+    ],
+    "category": "random"
+  },
+  {
+    "title": "Down With the Ship",
+    "description": "A couple Twolegs are riding in their water monsters when suddenly you hear a crash and it starts to sink under the water. Maybe it got sick? You're not sure, but the Twolegs are now swimming to shore.",
+    "habitat": ["shore", "lake"],
+    "category": "random"
+  },
+  {
     "title": "Strange Treasures",
     "description": "You find a small, squishy, brightly colored ball. It smells of Twolegs, but something about it makes you want to bat it around.",
     "habitat": [
@@ -319,6 +291,18 @@
       "meadow",
       "pines"
     ],
+    "category": "random"
+  },
+  {
+    "title": "Catnip Patch",
+    "description": "You find a lush patch of intoxicating plants. You have an overwhelming desire to roll in them. You can feel your stress melting away. Wait, what were you doing again?",
+    "habitat": ["twolegplace", "meadow", "moor"],
+    "category": "random"
+  },
+  {
+    "title": "Mayday",
+    "description": "A sparrow flies right into the clear ice on the side of twoleg den and falls.",
+    "habitat": ["twolegplace", "barn"],
     "category": "random"
   },
   {
@@ -362,6 +346,12 @@
     "category": "random"
   },
   {
+    "title": "Mother Goose",
+    "description": "These parents aren't happy about how close you are to their nest/hatchlings. They act hostile. Do you leave or try to get a meal?",
+    "habitat": ["lake", "shore", "meadow"],
+    "category": "random"
+  },
+  {
     "title": "Spooked",
     "description": "While sitting vigil, you hear the cracking of foliage. It's getting louder, closer, faster. Just when its about to reach you it suddenly stops. You don't hear it again.",
     "habitat": ["camp"],
@@ -370,6 +360,100 @@
   {
     "title": "Jumped",
     "description": "Its quiet, too quiet. You feel relaxed, that is until something jumps on your back! After reacting, you notice a frog jumping away in a hurry.",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "Butterfly Swarm",
+    "description": "A traveling group of butterflies swarms around you. They flutter around for a while before continuing on their way.",
+    "habitat": [
+      "camp",
+      "forest",
+      "moor",
+      "marsh",
+      "barn",
+      "meadow",
+      "pines",
+      "shore",
+      "twolegplace"
+    ],
+    "category": "vigil"
+  },
+  {
+    "title": "Touched by a Firefly",
+    "description": "A glowing firefly lands gently on your shoulder before drifting back into the night. It feels oddly magical.",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "StarClan's Blessing",
+    "description": "A shooting star streaks across the sky, and an unexpected sense of peace washes over you. Perhaps your ancestors are watching.",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "Gentle Silence",
+    "description": "The moon bathes the camp in silver light, and for several peaceful moments, nothing stirs except the leaves overhead. The silence is strangely comforting as you reflect on your new title.",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "A Gift in the Night",
+    "description": "A feather drifts into camp, carried by the breeze. It lands neatly between your paws with a soft tickle.",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "Rustling Bushes",
+    "description": "Something moves just beyond the camp entrance. After several tense heartbeats, a mouse scurries harmlessly away into the darkness.",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "The Longest Night",
+    "description": "The hours seem to crawl by. The excitement of your ceremony has faded, leaving only the challenge of staying alert until dawn. When was the last time that you were awake this long?",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "A Passing Owl",
+    "description": "The silent shape of an owl glides over camp without stopping, disappearing into the forest beyond. You watch until it vanishes into the darkness. Hopefully it doesn't return.",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "Heavy Eyelids",
+    "description": "The day's excitement catches up with you. Your eyes grow heavy, and it's becoming difficult to stay awake. Think of something to keep yourself from falling asleep!",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "Tail Twitch",
+    "description": "Your tail flicks against a pebble, sending it skittering across camp. Thankfully no one seems to wake up - that you can tell.",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "Things That Go Bump in the Night",
+    "description": "A loud crack echoes from beyond the camp walls. Your fur bristles as every possible explanation races through your mind.\nRoll an 11 or higher with `!roll 1d20` to determine whether it's harmless or worth leaving your post.",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "Flickering Shadows",
+    "description": "Clouds drift across the moon, making the shadows around camp shift and dance. For a heartbeat, every stump and bush seems alive. It would be easy for a potential threat to sneak up on you.\nRoll a 9 or higher with `!roll 1d20` to avoid startling yourself.",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "Buzzing Mosquitoes",
+    "description": "Mosquitoes seem determined to make your vigil miserable. One lands right on your ear, followed by another on your nose.\nRoll a 7 or higher with `!roll 1d20` to quietly ignore the irritation.",
+    "habitat": ["camp"],
+    "category": "vigil"
+  },
+  {
+    "title": "Distant Predator",
+    "description": "A fox barks somewhere beyond the camp, but you can't tell if it's in the territory. Though it's far away, the sound sends a chill down your spine.\nRoll an 11 or higher with `!roll 1d20` to determine whether it's harmless or worth leaving your post.",
     "habitat": ["camp"],
     "category": "vigil"
   }
