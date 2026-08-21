@@ -50,7 +50,7 @@
   {
     "title": "Mink Attack",
     "description": "A long, dark black creature slides out of the water. The mink's dark beedy eyes lock onto you, ready to lunge.",
-    "habitat": ["lake", "stream", "shore", "river"],
+    "habitat": ["pond", "stream", "shore", "river"],
     "category": "danger"
   },
   {
@@ -74,7 +74,7 @@
   {
     "title": "Hooked Fish",
     "description": "A fish that you've caught has a sharp, shiny attachment in its mouth and a strong piece of cobweb that seems to have snapped. Be careful handling and eating!",
-    "habitat": ["lake", "river", "stream"],
+    "habitat": ["pond", "river", "stream"],
     "category": "neg-hunt"
   },
   {
@@ -109,7 +109,7 @@
   {
     "title": "Fish Are Rude",
     "description": "You get low to the water in preparation to snag a fish as it swims by, but instead one jumps out of the water and smacks you in the face before quickly swimming away.",
-    "habitat": ["river", "lake", "stream"],
+    "habitat": ["river", "pond", "stream"],
     "category": "neg-hunt"
   },
   {
@@ -133,7 +133,7 @@
   {
     "title": "Shallow Pool",
     "description": "Some brown trout have gotten stuck in a small pool of water and have nowhere to hide!\nUse `!roll 1d4` to see how many you catch.",
-    "habitat": ["shore", "river", "stream", "lake"],
+    "habitat": ["shore", "river", "stream", "pond"],
     "category": "pos-hunt"
   },
   {
@@ -201,7 +201,7 @@
   {
     "title": "Rapid Currents",
     "description": "The water is moving quickly and a couple sunear have accidentally jumped out.\nUse `!roll 1d4` to see how many you catch!",
-    "habitat": ["lake", "river", "stream"],
+    "habitat": ["pond", "river", "stream"],
     "category": "pos-hunt"
   },
   {
@@ -260,7 +260,7 @@
     "habitat": [
       "barn",
       "forest",
-      "lake",
+      "pond",
       "marsh",
       "meadow",
       "moor",
@@ -276,7 +276,7 @@
   {
     "title": "Down With the Ship",
     "description": "A couple Twolegs are riding in their water monsters when suddenly you hear a crash and it starts to sink under the water. Maybe it got sick? You're not sure, but the Twolegs are now swimming to shore.",
-    "habitat": ["shore", "lake"],
+    "habitat": ["shore", "pond"],
     "category": "random"
   },
   {
@@ -308,7 +308,7 @@
   {
     "title": "Natural Treasures",
     "description": "You find a brightly colored shell that almost gleams in the sunlight, with an intricate swirl pattern.",
-    "habitat": ["lake", "river", "stream"],
+    "habitat": ["pond", "river", "stream"],
     "category": "random"
   },
   {
@@ -333,7 +333,7 @@
     "habitat": [
       "camp",
       "forest",
-      "lake",
+      "pond",
       "marsh",
       "meadow",
       "moor",
@@ -348,7 +348,7 @@
   {
     "title": "Mother Goose",
     "description": "These parents aren't happy about how close you are to their nest/hatchlings. They act hostile. Do you leave or try to get a meal?",
-    "habitat": ["lake", "shore", "meadow"],
+    "habitat": ["pond", "shore", "meadow"],
     "category": "random"
   },
   {
