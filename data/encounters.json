@@ -215,7 +215,7 @@
   },
   {
     "title": "Lucky Bucket",
-    "description": "You find a container with two perch sitting on the edge of the water along with some other Twoleg stuff. It looks like they left their prey for some reason? It smells pretty fresh...",
+    "description": "You find a container with two perch sitting on the edge of the water along with some other Twoleg stuff. It looks like they left their prey for some reason? It smells fresh...",
     "habitat": ["pond", "river", "stream"],
     "category": "pos-hunt"
   },
@@ -223,6 +223,12 @@
     "title": "Rabbit Burrow",
     "description": "You come upon a small burrow of baby rabbits, and the mother is away.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["moor", "forest"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Surprise",
+    "description": "You are stalking a mouse when a squirrel falls out of the tree next to you and lands at your paws. If you're quick, you can kill it before it realizes where it is!",
+    "habitat": ["forest", "pines", "marsh", "twolegplace"],
     "category": "pos-hunt"
   },
   {

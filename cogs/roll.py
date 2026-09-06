@@ -3,6 +3,7 @@ from discord.ext import commands
 import random
 import logging
 import string
+import re
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 
@@ -32,22 +33,26 @@ class Roll(commands.Cog):
         alphabet = string.ascii_letters + string.digits
         interaction_id = ''.join(random.choices(alphabet, k=16))
         logging.info(f"{interaction_id} - {ctx.author.display_name} used !roll {dice}")
-        dice_split = dice.split("d")
-        number_of_dice = dice_split[0] or 1
-        type_and_bonus = dice_split[1]
-        if "+" in type_and_bonus:
-            type_and_bonus_split = type_and_bonus.split("+")
-            type_of_dice = type_and_bonus_split[0]
-            bonus = type_and_bonus_split[1]
-        else:
-            type_of_dice = type_and_bonus
-            bonus = 0
 
-        rolls = [random.randint(1, int(type_of_dice)) for _ in range(int(number_of_dice))]
+        dice_string = dice.replace(" ", "").lower()
 
-        logging.info(f"{interaction_id} - {ctx.author.display_name} roll results: {rolls}, + {bonus}")
+        # Regex pattern: (number of dice)? d (number of sides) (modifier sign and value)?
+        pattern = r"^(\d*)d(\d+)(?:([+-])(\d+))?$"
+        match = re.match(pattern, dice_string)
 
-        total = sum(rolls) + int(bonus)
+        # Parse pieces of dice string; default to number of dice 1 if not specified
+        num_dice_str, sides_str, mod_sign, mod_val_str = match.groups()
+        num_dice = int(num_dice_str) if num_dice_str else 1
+        sides = int(sides_str)
+        modifier = 0
+        if mod_sign and mod_val_str:
+            modifier = int(mod_val_str) if mod_sign == "+" else -int(mod_val_str)
+
+        # Perform Roll
+        rolls = [random.randint(1, sides) for _ in range(num_dice)]
+        dice_sum = sum(rolls)
+        logging.info(f"{interaction_id} - {ctx.author.display_name} roll results: {rolls} (sum: {dice_sum}), modifier: {modifier}")
+        total = dice_sum + modifier
 
         
         roll_embed = discord.Embed(title="Dice Roller", description=f"<:d20:1492740388371304648> **Result:** {total}", color=discord.Color.blurple())
