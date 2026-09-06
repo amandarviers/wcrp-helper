@@ -72,6 +72,12 @@
     "category": "danger"
   },
   {
+    "title": "No, Really Buzz Off",
+    "description": "You accidentally wander too close to a buzzing wasp nest. The insects begin swarming around you.\nRoll a 15 or higher with `!roll 1d20` to escape without being stung.",
+    "habitat": ["forest", "meadow", "pines"],
+    "category": "danger"
+  },
+  {
     "title": "Hooked Fish",
     "description": "A fish that you've caught has a sharp, shiny attachment in its mouth and a strong piece of cobweb that seems to have snapped. Be careful handling and eating!",
     "habitat": ["pond", "river", "stream"],
@@ -131,9 +137,86 @@
     "category": "neg-hunt"
   },
   {
+    "title": "All Caught Up",
+    "description": "You chase a mouse into a patch of thick brambles, certain you can catch it. Instead, your fur gets tangled in the thorns and the mouse escapes while you struggle free.\nRoll a 10 or higher with `!roll 1d20` to avoid scratches and continue hunting. (ThunderClan can use `!roll 1d20+2`)",
+    "habitat": ["forest"],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Slip 'n Slide",
+    "description": "You crouch beside the water, watching a fish glide under the surface. Just as you prepare to strike, your paw slips against a moss-covered stone.\nRoll a 12 or higher with `!roll 1d20` to avoid falling in. (RiverClan can use `!roll 1d20+2`)",
+    "habitat": ["river", "stream", "pond"],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "A Deep Current",
+    "description": "You wade farther into the river than usual while hunting. The current is stronger than you anticipated, pulling at your paws and making it difficult to stay balanced.\nRoll a 12 or higher with `!roll 1d20` to return safely to shore without incident.",
+    "habitat": ["river"],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Changing Winds",
+    "description": "You carefully stalk a mouse, keeping low to the ground. Suddenly, the wind shifts and carries your scent directly toward the prey, startling it long before you have a chance to pounce.",
+    "habitat": [
+      "forest",
+      "rocky",
+      "moor",
+      "meadow",
+      "pines",
+      "twolegplace",
+      "marsh",
+      "shore",
+      "barn"
+    ],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Not Up to Code",
+    "description": "You chase a rabbit across the open land and discover it has disappeared underground. You try to dig it out, but the loose earth begins collapsing around you.\nRoll an 11 or higher with `!roll 1d20` to avoid getting stuck. (WindClan can use `!roll 1d20+2`)",
+    "habitat": ["moor", "meadow"],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Gesundheit",
+    "description": "A feather, seed, or stray piece of pollen tickles your nose at the worst possible moment. You can feel a sneeze building...and are unable to stop it from completely ruining any chance of catching your prey.",
+    "habitat": [
+      "forest",
+      "rocky",
+      "moor",
+      "meadow",
+      "pines",
+      "twolegplace",
+      "marsh",
+      "shore",
+      "barn",
+      "river",
+      "pond",
+      "stream"
+    ],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "A Balancing Act",
+    "description": "You spot a robin resting high in a tree. You climb upward, carefully placing each paw, but the branch beneath you begins to bend.\nRoll an 12 or higher with `!roll 1d20` to make the jump safely. (SkyClan can use `!roll 1d20+2`)",
+    "habitat": ["forest", "pines"],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Ants Go Marching 1 by 1",
+    "description": "You follow your nose to a delicious piece of food that's been left out, only to find it completely overrun by ants. Maybe it's worth risking a bite or two?",
+    "habitat": ["twolegplace", "barn"],
+    "category": "neg-hunt"
+  },
+  {
     "title": "Shallow Pool",
     "description": "Some brown trout have gotten stuck in a small pool of water and have nowhere to hide!\nUse `!roll 1d4` to see how many you catch.",
     "habitat": ["shore", "river", "stream", "pond"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Lucky Bucket",
+    "description": "You find a container with two perch sitting on the edge of the water along with some other Twoleg stuff. It looks like they left their prey for some reason? It smells pretty fresh...",
+    "habitat": ["pond", "river", "stream"],
     "category": "pos-hunt"
   },
   {
@@ -143,9 +226,15 @@
     "category": "pos-hunt"
   },
   {
+    "title": "Jumping Fish",
+    "description": "While watching the fish swim under the water, you miss a brown trout that swims quickly toward you. It jumps out of the water and lands on the shore next to you, flopping back and forth.",
+    "habitat": ["river", "stream", "pond"],
+    "category": "pos-hunt"
+  },
+  {
     "title": "Salmon Run",
     "description": "A bunch of salmon are tired from swimming upriver.\nUse `!roll 1d4` to see how many you catch!",
-    "habitat": ["river"],
+    "habitat": ["river", "stream"],
     "category": "pos-hunt"
   },
   {
@@ -201,7 +290,7 @@
   {
     "title": "Rapid Currents",
     "description": "The water is moving quickly and a couple sunear have accidentally jumped out.\nUse `!roll 1d4` to see how many you catch!",
-    "habitat": ["pond", "river", "stream"],
+    "habitat": ["river", "stream"],
     "category": "pos-hunt"
   },
   {
@@ -214,6 +303,18 @@
     "title": "Easy Catch",
     "description": "A fat squirrel falls out of a tree right in front of you and is too stunned to realize you're there.",
     "habitat": ["pines", "forest", "twolegplace"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Easy Catch",
+    "description": "A rabbit bursts out of a bush near you runs into a rock, stunning itself.",
+    "habitat": ["pines", "forest", "meadow", "moor"],
+    "category": "pos-hunt"
+  },
+  {
+    "title": "Tangled",
+    "description": "A squirrel is caught in some Twoleg garbage, making it difficult for it to run away.",
+    "habitat": ["forest", "marsh", "meadow", "moor", "pines", "rocky"],
     "category": "pos-hunt"
   },
   {
@@ -349,6 +450,42 @@
     "title": "Mother Goose",
     "description": "These parents aren't happy about how close you are to their nest/hatchlings. They act hostile. Do you leave or try to get a meal?",
     "habitat": ["pond", "shore", "meadow"],
+    "category": "random"
+  },
+  {
+    "title": "Buzz Off",
+    "description": "You accidentally wander too close to a buzzing bee nest. The insects begin swarming around you.\nRoll a 12 or higher with `!roll 1d20` to escape without being stung. Roll a 16 or higher to snag a piece of honey safely.",
+    "habitat": ["forest", "meadow", "pines"],
+    "category": "random"
+  },
+  {
+    "title": "Jane Doe",
+    "description": "A young deer notices you and stares curiously instead of running away. It doesn't seem frightened, just interested.",
+    "habitat": ["forest", "meadow", "pines"],
+    "category": "random"
+  },
+  {
+    "title": "Forgotten Cache",
+    "description": "You stumble across an old prey cache tucked beneath grass and moss. It seems forgotten.\nRoll a 12 or higher with `!roll 1d20` to determine whether the prey is still fresh. If it is, make another hunting roll to determine what you find.",
+    "habitat": ["forest", "pines", "meadow", "moor", "marsh"],
+    "category": "random"
+  },
+  {
+    "title": "Trash Bandit",
+    "description": "You're not the only one looking for food here among the scents of discarded Twoleg delicacies and crowfood. You've interrupted a raccoon clutching a prize in its strange paws, and it chitters defensively at you.",
+    "habitat": ["twolegplace", "barn"],
+    "category": "random"
+  },
+  {
+    "title": "Squeaky Clean",
+    "description": "A round creature is crouched by the water's edge when you get there. It seems like a raccoon is washing something it found to eat.",
+    "habitat": ["river", "stream", "pond", "shore"],
+    "category": "random"
+  },
+  {
+    "title": "All Aboard",
+    "description": "An odd shape lumbers on nearby, and it take you a moment to realize what you're looking at. A mother possum is carrying her children on her back somewhere or another.",
+    "habitat": ["forest", "twolegplace", "barn", "pines"],
     "category": "random"
   },
   {

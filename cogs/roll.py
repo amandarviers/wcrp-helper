@@ -34,13 +34,20 @@ class Roll(commands.Cog):
         logging.info(f"{interaction_id} - {ctx.author.display_name} used !roll {dice}")
         dice_split = dice.split("d")
         number_of_dice = dice_split[0] or 1
-        type_of_dice = dice_split[1]
+        type_and_bonus = dice_split[1]
+        if "+" in type_and_bonus:
+            type_and_bonus_split = type_and_bonus.split("+")
+            type_of_dice = type_and_bonus_split[0]
+            bonus = type_and_bonus_split[1]
+        else:
+            type_of_dice = type_and_bonus
+            bonus = 0
 
         rolls = [random.randint(1, int(type_of_dice)) for _ in range(int(number_of_dice))]
 
-        logging.info(f"{interaction_id} - {ctx.author.display_name} roll results: {rolls}")
+        logging.info(f"{interaction_id} - {ctx.author.display_name} roll results: {rolls}, + {bonus}")
 
-        total = sum(rolls)
+        total = sum(rolls) + int(bonus)
 
         
         roll_embed = discord.Embed(title="Dice Roller", description=f"<:d20:1492740388371304648> **Result:** {total}", color=discord.Color.blurple())
