@@ -209,43 +209,43 @@
   },
   {
     "title": "Shallow Pool",
-    "description": "Some brown trout have gotten stuck in a small pool of water and have nowhere to hide!\nUse `!roll 1d4` to see how many you catch.",
+    "description": "Some **young brown trout** have gotten stuck in a small pool of water and have nowhere to hide!\nUse `!roll 1d4` to see how many you catch.",
     "habitat": ["shore", "river", "stream", "pond"],
     "category": "pos-hunt"
   },
   {
     "title": "Lucky Bucket",
-    "description": "You find a container with two perch sitting on the edge of the water along with some other Twoleg stuff. It looks like they left their prey for some reason? It smells fresh...",
+    "description": "You find a container with two young perch sitting on the edge of the water along with some other Twoleg stuff. It looks like they left their prey for some reason? It smells fresh...",
     "habitat": ["pond", "river", "stream"],
     "category": "pos-hunt"
   },
   {
     "title": "Rabbit Burrow",
-    "description": "You come upon a small burrow of baby rabbits, and the mother is away.\nUse `!roll 1d4` to see how many you catch!",
+    "description": "You come upon a small burrow of **young rabbits**, and the mother is away.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["moor", "forest"],
     "category": "pos-hunt"
   },
   {
     "title": "Surprise",
-    "description": "You are stalking a mouse when a squirrel falls out of the tree next to you and lands at your paws. If you're quick, you can kill it before it realizes where it is!",
+    "description": "You are stalking a mouse when a **squirrel** falls out of the tree next to you and lands at your paws, scaring the mouse off. If you're quick, you can kill the squirrel before it realizes where it is!",
     "habitat": ["forest", "pines", "marsh", "twolegplace"],
     "category": "pos-hunt"
   },
   {
     "title": "Jumping Fish",
-    "description": "While watching the fish swim under the water, you miss a brown trout that swims quickly toward you. It jumps out of the water and lands on the shore next to you, flopping back and forth.",
+    "description": "While watching the fish swim under the water, you miss a **brown trout** that swims quickly toward you. It jumps out of the water and lands on the shore next to you, flopping back and forth.",
     "habitat": ["river", "stream", "pond"],
     "category": "pos-hunt"
   },
   {
     "title": "Salmon Run",
-    "description": "A bunch of salmon are tired from swimming upriver.\nUse `!roll 1d4` to see how many you catch!",
+    "description": "A bunch of **young salmon** are tired from swimming upriver.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["river", "stream"],
     "category": "pos-hunt"
   },
   {
     "title": "Frog Went a-Courting",
-    "description": "Frogs carelessly sing loudly, unaware of the danger of your presence.\nUse `!roll 1d4` to see how many you catch!",
+    "description": "**Young frogs** carelessly sing loudly, unaware of the danger of your presence.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["marsh", "shore"],
     "category": "pos-hunt"
   },
@@ -263,7 +263,7 @@
   },
   {
     "title": "Mouse Nest",
-    "description": "You find a small nest filled with mice.\nUse `!roll 1d4` to see how many you catch!",
+    "description": "You find a small nest filled with **young mice**.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": [
       "barn",
       "twolegplace",
@@ -277,31 +277,31 @@
   },
   {
     "title": "Lizard Scramble",
-    "description": "You find a bunch of lizards sunning themselves on a rock.\nUse `!roll 1d4` to see how many you catch!",
+    "description": "You find a bunch of **young lizards** sunning themselves on a rock.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["rocky"],
     "category": "pos-hunt"
   },
   {
     "title": "A Feast",
-    "description": "The Twolegs left kittypet food out for the loners in the area.\nUse `!roll 1d4` to see how much you find!",
+    "description": "The Twolegs left **kittypet** food out for the loners in the area.\nUse `!roll 1d4` to see how much you find!",
     "habitat": ["barn", "twolegplace"],
     "category": "pos-hunt"
   },
   {
     "title": "Fallen Nest",
-    "description": "A finch nest fell out of a tree nearby.\nUse `!roll 1d4` to see how many birds you find!",
+    "description": "A nest with **young finch** fell out of a tree nearby.\nUse `!roll 1d4` to see how many birds you find!",
     "habitat": ["forest", "twolegplace", "pines"],
     "category": "pos-hunt"
   },
   {
     "title": "Rapid Currents",
-    "description": "The water is moving quickly and a couple sunear have accidentally jumped out.\nUse `!roll 1d4` to see how many you catch!",
+    "description": "The water is moving quickly and a couple **young sunear** have accidentally jumped out.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["river", "stream"],
     "category": "pos-hunt"
   },
   {
     "title": "Gust of Wind",
-    "description": "A strong gust of wind knocked some young chickadees down.\nUse `!roll 1d4` to see how many you catch!",
+    "description": "A strong gust of wind knocked some **young chickadees** down.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["moor", "meadow"],
     "category": "pos-hunt"
   },

@@ -28,6 +28,10 @@
       "hibernate": false,
       "weight": 9
     },
+    "young chickadee": {
+      "hibernate": false,
+      "weight": 4
+    },
     "chipmunk": {
       "hibernate": true,
       "weight": 8
@@ -41,6 +45,10 @@
       "weight": 2
     },
     "finch": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "young finch": {
       "hibernate": false,
       "weight": 4
     },
@@ -60,6 +68,10 @@
       "hibernate": true,
       "weight": 3
     },
+    "young lizard": {
+      "hibernate": true,
+      "weight": 3
+    },
     "magpie": {
       "hibernate": false,
       "weight": 3
@@ -76,11 +88,19 @@
       "hibernate": false,
       "weight": 10
     },
+    "young mouse": {
+      "hibernate": false,
+      "weight": 4
+    },
     "pigeon": {
       "hibernate": false,
       "weight": 5
     },
     "rabbit": {
+      "hibernate": false,
+      "weight": 3
+    },
+    "young rabbit": {
       "hibernate": false,
       "weight": 3
     },
@@ -158,6 +178,10 @@
       "hibernate": true,
       "weight": 7
     },
+    "young lizard": {
+      "hibernate": true,
+      "weight": 3
+    },
     "pigeon": {
       "hibernate": false,
       "weight": 4
@@ -208,6 +232,10 @@
       "hibernate": false,
       "weight": 5
     },
+    "young mouse": {
+      "hibernate": false,
+      "weight": 4
+    },
     "pheasant": {
       "hibernate": false,
       "weight": 1
@@ -215,6 +243,10 @@
     "rabbit": {
       "hibernate": false,
       "weight": 6
+    },
+    "young rabbit": {
+      "hibernate": false,
+      "weight": 3
     },
     "sparrow": {
       "hibernate": false,
@@ -254,6 +286,10 @@
       "hibernate": false,
       "weight": 7
     },
+    "young finch": {
+      "hibernate": false,
+      "weight": 7
+    },
     "garter snake": {
       "hibernate": true,
       "weight": 3
@@ -282,6 +318,10 @@
       "hibernate": false,
       "weight": 9
     },
+    "young mouse": {
+      "hibernate": false,
+      "weight": 4
+    },
     "pheasant": {
       "hibernate": false,
       "weight": 1
@@ -293,6 +333,10 @@
     "rabbit": {
       "hibernate": false,
       "weight": 4
+    },
+    "young rabbit": {
+      "hibernate": false,
+      "weight": 3
     },
     "shrew": {
       "hibernate": false,
@@ -336,6 +380,10 @@
       "hibernate": false,
       "weight": 4
     },
+    "young finch": {
+      "hibernate": false,
+      "weight": 4
+    },
     "garter snake": {
       "hibernate": true,
       "weight": 5
@@ -360,9 +408,17 @@
       "hibernate": true,
       "weight": 8
     },
+    "young lizard": {
+      "hibernate": true,
+      "weight": 3
+    },
     "mouse": {
       "hibernate": false,
       "weight": 7
+    },
+    "young mouse": {
+      "hibernate": false,
+      "weight": 4
     },
     "rat": {
       "hibernate": false,
@@ -426,6 +482,10 @@
       "hibernate": false,
       "weight": 9
     },
+    "young chickadee": {
+      "hibernate": false,
+      "weight": 4
+    },
     "dove": {
       "hibernate": false,
       "weight": 4
@@ -433,6 +493,10 @@
     "finch": {
       "hibernate": false,
       "weight": 9
+    },
+    "young finch": {
+      "hibernate": false,
+      "weight": 4
     },
     "garden shrew": {
       "hibernate": false,
@@ -453,6 +517,10 @@
     "mouse": {
       "hibernate": false,
       "weight": 9
+    },
+    "young mouse": {
+      "hibernate": false,
+      "weight": 4
     },
     "pigeon": {
       "hibernate": false,
@@ -484,6 +552,10 @@
       "hibernate": false,
       "weight": 7
     },
+    "young brown trout": {
+      "hibernate": false,
+      "weight": 7
+    },
     "chub": {
       "hibernate": false,
       "weight": 9
@@ -504,11 +576,19 @@
       "hibernate": false,
       "weight": 5
     },
+    "young salmon": {
+      "hibernate": false,
+      "weight": 5
+    },
     "shad": {
       "hibernate": false,
       "weight": 7
     },
     "sunear": {
+      "hibernate": false,
+      "weight": 5
+    },
+    "young sunear": {
       "hibernate": false,
       "weight": 5
     }
@@ -521,6 +601,10 @@
     "brown trout": {
       "hibernate": false,
       "weight": 5
+    },
+    "young brown trout": {
+      "hibernate": false,
+      "weight": 7
     },
     "carp": {
       "hibernate": false,
@@ -545,12 +629,20 @@
     "sunear": {
       "hibernate": false,
       "weight": 5
+    },
+    "young sunear": {
+      "hibernate": false,
+      "weight": 5
     }
   },
   "stream": {
     "brown trout": {
       "hibernate": false,
       "weight": 6
+    },
+    "young brown trout": {
+      "hibernate": false,
+      "weight": 7
     },
     "chub": {
       "hibernate": false,
@@ -574,7 +666,15 @@
       "hibernate": false,
       "weight": 4
     },
+    "young chickadee": {
+      "hibernate": false,
+      "weight": 4
+    },
     "frog": {
+      "hibernate": true,
+      "weight": 8
+    },
+    "young frog": {
       "hibernate": true,
       "weight": 8
     },
@@ -587,6 +687,10 @@
       "weight": 1
     },
     "mouse": {
+      "hibernate": false,
+      "weight": 4
+    },
+    "young mouse": {
       "hibernate": false,
       "weight": 4
     },
@@ -616,6 +720,10 @@
       "hibernate": true,
       "weight": 9
     },
+    "young frog": {
+      "hibernate": true,
+      "weight": 8
+    },
     "moorhen": {
       "hibernate": false,
       "weight": 1
@@ -630,6 +738,10 @@
       "hibernate": false,
       "weight": 4
     },
+    "young finch": {
+      "hibernate": false,
+      "weight": 4
+    },
     "kittypet food": {
       "hibernate": false,
       "weight": 3
@@ -637,6 +749,10 @@
     "mouse": {
       "hibernate": false,
       "weight": 10
+    },
+    "young mouse": {
+      "hibernate": false,
+      "weight": 4
     },
     "rat": {
       "hibernate": false,
