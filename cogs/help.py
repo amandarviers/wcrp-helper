@@ -39,7 +39,7 @@ class Help(commands.Cog):
 
         await ctx.send(embed = help_embed)
     
-    @help_group.command(name="roll")
+    @help_group.command(name="roll", aliases=["Roll", "ROLL"])
     async def help_roll(self, ctx):
         logging.info(f"{ctx.author.display_name} used !help roll")
         help_roll_embed = discord.Embed(title="How To: Roll", description="`!roll <dice>`", color=discord.Color.dark_teal())
@@ -47,7 +47,7 @@ class Help(commands.Cog):
 
         await ctx.send(embed = help_roll_embed)
     
-    @help_group.command(name="prey")
+    @help_group.command(name="prey", aliases=["Prey", "PREY"])
     async def help_prey(self, ctx):
         logging.info(f"{ctx.author.display_name} used !help prey")
         help_prey_embed = discord.Embed(title="How To: Prey Catcher", description="`!prey <area> <skill> <attempts>`", color=discord.Color.dark_teal())
@@ -57,7 +57,7 @@ class Help(commands.Cog):
 
         await ctx.send(embed = help_prey_embed)
 
-    @help_group.command(name="pile")
+    @help_group.command(name="pile", aliases=["Pile", "PILE"])
     async def help_pile(self, ctx):
         logging.info(f"{ctx.author.display_name} used !help pile")
         help_pile_embed = discord.Embed(title="How To: Prey Pile", description="`!pile <action> <group> [item]`", color=discord.Color.dark_teal())
@@ -67,7 +67,7 @@ class Help(commands.Cog):
 
         await ctx.send(embed = help_pile_embed)
 
-    @help_group.command(name="herb")
+    @help_group.command(name="herb", aliases=["Herb", "HERB"])
     async def help_herb(self, ctx):
         logging.info(f"{ctx.author.display_name} used !help herb")
         help_herb_embed = discord.Embed(title="How To: Herb Finder", description="`!herb <area> <attempts>`", color=discord.Color.dark_teal())
@@ -76,7 +76,7 @@ class Help(commands.Cog):
 
         await ctx.send(embed = help_herb_embed)
     
-    @help_group.command(name="encounter")
+    @help_group.command(name="encounter", aliases=["Encounter", "ENCOUNTER"])
     async def help_encounter(self, ctx):
         logging.info(f"{ctx.author.display_name} used !help encounter")
         help_encounter_embed = discord.Embed(title="How To: Encounters", description="`!encounter <area> <type>`", color=discord.Color.dark_teal())

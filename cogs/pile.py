@@ -47,7 +47,7 @@ class Pile(commands.Cog):
             await ctx.send(embed=error_embed)
     
 
-    @pile_group.command(name="view")
+    @pile_group.command(name="view", aliases=["View", "VIEW"])
     async def pile_view(self, ctx, group):
         group = group.lower()
         alphabet = string.ascii_letters + string.digits
@@ -67,7 +67,7 @@ class Pile(commands.Cog):
             error_embed.description = f"{group.capitalize()} is not a valid group."
             await ctx.send(embed=error_embed)
     
-    @pile_group.command(name="add")
+    @pile_group.command(name="add", aliases=["Add", "ADD"])
     async def pile_add(self, ctx, group, *, item:str):
         group = group.lower()
         item = item.lower()
@@ -98,7 +98,7 @@ class Pile(commands.Cog):
 
         await ctx.send(embed=pile_add_embed)
     
-    @pile_group.command(name="take")
+    @pile_group.command(name="take", aliases=["Take", "TAKE"])
     async def pile_take(self, ctx, group, *, item:str):
         group = group.lower()
         item = item.lower()
