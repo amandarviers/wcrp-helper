@@ -11,6 +11,7 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=lo
 # [optional arg]
 command_guide = "!herb <area> <attempts>"
 
+# herb list
 with open("./data/herbs.json", "r") as f:
     data = json.load(f)
 
@@ -33,6 +34,7 @@ class Herb(commands.Cog):
 
     @commands.command()
     async def herb(self, ctx, area, attempts: int):
+        area = area.lower()
         alphabet = string.ascii_letters + string.digits
         interaction_id = ''.join(random.choices(alphabet, k=16))
         logging.info(f"{interaction_id} - {ctx.author.display_name} used !herb {area} {attempts}")

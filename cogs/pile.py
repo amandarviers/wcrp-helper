@@ -49,6 +49,7 @@ class Pile(commands.Cog):
 
     @pile_group.command(name="view")
     async def pile_view(self, ctx, group):
+        group = group.lower()
         alphabet = string.ascii_letters + string.digits
         interaction_id = ''.join(random.choices(alphabet, k=16))
         logging.info(f"{interaction_id} - {ctx.author.display_name} used !pile view {group}")
@@ -68,6 +69,8 @@ class Pile(commands.Cog):
     
     @pile_group.command(name="add")
     async def pile_add(self, ctx, group, *, item:str):
+        group = group.lower()
+        item = item.lower()
         alphabet = string.ascii_letters + string.digits
         interaction_id = ''.join(random.choices(alphabet, k=16))
         logging.info(f"{interaction_id} - {ctx.author.display_name} used !pile add {group} {item}")
@@ -97,6 +100,8 @@ class Pile(commands.Cog):
     
     @pile_group.command(name="take")
     async def pile_take(self, ctx, group, *, item:str):
+        group = group.lower()
+        item = item.lower()
         alphabet = string.ascii_letters + string.digits
         interaction_id = ''.join(random.choices(alphabet, k=16))
         logging.info(f"{interaction_id} - {ctx.author.display_name} used !pile take {group} {item}")
@@ -136,6 +141,7 @@ class Pile(commands.Cog):
 
     @pile_group.command(name="empty")
     async def pile_empty(self, ctx, group):
+        group = group.lower()
         alphabet = string.ascii_letters + string.digits
         interaction_id = ''.join(random.choices(alphabet, k=16))
         logging.info(f"{interaction_id} - {ctx.author.display_name} used !pile empty {group}")

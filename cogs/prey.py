@@ -77,6 +77,8 @@ class Prey(commands.Cog):
 
     @commands.command()
     async def prey(self, ctx, area, skill, attempts: int):
+        area = area.lower()
+        skill = skill.lower()
         alphabet = string.ascii_letters + string.digits
         interaction_id = ''.join(random.choices(alphabet, k=16))
         logging.info(f"{interaction_id} - {ctx.author.display_name} used !prey {area} {skill} {attempts}")

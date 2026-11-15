@@ -38,6 +38,8 @@ class Encounter(commands.Cog):
     
     @commands.command()
     async def encounter(self, ctx, area, category):
+        area = area.lower()
+        category = category.lower()
         alphabet = string.ascii_letters + string.digits
         interaction_id = ''.join(random.choices(alphabet, k=16))
         logging.info(f"{interaction_id} - {ctx.author.display_name} used !encounter {area} {category}")
