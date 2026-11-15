@@ -8,7 +8,7 @@
   {
     "title": "Falling Tree",
     "description": "Due to wind, weather, or age, a tree is collapsing.\nRoll an 8 or higher with `!roll 1d20` to avoid it!\n*Note: If this is WindClan camp, disregard and try again.*",
-    "habitat": ["forest", "pines", "camp"],
+    "habitat": ["forest", "pine", "camp"],
     "category": "danger"
   },
   {
@@ -20,7 +20,7 @@
       "marsh",
       "meadow",
       "moor",
-      "pines",
+      "pine",
       "shore",
       "twolegplace"
     ],
@@ -35,7 +35,7 @@
       "marsh",
       "meadow",
       "moor",
-      "pines",
+      "pine",
       "shore",
       "twolegplace"
     ],
@@ -44,7 +44,7 @@
   {
     "title": "Snake Attack",
     "description": "A strange hissing sounds alerts you to the presence of a snake, and it sounds angry!",
-    "habitat": ["rocky", "pines"],
+    "habitat": ["rocky", "pine"],
     "category": "danger"
   },
   {
@@ -56,7 +56,7 @@
   {
     "title": "Hawk Attack",
     "description": "A large hawk circles above, watching your movements closely. On the next circle, it dives down, talons outstretched.",
-    "habitat": ["forest", "meadow", "moor", "pines", "rocky"],
+    "habitat": ["forest", "meadow", "moor", "pine", "rocky"],
     "category": "danger"
   },
   {
@@ -74,7 +74,7 @@
   {
     "title": "No, Really Buzz Off",
     "description": "You accidentally wander too close to a buzzing wasp nest. The insects begin swarming around you.\nRoll a 15 or higher with `!roll 1d20` to escape without being stung.",
-    "habitat": ["forest", "meadow", "pines"],
+    "habitat": ["forest", "meadow", "pine"],
     "category": "danger"
   },
   {
@@ -86,7 +86,7 @@
   {
     "title": "Tripping Over Yourself",
     "description": "You see a big, juicy piece of prey ahead and quickly stalk it. But you're too focused on how hungry you are and your attempt to catch it is thwarted by a hole or a rock that you trip on.\nRoll an 8 or higher with `!roll 1d20` to avoid a sprain.",
-    "habitat": ["shore", "forest", "rocky", "moor", "meadow", "pines", "marsh"],
+    "habitat": ["shore", "forest", "rocky", "moor", "meadow", "pine", "marsh"],
     "category": "neg-hunt"
   },
   {
@@ -106,7 +106,7 @@
       "rocky",
       "moor",
       "meadow",
-      "pines",
+      "pine",
       "twolegplace",
       "marsh"
     ],
@@ -127,7 +127,7 @@
   {
     "title": "Snatched",
     "description": "A small mouse nibbles at some food nearby, focused entirely on what its doing and unaware of your approach. Seconds before you prepare to make your pounce, a large hawk swoops down and snatches it off the ground.",
-    "habitat": ["forest", "marsh", "meadow", "moor", "pines", "rocky", "shore"],
+    "habitat": ["forest", "marsh", "meadow", "moor", "pine", "rocky", "shore"],
     "category": "neg-hunt"
   },
   {
@@ -155,6 +155,18 @@
     "category": "neg-hunt"
   },
   {
+    "title": "Emboldened",
+    "description": "You spot a plump looking hare and begin your chase. The hare is fast, and after a moment, it skids and turns around to face you and starts chasing you back!",
+    "habitat": ["moor"],
+    "category": "neg-hunt"
+  },
+  {
+    "title": "Emboldened",
+    "description": "You spot a plump looking squirrel and begin your chase. The squirrel is fast, and after a moment, it skids and turns around to face you and starts chasing you back!",
+    "habitat": ["forest", "pine", "meadow", "twolegplace"],
+    "category": "neg-hunt"
+  },
+  {
     "title": "Changing Winds",
     "description": "You carefully stalk a mouse, keeping low to the ground. Suddenly, the wind shifts and carries your scent directly toward the prey, startling it long before you have a chance to pounce.",
     "habitat": [
@@ -162,7 +174,7 @@
       "rocky",
       "moor",
       "meadow",
-      "pines",
+      "pine",
       "twolegplace",
       "marsh",
       "shore",
@@ -184,7 +196,7 @@
       "rocky",
       "moor",
       "meadow",
-      "pines",
+      "pine",
       "twolegplace",
       "marsh",
       "shore",
@@ -198,13 +210,13 @@
   {
     "title": "A Balancing Act",
     "description": "You spot a robin resting high in a tree. You climb upward, carefully placing each paw, but the branch beneath you begins to bend.\nRoll an 12 or higher with `!roll 1d20` to make the jump safely. (SkyClan can use `!roll 1d20+2`)",
-    "habitat": ["forest", "pines"],
+    "habitat": ["forest", "pine"],
     "category": "neg-hunt"
   },
   {
     "title": "Ants Go Marching 1 by 1",
     "description": "You follow your nose to a delicious piece of food that's been left out, only to find it completely overrun by ants. Maybe it's worth risking a bite or two?",
-    "habitat": ["twolegplace", "barn"],
+    "habitat": ["twolegplace", "barn", "carrionplace"],
     "category": "neg-hunt"
   },
   {
@@ -228,7 +240,7 @@
   {
     "title": "Surprise",
     "description": "You are stalking a mouse when a **squirrel** falls out of the tree next to you and lands at your paws, scaring the mouse off. If you're quick, you can kill the squirrel before it realizes where it is!",
-    "habitat": ["forest", "pines", "marsh", "twolegplace"],
+    "habitat": ["forest", "pine", "marsh", "twolegplace"],
     "category": "pos-hunt"
   },
   {
@@ -268,10 +280,11 @@
       "barn",
       "twolegplace",
       "forest",
-      "pines",
+      "pine",
       "meadow",
       "marsh",
-      "rocky"
+      "rocky",
+      "carrionplace"
     ],
     "category": "pos-hunt"
   },
@@ -290,7 +303,7 @@
   {
     "title": "Fallen Nest",
     "description": "A nest with **young finch** fell out of a tree nearby.\nUse `!roll 1d4` to see how many birds you find!",
-    "habitat": ["forest", "twolegplace", "pines"],
+    "habitat": ["forest", "twolegplace", "pine"],
     "category": "pos-hunt"
   },
   {
@@ -308,19 +321,19 @@
   {
     "title": "Easy Catch",
     "description": "A fat squirrel falls out of a tree right in front of you and is too stunned to realize you're there.",
-    "habitat": ["pines", "forest", "twolegplace"],
+    "habitat": ["pine", "forest", "twolegplace"],
     "category": "pos-hunt"
   },
   {
     "title": "Easy Catch",
     "description": "A rabbit bursts out of a bush near you runs into a rock, stunning itself.",
-    "habitat": ["pines", "forest", "meadow", "moor"],
+    "habitat": ["pine", "forest", "meadow", "moor"],
     "category": "pos-hunt"
   },
   {
     "title": "Tangled",
     "description": "A squirrel is caught in some Twoleg garbage, making it difficult for it to run away.",
-    "habitat": ["forest", "marsh", "meadow", "moor", "pines", "rocky"],
+    "habitat": ["forest", "marsh", "meadow", "moor", "pine", "rocky"],
     "category": "pos-hunt"
   },
   {
@@ -332,21 +345,22 @@
       "moor",
       "twolegplace",
       "forest",
-      "pines",
-      "rocky"
+      "pine",
+      "rocky",
+      "carrionplace"
     ],
     "category": "random"
   },
   {
     "title": "Angry Squirrels",
     "description": "An angry squirrel throws sticks and stones at you as you walk through the forest, alerting all other prey of your presence. Hopefully you didn't intend on hunting!",
-    "habitat": ["forest", "pines"],
+    "habitat": ["forest", "pine"],
     "category": "random"
   },
   {
     "title": "Tree Fort",
     "description": "Some twoleg kits are playing nearby, moving and bending twigs and branches to create a strange structure that stays up after they leave.",
-    "habitat": ["forest", "pines"],
+    "habitat": ["forest", "pine"],
     "category": "random"
   },
   {
@@ -371,12 +385,13 @@
       "marsh",
       "meadow",
       "moor",
-      "pines",
+      "pine",
       "river",
       "rocky",
       "shore",
       "stream",
-      "twolegplace"
+      "twolegplace",
+      "carrionplace"
     ],
     "category": "random"
   },
@@ -396,7 +411,7 @@
       "forest",
       "moor",
       "meadow",
-      "pines"
+      "pine"
     ],
     "category": "random"
   },
@@ -428,7 +443,7 @@
       "rocky",
       "moor",
       "meadow",
-      "pines",
+      "pine",
       "twolegplace",
       "marsh"
     ],
@@ -444,7 +459,7 @@
       "marsh",
       "meadow",
       "moor",
-      "pines",
+      "pine",
       "river",
       "rocky",
       "shore",
@@ -461,25 +476,25 @@
   {
     "title": "Buzz Off",
     "description": "You accidentally wander too close to a buzzing bee nest. The insects begin swarming around you.\nRoll a 12 or higher with `!roll 1d20` to escape without being stung. Roll a 16 or higher to snag a piece of honey safely.",
-    "habitat": ["forest", "meadow", "pines"],
+    "habitat": ["forest", "meadow", "pine"],
     "category": "random"
   },
   {
     "title": "Jane Doe",
     "description": "A young deer notices you and stares curiously instead of running away. It doesn't seem frightened, just interested.",
-    "habitat": ["forest", "meadow", "pines"],
+    "habitat": ["forest", "meadow", "pine"],
     "category": "random"
   },
   {
     "title": "Forgotten Cache",
     "description": "You stumble across an old prey cache tucked beneath grass and moss. It seems forgotten.\nRoll a 12 or higher with `!roll 1d20` to determine whether the prey is still fresh. If it is, make another hunting roll to determine what you find.",
-    "habitat": ["forest", "pines", "meadow", "moor", "marsh"],
+    "habitat": ["forest", "pine", "meadow", "moor", "marsh"],
     "category": "random"
   },
   {
     "title": "Trash Bandit",
     "description": "You're not the only one looking for food here among the scents of discarded Twoleg delicacies and crowfood. You've interrupted a raccoon clutching a prize in its strange paws, and it chitters defensively at you.",
-    "habitat": ["twolegplace", "barn"],
+    "habitat": ["twolegplace", "barn", "carrionplace"],
     "category": "random"
   },
   {
@@ -491,7 +506,7 @@
   {
     "title": "All Aboard",
     "description": "An odd shape lumbers on nearby, and it take you a moment to realize what you're looking at. A mother possum is carrying her children on her back somewhere or another.",
-    "habitat": ["forest", "twolegplace", "barn", "pines"],
+    "habitat": ["forest", "twolegplace", "barn", "pine", "carrionplace"],
     "category": "random"
   },
   {
@@ -516,7 +531,7 @@
       "marsh",
       "barn",
       "meadow",
-      "pines",
+      "pine",
       "shore",
       "twolegplace"
     ],
