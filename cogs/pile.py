@@ -11,7 +11,7 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=lo
 # [optional arg]
 command_guide = "!pile <action> <group> [item]"
 
-with open("./data/prey_list_final.json", "r") as f:
+with open("./data/herbs_and_prey.json", "r") as f:
     data = json.load(f)
 
 error_embed = discord.Embed(title="<:error:1492739840230428829> Error", description="Error", color=discord.Color.red())
@@ -22,6 +22,19 @@ def get_file_contents(group):
             pile_contents = "".join(lines).replace("\n", ", ")[:-2] or "nothing"
 
     return pile_contents
+
+def is_valid_item(item:str) -> bool:
+    item = item.lower().strip()
+
+    for habitat in data.values():
+        if not isinstance(habitat, dict):
+            continue
+        prey = habitat.get("prey", {})
+        if isinstance(prey, dict):
+            if item in prey.keys():
+                if item.lower() == item:
+                    return True
+    return False
 
 class Pile(commands.Cog):
     def __init__(self, bot):
@@ -74,19 +87,12 @@ class Pile(commands.Cog):
         alphabet = string.ascii_letters + string.digits
         interaction_id = ''.join(random.choices(alphabet, k=16))
         logging.info(f"{interaction_id} - {ctx.author.display_name} used !pile add {group} {item}")
-        valid_item = False
-        for _, animals in data.items():
-            for animal in animals:
-                if item == animal:
-                    valid_item = True
-                    break
-            if valid_item:
-                break
 
-        if not valid_item: 
+        if not is_valid_item(item):
             error_embed.description = f"{item.capitalize()} is not a valid item"
             await ctx.send(embed=error_embed)
             return
+        
         with open(f"./data/piles/{group}.txt", "a") as file:
             file.write(f"{item}\n")
         
@@ -99,22 +105,56 @@ class Pile(commands.Cog):
         await ctx.send(embed=pile_add_embed)
     
     @pile_group.command(name="take", aliases=["Take", "TAKE"])
-    async def pile_take(self, ctx, group, *, item:str):
+    async def pile_take(self, ctx, group, *, item):
         group = group.lower()
-        item = item.lower()
         alphabet = string.ascii_letters + string.digits
         interaction_id = ''.join(random.choices(alphabet, k=16))
         logging.info(f"{interaction_id} - {ctx.author.display_name} used !pile take {group} {item}")
-        valid_item = False
-        for _, animals in data.items():
-            for animal in animals:
-                if item == animal:
-                    valid_item = True
-                    break
-            if valid_item:
-                break
 
-        if not valid_item: 
+        if item.isdigit():
+            count = int(item)
+
+            if count <= 0:
+                error_embed.description = f"Count must be a positive integer."
+                await ctx.send(embed=error_embed)
+                return
+            try:
+                with open(f"./data/piles/{group}.txt", "r") as file:
+                    lines = file.readlines()
+            except FileNotFoundError:
+                error_embed.description = f"{group.capitalize()} is not a valid group."
+                await ctx.send(embed=error_embed)
+                return
+
+            if count > len(lines):
+                error_embed.description = f"Cannot take {count} items from the {group.capitalize()} pile. It only contains {len(lines)} items."
+                await ctx.send(embed=error_embed)
+                return
+
+            if count >= len(lines):
+                remaining_lines = []
+            else: 
+                remaining_lines = lines[count:]
+
+            with open(f"./data/piles/{group}.txt", "w") as file:
+                file.writelines(remaining_lines)
+
+            pile_contents = get_file_contents(group)
+
+            pile_take_embed = discord.Embed(
+                title=f"{group.capitalize()} Prey Pile",
+                description=f"Pile now contains: {pile_contents}",
+                color=discord.Color.green()
+            )
+            pile_take_embed.set_footer(
+                text=f"{ctx.author.display_name} took {count} items from the {group.capitalize()} pile",
+                icon_url=ctx.author.display_avatar.url
+            )
+
+            await ctx.send(embed=pile_take_embed)
+            return
+        item = item.lower()
+        if not is_valid_item(item):
             error_embed.description = f"{item.capitalize()} is not a valid item"
             await ctx.send(embed=error_embed)
             return

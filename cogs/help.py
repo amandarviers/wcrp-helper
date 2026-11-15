@@ -56,7 +56,7 @@ class Help(commands.Cog):
     async def help_pile(self, ctx):
         logging.info(f"{ctx.author.display_name} used !help pile")
         help_pile_embed = discord.Embed(title="How To: Prey Pile", description="`!pile <action> <group> [item]`", color=discord.Color.dark_teal())
-        help_pile_embed.add_field(name="Action", value="How you want to interact with the pile. Valid actions are view, add, and take.", inline=False)
+        help_pile_embed.add_field(name="Action", value="How you want to interact with the pile. Valid actions are view, add, take, and empty.", inline=False)
         help_pile_embed.add_field(name="Group", value="Which Clan/group's pile you want to use. Valid groups are thunder, river, wind, shadow, sky, and kinship.", inline=False)
         help_pile_embed.add_field(name="Item", value="The piece of prey you want to use. *Is not needed when action is view.*", inline=False)
 
