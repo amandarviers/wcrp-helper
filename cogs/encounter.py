@@ -13,7 +13,7 @@ command_guide = "!encounter <area> <category>"
 
 valid_categories = ["danger", "random", "vigil", "pos-hunt", "neg-hunt"]
 
-with open("./data/prey_list_final.json", "r") as f:
+with open("./data/herbs_and_prey.json", "r") as f:
     areadata = json.load(f)
 
 areas = list(areadata.keys())

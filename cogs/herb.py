@@ -12,7 +12,7 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=lo
 command_guide = "!herb <area> <attempts>"
 
 # herb list
-with open("./data/herbs.json", "r") as f:
+with open("./data/herbs_and_prey.json", "r") as f:
     data = json.load(f)
 
 areas = list(data.keys())
@@ -49,7 +49,7 @@ class Herb(commands.Cog):
         
         herbs_found = ""
         for _ in range(attempts):
-            herb = random.choice(data[area])
+            herb = random.choice(data[area]["herbs"])
             herbs_found += f"\n- {herb}"
         
         herb_embed = discord.Embed(title="Herb Finder", description=f"{herbs_found}", color=discord.Color.dark_green())

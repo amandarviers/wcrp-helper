@@ -25,7 +25,7 @@ skills_dict = {
     "expert": 3
 }
 
-with open("./data/prey_list_final.json", "r") as f:
+with open("./data/herbs_and_prey.json", "r") as f:
     data = json.load(f)
 
 areas = list(data.keys())
@@ -49,7 +49,7 @@ def calc_success(roll):
 def find_prey(area): 
     candidates = []
 
-    for animal, info in data[area].items():
+    for animal, info in data[area]["prey"].items():
         if hibernate and info["hibernate"]:
             weight = info["weight"] - 5 - global_modifier
         else:

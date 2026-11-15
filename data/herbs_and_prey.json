@@ -1,0 +1,1004 @@
+{
+  "forest": {
+    "herbs": [
+      "alder bark",
+      "blackberry leaves",
+      "burdock",
+      "catchweed",
+      "celandine",
+      "chickweed",
+      "cob nuts",
+      "comfrey",
+      "elder leaves",
+      "ivy leaves",
+      "lungwort",
+      "raspberry leaves",
+      "stinging nettle",
+      "willow bark",
+      "willow leaves",
+      "yarrow",
+      "fennel",
+      "chervil",
+      "broom",
+      "tree sap",
+      "bright eye",
+      "honey",
+      "tansy",
+      "bindweed",
+      "birch sap",
+      "wild garlic",
+      "wood sorrel"
+    ],
+    "prey": {
+      "bat": {
+        "hibernate": false,
+        "weight": 1
+      },
+      "blackbird": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "blue jay": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "bushtit": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "cardinal": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "chaffinch": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "chickadee": {
+        "hibernate": false,
+        "weight": 9
+      },
+      "young chickadee": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "chipmunk": {
+        "hibernate": true,
+        "weight": 8
+      },
+      "dormouse": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "dove": {
+        "hibernate": false,
+        "weight": 2
+      },
+      "finch": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "young finch": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "gartner snake": {
+        "hibernate": true,
+        "weight": 2
+      },
+      "hedgehog": {
+        "hibernate": true,
+        "weight": 2
+      },
+      "jay": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "lizard": {
+        "hibernate": true,
+        "weight": 3
+      },
+      "young lizard": {
+        "hibernate": true,
+        "weight": 3
+      },
+      "magpie": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "mockingbird": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "mole": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "mouse": {
+        "hibernate": false,
+        "weight": 10
+      },
+      "young mouse": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "pigeon": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "rabbit": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "young rabbit": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "rat": {
+        "hibernate": false,
+        "weight": 1
+      },
+      "robin": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "shrew": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "skink": {
+        "hibernate": true,
+        "weight": 2
+      },
+      "sparrow": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "squirrel": {
+        "hibernate": false,
+        "weight": 9
+      },
+      "thrush": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "titmouse": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "vole": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "warbler": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "woodpecker": {
+        "hibernate": false,
+        "weight": 2
+      },
+      "woodrat": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "wren": {
+        "hibernate": false,
+        "weight": 6
+      }
+    }
+  },
+  "rocky": {
+    "herbs": [
+      "broom",
+      "thyme",
+      "rosemary",
+      "lavender",
+      "hawkweed",
+      "tormentil",
+      "sorrel"
+    ],
+    "prey": {
+      "adder": {
+        "hibernate": true,
+        "weight": 2
+      },
+      "anole": {
+        "hibernate": true,
+        "weight": 5
+      },
+      "grass snake": {
+        "hibernate": true,
+        "weight": 5
+      },
+      "jay": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "lizard": {
+        "hibernate": true,
+        "weight": 7
+      },
+      "young lizard": {
+        "hibernate": true,
+        "weight": 3
+      },
+      "pigeon": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "skink": {
+        "hibernate": true,
+        "weight": 6
+      }
+    }
+  },
+  "moor": {
+    "herbs": [
+      "heather nectar",
+      "ragwort leaves",
+      "tansy",
+      "yarrow",
+      "broom",
+      "sheep sorrel"
+    ],
+    "prey": {
+      "adder": {
+        "hibernate": true,
+        "weight": 1
+      },
+      "blackbird": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "chaffinch": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "dove": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "gopher": {
+        "hibernate": false,
+        "weight": 2
+      },
+      "grackle": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "hare": {
+        "hibernate": false,
+        "weight": 2
+      },
+      "magpie": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "mole": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "mouse": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "young mouse": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "pheasant": {
+        "hibernate": false,
+        "weight": 1
+      },
+      "rabbit": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "young rabbit": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "sparrow": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "titmouse": {
+        "hibernate": false,
+        "weight": 6
+      }
+    }
+  },
+  "meadow": {
+    "herbs": [
+      "borage leaves",
+      "burnet",
+      "chamomile",
+      "daisy",
+      "dandelion",
+      "dock",
+      "feverfew",
+      "goldenrod",
+      "lamb's ear",
+      "lovage",
+      "marigold",
+      "mint",
+      "parsley",
+      "poppy seeds",
+      "sorrel",
+      "sweet sedge",
+      "thyme",
+      "goatweed",
+      "ragweed",
+      "honey",
+      "tansy",
+      "bindweed",
+      "coltsfoot"
+    ],
+    "prey": {
+      "adder": {
+        "hibernate": true,
+        "weight": 1
+      },
+      "blackbird": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "blue jay": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "cardinal": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "chipmunk": {
+        "hibernate": true,
+        "weight": 6
+      },
+      "dove": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "finch": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "young finch": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "garter snake": {
+        "hibernate": true,
+        "weight": 3
+      },
+      "grackle": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "grass snake": {
+        "hibernate": true,
+        "weight": 4
+      },
+      "hedgehog": {
+        "hibernate": true,
+        "weight": 2
+      },
+      "magpie": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "mole": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "mouse": {
+        "hibernate": false,
+        "weight": 9
+      },
+      "young mouse": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "pheasant": {
+        "hibernate": false,
+        "weight": 1
+      },
+      "pigeon": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "rabbit": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "young rabbit": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "shrew": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "sparrow": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "squirrel": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "titmouse": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "wren": {
+        "hibernate": false,
+        "weight": 5
+      }
+    }
+  },
+  "pine": {
+    "herbs": [
+      "juniper berries",
+      "rosemary",
+      "ivy leaves",
+      "willowherb",
+      "stinging nettle",
+      "tree sap",
+      "birch sap",
+      "wild garlic"
+    ],
+    "prey": {
+      "anole": {
+        "hibernate": true,
+        "weight": 6
+      },
+      "blue jay": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "bushtit": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "chaffinch": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "finch": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "young finch": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "garter snake": {
+        "hibernate": true,
+        "weight": 5
+      },
+      "gecko": {
+        "hibernate": true,
+        "weight": 5
+      },
+      "grackle": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "grass snake": {
+        "hibernate": true,
+        "weight": 4
+      },
+      "jay": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "lizard": {
+        "hibernate": true,
+        "weight": 8
+      },
+      "young lizard": {
+        "hibernate": true,
+        "weight": 3
+      },
+      "mouse": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "young mouse": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "rat": {
+        "hibernate": false,
+        "weight": 2
+      },
+      "shrew": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "skink": {
+        "hibernate": true,
+        "weight": 5
+      },
+      "sparrow": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "squirrel": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "swift": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "thrush": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "toad": {
+        "hibernate": true,
+        "weight": 5
+      },
+      "warbler": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "woodpecker": {
+        "hibernate": false,
+        "weight": 2
+      },
+      "wren": {
+        "hibernate": false,
+        "weight": 5
+      }
+    }
+  },
+  "marsh": {
+    "herbs": [
+      "rush",
+      "horsetail",
+      "sweet sedge",
+      "ragwort leaves",
+      "willowherb",
+      "dock",
+      "birch sap",
+      "coltsfoot"
+    ],
+    "prey": {
+      "bullfrog": {
+        "hibernate": true,
+        "weight": 4
+      },
+      "cardinal": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "chickadee": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "young chickadee": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "frog": {
+        "hibernate": true,
+        "weight": 8
+      },
+      "young frog": {
+        "hibernate": true,
+        "weight": 8
+      },
+      "grackle": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "moorhen": {
+        "hibernate": false,
+        "weight": 1
+      },
+      "mouse": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "young mouse": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "pheasant": {
+        "hibernate": false,
+        "weight": 1
+      },
+      "shrew": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "toad": {
+        "hibernate": true,
+        "weight": 5
+      },
+      "water vole": {
+        "hibernate": false,
+        "weight": 9
+      }
+    }
+  },
+  "shore": {
+    "herbs": ["dock", "rush", "goldenrod", "willowherb", "ragweed"],
+    "prey": {
+      "bullfrog": {
+        "hibernate": true,
+        "weight": 4
+      },
+      "frog": {
+        "hibernate": true,
+        "weight": 9
+      },
+      "young frog": {
+        "hibernate": true,
+        "weight": 8
+      },
+      "moorhen": {
+        "hibernate": false,
+        "weight": 1
+      },
+      "water vole": {
+        "hibernate": false,
+        "weight": 9
+      }
+    }
+  },
+  "river": {
+    "herbs": [
+      "comfrey",
+      "mint",
+      "watermint",
+      "willow bark",
+      "willow leaves",
+      "horsetail",
+      "rush",
+      "dock",
+      "mallow"
+    ],
+    "prey": {
+      "bream": {
+        "hibernate": false,
+        "weight": 1
+      },
+      "brown trout": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "young brown trout": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "chub": {
+        "hibernate": false,
+        "weight": 9
+      },
+      "minnow": {
+        "hibernate": false,
+        "weight": 10
+      },
+      "perch": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "pike": {
+        "hibernate": false,
+        "weight": 2
+      },
+      "salmon": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "young salmon": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "shad": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "sunear": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "young sunear": {
+        "hibernate": false,
+        "weight": 5
+      }
+    }
+  },
+  "stream": {
+    "herbs": [
+      "horsetail",
+      "mint",
+      "watermint",
+      "rush",
+      "comfrey",
+      "willow bark",
+      "willow leaves",
+      "mallow"
+    ],
+    "prey": {
+      "brown trout": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "young brown trout": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "chub": {
+        "hibernate": false,
+        "weight": 9
+      },
+      "minnow": {
+        "hibernate": false,
+        "weight": 10
+      }
+    }
+  },
+  "pond": {
+    "herbs": [
+      "watermint",
+      "horsetail",
+      "rush",
+      "sweet sedge",
+      "dock",
+      "willow leaves",
+      "willow bark"
+    ],
+    "prey": {
+      "bream": {
+        "hibernate": false,
+        "weight": 2
+      },
+      "brown trout": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "young brown trout": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "carp": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "loach": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "minnow": {
+        "hibernate": false,
+        "weight": 10
+      },
+      "perch": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "pike": {
+        "hibernate": false,
+        "weight": 1
+      },
+      "sunear": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "young sunear": {
+        "hibernate": false,
+        "weight": 5
+      }
+    }
+  },
+  "camp": {
+    "herbs": [],
+    "prey": {
+      "ladybug": {
+        "hibernate": true,
+        "weight": 5
+      },
+      "cricket": {
+        "hibernate": true,
+        "weight": 5
+      },
+      "leaf": {
+        "hibernate": false,
+        "weight": 10
+      },
+      "twig": {
+        "hibernate": false,
+        "weight": 10
+      },
+      "pebble": {
+        "hibernate": false,
+        "weight": 10
+      },
+      "moss ball": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "dragonfly": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "butterfly": {
+        "hibernate": true,
+        "weight": 6
+      }
+    }
+  },
+  "barn": {
+    "herbs": [
+      "catmint",
+      "chamomile",
+      "raspberry leaves",
+      "blackberry leaves",
+      "mint",
+      "rhubarb",
+      "dandelion"
+    ],
+    "prey": {
+      "finch": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "young finch": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "kittypet food": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "mouse": {
+        "hibernate": false,
+        "weight": 10
+      },
+      "young mouse": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "rat": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "swift": {
+        "hibernate": false,
+        "weight": 4
+      }
+    }
+  },
+  "twolegplace": {
+    "herbs": [
+      "catmint",
+      "chamomile",
+      "raspberry leaves",
+      "blackberry leaves",
+      "mint",
+      "rhubarb",
+      "dandelion"
+    ],
+    "prey": {
+      "blackbird": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "blue jay": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "bushtit": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "chickadee": {
+        "hibernate": false,
+        "weight": 9
+      },
+      "young chickadee": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "dove": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "finch": {
+        "hibernate": false,
+        "weight": 9
+      },
+      "young finch": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "garden shrew": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "garden vole": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "kittypet food": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "magpie": {
+        "hibernate": false,
+        "weight": 2
+      },
+      "mouse": {
+        "hibernate": false,
+        "weight": 9
+      },
+      "young mouse": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "pigeon": {
+        "hibernate": false,
+        "weight": 6
+      },
+      "rat": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "squirrel": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "twoleg food": {
+        "hibernate": false,
+        "weight": 3
+      },
+      "twoleg trash": {
+        "hibernate": false,
+        "weight": 9
+      }
+    }
+  },
+  "carrionplace": {
+    "herbs": ["dandelion"],
+    "prey": {
+      "rat": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "mouse": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "moldy sandwich": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "mole": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "mystery meat": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "twoleg food": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "twoleg trash": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "crowfood": {
+        "hibernate": false,
+        "weight": 7
+      }
+    }
+  }
+}
