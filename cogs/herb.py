@@ -43,7 +43,7 @@ class Herb(commands.Cog):
       embed = error_embed(f"Invalid command. `{command_guide}`")
       await ctx.send(embed=embed)
 
-  @herb_group.command(name="random", aliases=["rand", "Random", "Rand"])
+  @herb_group.command(name="random", aliases=["Random", "RANDOM"])
   async def herb_random(self, ctx, area:str, attempts:int):
     # normalize vars
     area = area.lower()
@@ -69,7 +69,7 @@ class Herb(commands.Cog):
 
     await ctx.send(embed=herb_embed)
 
-  @herb_group.command(name="specific", aliases=["Specific"])
+  @herb_group.command(name="specific", aliases=["Specific", "SPECIFIC"])
   async def herb_specific(self, ctx, area:str, herb:str):
     # normalize vars
     area = area.lower()

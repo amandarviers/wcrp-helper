@@ -3,13 +3,13 @@
     "title": "Loose Horse",
     "description": "A horse has escaped from the horseplace and is running in a frenzy. Prey is scared away, and a twoleg might appear soon to catch it.\nRoll an 8 or higher with `!roll 1d20` to avoid its hooves!",
     "habitat": ["moor"],
-    "category": "danger"
+    "category": "random"
   },
   {
     "title": "Falling Tree",
     "description": "Due to wind, weather, or age, a tree is collapsing.\nRoll an 8 or higher with `!roll 1d20` to avoid it!\n*Note: If this is WindClan camp, disregard and try again.*",
     "habitat": ["forest", "pine", "camp"],
-    "category": "danger"
+    "category": "random"
   },
   {
     "title": "Fox Attack",
@@ -24,7 +24,7 @@
       "shore",
       "twolegplace"
     ],
-    "category": "danger"
+    "category": "random"
   },
   {
     "title": "Badger Attack",
@@ -39,43 +39,43 @@
       "shore",
       "twolegplace"
     ],
-    "category": "danger"
+    "category": "random"
   },
   {
     "title": "Snake Attack",
     "description": "A strange hissing sounds alerts you to the presence of a snake, and it sounds angry!",
     "habitat": ["rocky", "pine"],
-    "category": "danger"
+    "category": "random"
   },
   {
     "title": "Mink Attack",
     "description": "A long, dark black creature slides out of the water. The mink's dark beedy eyes lock onto you, ready to lunge.",
     "habitat": ["pond", "stream", "shore", "river"],
-    "category": "danger"
+    "category": "random"
   },
   {
     "title": "Hawk Attack",
     "description": "A large hawk circles above, watching your movements closely. On the next circle, it dives down, talons outstretched.",
     "habitat": ["forest", "meadow", "moor", "pine", "rocky"],
-    "category": "danger"
+    "category": "random"
   },
   {
     "title": "Cat Trap",
     "description": "Something smells really good, better even than fresh prey. One problem: it's inside of a box with silver bars. It seems safe, though. Will you try to get it out?\nRoll a 15 or higher with `!roll 1d20` to successfully get the food out!",
     "habitat": ["twolegplace", "forest", "barn"],
-    "category": "danger"
+    "category": "random"
   },
   {
     "title": "Monster",
     "description": "As you approach the Thunderpath, it suddenly starts rumbling.\nRoll a 6 or higher with `!roll 1d20` to get out of its way.",
     "habitat": ["forest", "twolegplace"],
-    "category": "danger"
+    "category": "random"
   },
   {
     "title": "No, Really Buzz Off",
     "description": "You accidentally wander too close to a buzzing wasp nest. The insects begin swarming around you.\nRoll a 15 or higher with `!roll 1d20` to escape without being stung.",
     "habitat": ["forest", "meadow", "pine"],
-    "category": "danger"
+    "category": "random"
   },
   {
     "title": "Hooked Fish",

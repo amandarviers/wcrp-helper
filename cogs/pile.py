@@ -188,7 +188,7 @@ class Pile(commands.Cog):
 
       await ctx.send(embed=pile_take_embed)
 
-  @pile_group.command(name="empty")
+  @pile_group.command(name="empty", aliases=["Empty", "EMPTY"])
   async def pile_empty(self, ctx, group):
     # normalize vars
     group = group.lower()
