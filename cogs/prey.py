@@ -12,7 +12,6 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=lo
 command_guide = "!prey <area> <skill> <attempts>"
 hibernate = False
 global_modifier = 5
-prey_scarcity = 15
 
 error_embed = discord.Embed(title="<:error:1492739840230428829> Error", description="Error", color=discord.Color.red())
 
@@ -57,7 +56,7 @@ def find_prey(area):
         
         candidates.extend([animal] * weight)
 
-    candidates.extend(["none"] * prey_scarcity)
+    candidates.extend(["none"] * 10)
 
     return candidates
 
