@@ -2,63 +2,66 @@ import discord
 from discord.ext import commands
 import json
 import random
-import logging
 import string
+import logging
 
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
+from util.logging_utils import log_command_usage
+from util.error_utils import error_embed
+
+# set up logger
+logger = logging.getLogger(__name__)
 
 # <required arg>
 # [optional arg]
-command_guide = "!herb <type> <area> [attempts/herb]"
+command_guide = "!herb <type> <area> <attempts or herb>"
 
-# herb list
+# load herb list
 with open("./data/herbs_and_prey.json", "r") as f:
-    data = json.load(f)
+    herb_data = json.load(f)
 
-areas = list(data.keys())
-
-error_embed = discord.Embed(title="<:error:1492739840230428829> Error", description="Error", color=discord.Color.red())
+# load valid areas
+areas = list(herb_data.keys())
 
 class Herb(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
   @commands.Cog.listener()
   async def on_ready(self):
-    logging.info(f"herb.py is ready")
+    logger.info(f"herb.py is ready")
   
   async def cog_command_error(self, ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-      error_embed.description = f"Missing required information: `{command_guide}`"
-      await ctx.send(embed=error_embed)
+      embed = error_embed(f"Missing required information: `{command_guide}`")
+      await ctx.send(embed=embed)
       return
 
   @commands.group(name="herb", invoke_without_command=True)
   async def herb_group(self, ctx):
-    alphabet = string.ascii_letters + string.digits
-    interaction_id = ''.join(random.choices(alphabet, k=16))
-    logging.info(f"{interaction_id} - {ctx.author.display_name} used !herb")
+    # get interaction info
+    interaction_id = log_command_usage(ctx, "herb")
     if ctx.invoked_subcommand is None:
-      error_embed.description = f"Invalid command. `{command_guide}`"
-      await ctx.send(embed=error_embed)
+      embed = error_embed(f"Invalid command. `{command_guide}`")
+      await ctx.send(embed=embed)
 
   @herb_group.command(name="random", aliases=["rand", "Random", "Rand"])
   async def herb_random(self, ctx, area:str, attempts:int):
+    # normalize vars
     area = area.lower()
-    alphabet = string.ascii_letters + string.digits
-    interaction_id = ''.join(random.choices(alphabet, k=16))
-    logging.info(f"{interaction_id} - {ctx.author.display_name} used !herb random {area} {attempts}")
+    # get interaction info
+    interaction_id = log_command_usage(ctx, "herb random", area=area, attempts=attempts)
+    # handle data errors
     if area not in areas:
-        error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"
-        await ctx.send(embed=error_embed)
+        embed = error_embed(f"Invalid area. Choose from: { ', '.join(areas)}")
+        await ctx.send(embed=embed)
+        return
+    if attempts > 5 or attempts == 0:
+        embed = error_embed(f"Attempts must be between 1 and 5")
+        await ctx.send(embed=embed)
         return
 
-    if attempts > 5 or attempts == 0:
-        error_embed.description = f"Attempts must be between 1 and 5"
-        await ctx.send(embed=error_embed)
-        return
     herbs_found = ""
     for _ in range(attempts):
-        herb = random.choice(data[area]["herbs"])
+        herb = random.choice(herb_data[area]["herbs"])
         herbs_found += f"\n- {herb}"
 
     herb_embed = discord.Embed(title="Herb Finder", description=f"{herbs_found}", color=discord.Color.dark_green())
@@ -68,19 +71,19 @@ class Herb(commands.Cog):
 
   @herb_group.command(name="specific", aliases=["Specific"])
   async def herb_specific(self, ctx, area:str, herb:str):
+    # normalize vars
     area = area.lower()
     herb = herb.lower()
-    alphabet = string.ascii_letters + string.digits
-    interaction_id = ''.join(random.choices(alphabet, k=16))
-    logging.info(f"{interaction_id} - {ctx.author.display_name} used !herb specific {area} {herb}")
+    # get interaction info
+    interaction_id = log_command_usage(ctx, "herb specific", area=area, herb=herb)
+    # handle data errors
     if area not in areas:
-        error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"
-        await ctx.send(embed=error_embed)
+        embed = error_embed(f"Invalid area. Choose from: { ', '.join(areas)}")
+        await ctx.send(embed=embed)
         return
-
-    if herb not in data[area]["herbs"]:
-        error_embed.description = f"Invalid herb for {area}. Choose from: { ', '.join(data[area]['herbs'])}"
-        await ctx.send(embed=error_embed)
+    if herb not in herb_data[area]["herbs"]:
+        embed = error_embed(f"Invalid herb for {area}. Choose from: { ', '.join(herb_data[area]['herbs'])}")
+        await ctx.send(embed=embed)
         return
 
     roll = random.randint(1, 20)
