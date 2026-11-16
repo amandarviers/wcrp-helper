@@ -1,14 +1,14 @@
 [
   {
     "title": "Loose Horse",
-    "description": "A horse has escaped from the horseplace and is running in a frenzy. Prey is scared away, and a twoleg might appear soon to catch it.\nRoll an 8 or higher with `!roll 1d20` to avoid its hooves!",
-    "habitat": ["moor"],
+    "description": "A horse has escaped from the barn and is running in a frenzy. Prey is scared away, and a twoleg might appear soon to catch it.\nRoll an 8 or higher with `!roll 1d20` to avoid its hooves!",
+    "habitat": ["moor", "meadow"],
     "category": "random"
   },
   {
     "title": "Falling Tree",
     "description": "Due to wind, weather, or age, a tree is collapsing.\nRoll an 8 or higher with `!roll 1d20` to avoid it!\n*Note: If this is WindClan camp, disregard and try again.*",
-    "habitat": ["forest", "pine", "camp"],
+    "habitat": ["forest", "pine", "camp", "marsh", "shore"],
     "category": "random"
   },
   {
@@ -44,7 +44,7 @@
   {
     "title": "Snake Attack",
     "description": "A strange hissing sounds alerts you to the presence of a snake, and it sounds angry!",
-    "habitat": ["rocky", "pine"],
+    "habitat": ["rocky", "pine", "marsh"],
     "category": "random"
   },
   {
@@ -62,19 +62,19 @@
   {
     "title": "Cat Trap",
     "description": "Something smells really good, better even than fresh prey. One problem: it's inside of a box with silver bars. It seems safe, though. Will you try to get it out?\nRoll a 15 or higher with `!roll 1d20` to successfully get the food out!",
-    "habitat": ["twolegplace", "forest", "barn"],
+    "habitat": ["twolegplace", "forest", "barn", "pine"],
     "category": "random"
   },
   {
     "title": "Monster",
     "description": "As you approach the Thunderpath, it suddenly starts rumbling.\nRoll a 6 or higher with `!roll 1d20` to get out of its way.",
-    "habitat": ["forest", "twolegplace"],
+    "habitat": ["twolegplace"],
     "category": "random"
   },
   {
     "title": "No, Really Buzz Off",
-    "description": "You accidentally wander too close to a buzzing wasp nest. The insects begin swarming around you.\nRoll a 15 or higher with `!roll 1d20` to escape without being stung.",
-    "habitat": ["forest", "meadow", "pine"],
+    "description": "You accidentally wander too close to a buzzing wasp nest. The insects begin swarming around you.\nRoll a 10 or higher with `!roll 1d20` to escape without being stung.",
+    "habitat": ["forest", "meadow", "pine", "twolegplace"],
     "category": "random"
   },
   {
@@ -86,7 +86,17 @@
   {
     "title": "Tripping Over Yourself",
     "description": "You see a big, juicy piece of prey ahead and quickly stalk it. But you're too focused on how hungry you are and your attempt to catch it is thwarted by a hole or a rock that you trip on.\nRoll an 8 or higher with `!roll 1d20` to avoid a sprain.",
-    "habitat": ["shore", "forest", "rocky", "moor", "meadow", "pine", "marsh"],
+    "habitat": [
+      "shore",
+      "forest",
+      "rocky",
+      "moor",
+      "meadow",
+      "pine",
+      "marsh",
+      "barn",
+      "twolegplace"
+    ],
     "category": "neg-hunt"
   },
   {
@@ -121,7 +131,7 @@
   {
     "title": "Poisoned Prey",
     "description": "This prey ate something that it shouldn't have. Be careful if you choose to eat it!",
-    "habitat": ["twolegplace", "barn"],
+    "habitat": ["twolegplace", "barn", "carrionplace"],
     "category": "neg-hunt"
   },
   {
@@ -216,25 +226,25 @@
   {
     "title": "Ants Go Marching 1 by 1",
     "description": "You follow your nose to a delicious piece of food that's been left out, only to find it completely overrun by ants. Maybe it's worth risking a bite or two?",
-    "habitat": ["twolegplace", "barn", "carrionplace"],
+    "habitat": ["twolegplace", "barn"],
     "category": "neg-hunt"
   },
   {
     "title": "Shallow Pool",
     "description": "Some **young brown trout** have gotten stuck in a small pool of water and have nowhere to hide!\nUse `!roll 1d4` to see how many you catch.",
-    "habitat": ["shore", "river", "stream", "pond"],
+    "habitat": ["river", "stream", "pond"],
     "category": "pos-hunt"
   },
   {
     "title": "Lucky Bucket",
-    "description": "You find a container with two young perch sitting on the edge of the water along with some other Twoleg stuff. It looks like they left their prey for some reason? It smells fresh...",
+    "description": "You find a container with two **young perch** sitting on the edge of the water along with some other Twoleg stuff. It looks like they left their prey for some reason? It smells fresh...",
     "habitat": ["pond", "river", "stream"],
     "category": "pos-hunt"
   },
   {
     "title": "Rabbit Burrow",
     "description": "You come upon a small burrow of **young rabbits**, and the mother is away.\nUse `!roll 1d4` to see how many you catch!",
-    "habitat": ["moor", "forest"],
+    "habitat": ["moor", "meadow"],
     "category": "pos-hunt"
   },
   {
@@ -296,8 +306,8 @@
   },
   {
     "title": "A Feast",
-    "description": "The Twolegs left **kittypet** food out for the loners in the area.\nUse `!roll 1d4` to see how much you find!",
-    "habitat": ["barn", "twolegplace"],
+    "description": "The Twolegs left **kittypet food** out for the loners in the area.\nUse `!roll 1d4` to see how much you find!",
+    "habitat": ["barn", "twolegplace", "carrionplace"],
     "category": "pos-hunt"
   },
   {
@@ -320,19 +330,19 @@
   },
   {
     "title": "Easy Catch",
-    "description": "A fat squirrel falls out of a tree right in front of you and is too stunned to realize you're there.",
-    "habitat": ["pine", "forest", "twolegplace"],
+    "description": "A fat **squirrel** falls out of a tree right in front of you and is too stunned to realize you're there.",
+    "habitat": ["pine", "twolegplace"],
     "category": "pos-hunt"
   },
   {
     "title": "Easy Catch",
-    "description": "A rabbit bursts out of a bush near you runs into a rock, stunning itself.",
+    "description": "A **young rabbit** bursts out of a bush near you runs into a rock, stunning itself.",
     "habitat": ["pine", "forest", "meadow", "moor"],
     "category": "pos-hunt"
   },
   {
     "title": "Tangled",
-    "description": "A squirrel is caught in some Twoleg garbage, making it difficult for it to run away.",
+    "description": "A **squirrel** is caught in some Twoleg garbage, making it difficult for it to run away.",
     "habitat": ["forest", "marsh", "meadow", "moor", "pine", "rocky"],
     "category": "pos-hunt"
   },
@@ -347,6 +357,7 @@
       "forest",
       "pine",
       "rocky",
+      "shore",
       "carrionplace"
     ],
     "category": "random"
@@ -396,12 +407,6 @@
     "category": "random"
   },
   {
-    "title": "Down With the Ship",
-    "description": "A couple Twolegs are riding in their water monsters when suddenly you hear a crash and it starts to sink under the water. Maybe it got sick? You're not sure, but the Twolegs are now swimming to shore.",
-    "habitat": ["shore", "pond"],
-    "category": "random"
-  },
-  {
     "title": "Strange Treasures",
     "description": "You find a small, squishy, brightly colored ball. It smells of Twolegs, but something about it makes you want to bat it around.",
     "habitat": [
@@ -424,7 +429,7 @@
   {
     "title": "Mayday",
     "description": "A sparrow flies right into the clear ice on the side of twoleg den and falls.",
-    "habitat": ["twolegplace", "barn"],
+    "habitat": ["twolegplace", "barn", "carrionplace"],
     "category": "random"
   },
   {
@@ -469,7 +474,7 @@
   },
   {
     "title": "Mother Goose",
-    "description": "These parents aren't happy about how close you are to their nest/hatchlings. They act hostile. Do you leave or try to get a meal?",
+    "description": "These parents aren't happy about how close you are to their nest/hatchlings. They act hostile. Do you leave or try to get a meal? Roll a 15 or higher with `!roll 1d20` to get a hatchling and escape safely.",
     "habitat": ["pond", "shore", "meadow"],
     "category": "random"
   },
@@ -487,7 +492,7 @@
   },
   {
     "title": "Forgotten Cache",
-    "description": "You stumble across an old prey cache tucked beneath grass and moss. It seems forgotten.\nRoll a 12 or higher with `!roll 1d20` to determine whether the prey is still fresh. If it is, make another hunting roll to determine what you find.",
+    "description": "You stumble across an old prey cache tucked beneath grass and moss. It seems forgotten.\nRoll a 12 or higher with `!roll 1d20` to determine whether the prey is still fresh. If it is, make a hunting roll to determine what you find.",
     "habitat": ["forest", "pine", "meadow", "moor", "marsh"],
     "category": "random"
   },
