@@ -4,7 +4,10 @@ from itertools import cycle
 import os
 import asyncio
 from dotenv import load_dotenv
+from util.logging_utils import configure_logging
 import logging
+
+logger = logging.getLogger(__name__)
 
 load_dotenv()
 BOT_TOKEN = os.getenv('BOT_TOKEN')
@@ -14,32 +17,33 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='!', case_insensitive=True, intents=intents)
 
 bot.remove_command("help")
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
+configure_logging()
 
 # status
 with open("data/status_list.txt", "r") as f:
-    bot_status = cycle([line.strip() for line in f])
+  bot_status = cycle([line.strip() for line in f])
 
 @tasks.loop(minutes=5)
 async def change_status():
-    await bot.change_presence(activity=discord.Game(next(bot_status)))
+  await bot.change_presence(activity=discord.Game(next(bot_status)))
 
+# bot login
 @bot.event
 async def on_ready():
-    logging.info(f'Logged in as {bot.user.name}')
-    if not change_status.is_running():
-        change_status.start()
+  logger.info(f'Logged in as {bot.user.name}')
+  if not change_status.is_running():
+    change_status.start()
 
 # load all cogs
 async def load():
-    for filename in os.listdir("./cogs"):
-        if filename.endswith(".py"):
-            await bot.load_extension(f"cogs.{filename[:-3]}")
-            logging.info(f"{filename[:-3]} is loaded")
+  for filename in os.listdir("./cogs"):
+    if filename.endswith(".py"):
+      await bot.load_extension(f"cogs.{filename[:-3]}")
+      logger.info(f"{filename[:-3]} is loaded")
 
 async def main():
-    async with bot:
-        await load()
-        await bot.start(BOT_TOKEN)
+  async with bot:
+    await load()
+    await bot.start(BOT_TOKEN)
 
 asyncio.run(main())

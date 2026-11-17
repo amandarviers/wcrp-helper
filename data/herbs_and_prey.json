@@ -1000,5 +1000,51 @@
         "weight": 7
       }
     }
+  },
+  "thunderpath": {
+    "herbs": ["dandelion", "blackberry leaves", "raspberry leaves"],
+    "prey": {
+      "crowfood": {
+        "hibernate": false,
+        "weight": 7
+      },
+      "mouse": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "twoleg food": {
+        "hibernate": false,
+        "weight": 5
+      },
+      "twoleg trash": {
+        "hibernate": false,
+        "weight": 8
+      }
+    }
+  },
+  "tunnel": {
+    "herbs": [],
+    "prey": {
+      "rabbit": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "young hare": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "mouse": {
+        "hibernate": false,
+        "weight": 4
+      },
+      "mole": {
+        "hibernate": false,
+        "weight": 8
+      },
+      "rat": {
+        "hibernate": false,
+        "weight": 5
+      }
+    }
   }
 }

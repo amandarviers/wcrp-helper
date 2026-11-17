@@ -2,102 +2,101 @@ import discord
 from discord.ext import commands
 import json
 import random
-import logging
 import string
+import logging
 
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
+from util.logging_utils import log_command_usage
+from util.error_utils import error_embed
+
+# set up logger
+logger = logging.getLogger(__name__)
 
 # <required arg>
 # [optional arg]
-command_guide = "!herb <type> <area> [attempts/herb]"
+command_guide = "!herb <area> <attempts or herb>"
 
-# herb list
+# load herb list
 with open("./data/herbs_and_prey.json", "r") as f:
-    data = json.load(f)
+    herb_data = json.load(f)
 
-areas = list(data.keys())
+# load valid areas
+areas = list(herb_data.keys())
 
-error_embed = discord.Embed(title="<:error:1492739840230428829> Error", description="Error", color=discord.Color.red())
+# load current season data
+with open("./data/current_season.txt", "r") as season_file:
+  current_season = (season_file.readlines()[0])
+with open("./data/seasons.json", "r") as season_details_file:
+  season_details = json.load(season_details_file)
 
 class Herb(commands.Cog):
   def __init__(self, bot):
     self.bot = bot
   @commands.Cog.listener()
   async def on_ready(self):
-    logging.info(f"herb.py is ready")
-  
+    logger.info(f"herb.py is ready")
+
+  # missing required args
   async def cog_command_error(self, ctx, error):
     if isinstance(error, commands.MissingRequiredArgument):
-      error_embed.description = f"Missing required information: `{command_guide}`"
-      await ctx.send(embed=error_embed)
+      embed = error_embed(f"Missing required information: `{command_guide}`")
+      await ctx.send(embed=embed)
       return
 
-  @commands.group(name="herb", invoke_without_command=True)
-  async def herb_group(self, ctx):
-    alphabet = string.ascii_letters + string.digits
-    interaction_id = ''.join(random.choices(alphabet, k=16))
-    logging.info(f"{interaction_id} - {ctx.author.display_name} used !herb")
-    if ctx.invoked_subcommand is None:
-      error_embed.description = f"Invalid command. `{command_guide}`"
-      await ctx.send(embed=error_embed)
-
-  @herb_group.command(name="random", aliases=["rand", "Random", "Rand"])
-  async def herb_random(self, ctx, area:str, attempts:int):
+  @commands.command()
+  async def herb(self, ctx, area, attempt_or_herb):
+    # normalize vars
     area = area.lower()
-    alphabet = string.ascii_letters + string.digits
-    interaction_id = ''.join(random.choices(alphabet, k=16))
-    logging.info(f"{interaction_id} - {ctx.author.display_name} used !herb random {area} {attempts}")
+    # get interaction info
+    interaction_id = log_command_usage(ctx, "herb", area=area, attempt_or_herb=attempt_or_herb)
+    # handle data errors
     if area not in areas:
-        error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"
-        await ctx.send(embed=error_embed)
+      embed = error_embed(f"Invalid area. Choose from: { ', '.join(areas)}")
+      await ctx.send(embed=embed)
+      return
+
+    # handle random searches
+    if attempt_or_herb.isdigit():
+      logger.info(f"{interaction_id} - attempt_or_herb is digit: {attempt_or_herb}")
+      attempt_or_herb = int(attempt_or_herb)
+      if attempt_or_herb > 5 or attempt_or_herb == 0:
+        embed = error_embed(f"Attempts must be between 1 and 5")
+        await ctx.send(embed=embed)
         return
 
-    if attempts > 5 or attempts == 0:
-        error_embed.description = f"Attempts must be between 1 and 5"
-        await ctx.send(embed=error_embed)
-        return
-    herbs_found = ""
-    for _ in range(attempts):
-        herb = random.choice(data[area]["herbs"])
+      herbs_found = ""
+      for _ in range(attempt_or_herb):
+        herb = random.choice(herb_data[area]["herbs"])
         herbs_found += f"\n- {herb}"
 
-    herb_embed = discord.Embed(title="Herb Finder", description=f"{herbs_found}", color=discord.Color.dark_green())
-    herb_embed.set_footer(text=f"{ctx.author.display_name} made {attempts} attempts to find herbs", icon_url=ctx.author.display_avatar.url)
+      herb_embed = discord.Embed(title="Herb Finder", description=f"{herbs_found}", color=discord.Color.dark_green())
+      herb_embed.set_footer(text=f"{ctx.author.display_name} made {attempt_or_herb} attempts to find herbs", icon_url=ctx.author.display_avatar.url)
 
-    await ctx.send(embed=herb_embed)
-
-  @herb_group.command(name="specific", aliases=["Specific"])
-  async def herb_specific(self, ctx, area:str, herb:str):
-    area = area.lower()
-    herb = herb.lower()
-    alphabet = string.ascii_letters + string.digits
-    interaction_id = ''.join(random.choices(alphabet, k=16))
-    logging.info(f"{interaction_id} - {ctx.author.display_name} used !herb specific {area} {herb}")
-    if area not in areas:
-        error_embed.description = f"Invalid area. Choose from: { ', '.join(areas)}"
-        await ctx.send(embed=error_embed)
-        return
-
-    if herb not in data[area]["herbs"]:
-        error_embed.description = f"Invalid herb for {area}. Choose from: { ', '.join(data[area]['herbs'])}"
-        await ctx.send(embed=error_embed)
-        return
-
-    roll = random.randint(1, 20)
-    if roll >= 18:
-      msg = f"You found 3 {herb} in the {area}!"
-    elif roll >= 13:
-      msg = f"You found 2 {herb} in the {area}!"
-    elif roll >= 5:
-      msg = f"You found 1 {herb} in the {area}!"
+      await ctx.send(embed=herb_embed)
     else:
-      msg = f"You found no {herb} in the {area}."
+      logger.info(f"{interaction_id} - attempt_or_herb is herb: {attempt_or_herb}")
+      # handle specific searches
+      attempt_or_herb = attempt_or_herb.lower()
 
-    herb_embed = discord.Embed(title="Herb Finder", description=f"{msg}", color=discord.Color.dark_green())
-    herb_embed.set_footer(text=f"{ctx.author.display_name} looked for {herb} in {area}", icon_url=ctx.author.display_avatar.url)
+      if attempt_or_herb not in herb_data[area]["herbs"]:
+          embed = error_embed(f"Invalid herb for {area}. Choose from: { ', '.join(herb_data[area]['herbs'])}")
+          await ctx.send(embed=embed)
+          return
 
-    await ctx.send(embed=herb_embed)
+      roll = random.randint(1, 20)
+      logger.info(f"{interaction_id} - rolled {roll} when searching for {attempt_or_herb}")
+      if roll >= 18:
+        msg = f"You found 3 {attempt_or_herb} in the {area}!"
+      elif roll >= 13:
+        msg = f"You found 2 {attempt_or_herb} in the {area}!"
+      elif roll >= 5:
+        msg = f"You found 1 {attempt_or_herb} in the {area}!"
+      else:
+        msg = f"You found no {attempt_or_herb} in the {area}."
 
+      herb_embed = discord.Embed(title="Herb Finder", description=f"{msg}", color=discord.Color.dark_green())
+      herb_embed.set_footer(text=f"{ctx.author.display_name} looked for {attempt_or_herb} in {area}", icon_url=ctx.author.display_avatar.url)
+
+      await ctx.send(embed=herb_embed)
 
 async def setup(bot):
   await bot.add_cog(Herb(bot))
