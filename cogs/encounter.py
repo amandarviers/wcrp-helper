@@ -71,7 +71,7 @@ class Encounter(commands.Cog):
 
     if "hunt" in category or category == "danger":
       for candidate in encounter_data:
-        if candidate["category"] != category:
+        if category not in candidate["category"]:
           continue
         if area not in candidate["habitat"]:
           continue
@@ -80,7 +80,7 @@ class Encounter(commands.Cog):
     else:
       if roll > 8:
         for candidate in encounter_data:
-          if candidate["category"] != category:
+          if category not in candidate["category"]:
             continue
           if area not in candidate["habitat"]:
             continue

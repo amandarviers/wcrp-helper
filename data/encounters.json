@@ -3,17 +3,17 @@
     "title": "Loose Horse",
     "description": "A horse has escaped from the barn and is running in a frenzy. Prey is scared away, and a twoleg might appear soon to catch it.\nRoll an 8 or higher with `!roll 1d20` to avoid its hooves!",
     "habitat": ["moor", "meadow"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Falling Tree",
     "description": "Due to wind, weather, or age, a tree is collapsing.\nRoll an 8 or higher with `!roll 1d20` to avoid it!\n*Note: If this is WindClan camp, disregard and try again.*",
     "habitat": ["forest", "pine", "camp", "marsh", "shore"],
-    "category": "random"
+    "category": ["random", "vigil"]
   },
   {
     "title": "Fox Attack",
-    "description": "A familiar smell reaches you on the wind, but by the time you recognize it, a fox charges out of a bush!",
+    "description": "A familiar smell reaches you, but by the time you recognize it, a fox charges at you!",
     "habitat": [
       "camp",
       "forest",
@@ -22,13 +22,14 @@
       "moor",
       "pine",
       "shore",
-      "twolegplace"
+      "twolegplace",
+      "tunnel"
     ],
-    "category": "random"
+    "category": ["random", "vigil"]
   },
   {
     "title": "Badger Attack",
-    "description": "A large, black and white creature lumbers through the brush on large paws. You quickly recognize it as a badger!",
+    "description": "A large, black and white creature lumbers towards you on huge paws. You quickly recognize it as a badger!",
     "habitat": [
       "camp",
       "forest",
@@ -37,51 +38,64 @@
       "moor",
       "pine",
       "shore",
-      "twolegplace"
+      "twolegplace",
+      "tunnel"
     ],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Snake Attack",
     "description": "A strange hissing sounds alerts you to the presence of a snake, and it sounds angry!",
     "habitat": ["rocky", "pine", "marsh"],
-    "category": "random"
+    "category": ["random", "vigil"]
   },
   {
     "title": "Mink Attack",
     "description": "A long, dark black creature slides out of the water. The mink's dark beedy eyes lock onto you, ready to lunge.",
     "habitat": ["pond", "stream", "shore", "river"],
-    "category": "random"
+    "category": ["random"]
+  },
+  {
+    "title": "Weasel Attack",
+    "description": "A slender, long creature with brown fur approaches. The weasel locks eyes on you and prepares to attack.",
+    "habitat": ["tunnel"],
+    "category": ["random"]
+  },
+  {
+    "title": "Hare Attack",
+    "description": "A shift in the air tells you that you're not alone: a large male hare prepares to attack!",
+    "habitat": ["moor", "tunnel"],
+    "category": ["random"]
   },
   {
     "title": "Hawk Attack",
     "description": "A large hawk circles above, watching your movements closely. On the next circle, it dives down, talons outstretched.",
     "habitat": ["forest", "meadow", "moor", "pine", "rocky"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Cat Trap",
-    "description": "Something smells really good, better even than fresh prey. One problem: it's inside of a box with silver bars. It seems safe, though. Will you try to get it out?\nRoll a 15 or higher with `!roll 1d20` to successfully get the food out!",
-    "habitat": ["twolegplace", "forest", "barn", "pine"],
-    "category": "random"
+    "description": "Something smells really good, better even than fresh prey. One problem: it's inside of a box with silver bars. It seems safe, though. Will you try to get it out?\nRoll a 15 or higher with `!roll 1d20` to successfully get the **twoleg food** out!",
+    "habitat": ["twolegplace", "forest", "barn", "pine", "carrionplace"],
+    "category": ["random"]
   },
   {
     "title": "Monster",
-    "description": "As you approach the Thunderpath, it suddenly starts rumbling.\nRoll a 6 or higher with `!roll 1d20` to get out of its way.",
-    "habitat": ["twolegplace"],
-    "category": "random"
+    "description": "As you approach the Thunderpath, it suddenly starts rumbling from an oncoming monster.\nRoll a 10 or higher with `!roll 1d20` to get out of its way.",
+    "habitat": ["twolegplace", "thunderpath"],
+    "category": ["random"]
   },
   {
     "title": "No, Really Buzz Off",
     "description": "You accidentally wander too close to a buzzing wasp nest. The insects begin swarming around you.\nRoll a 10 or higher with `!roll 1d20` to escape without being stung.",
     "habitat": ["forest", "meadow", "pine", "twolegplace"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Hooked Fish",
     "description": "A fish that you've caught has a sharp, shiny attachment in its mouth and a strong piece of cobweb that seems to have snapped. Be careful handling and eating!",
     "habitat": ["pond", "river", "stream"],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "Tripping Over Yourself",
@@ -95,15 +109,16 @@
       "pine",
       "marsh",
       "barn",
-      "twolegplace"
+      "twolegplace",
+      "thunderpath"
     ],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "Tripping Over Yourself",
     "description": "You see a tempting feather up ahead and quickly stalk it. But you're too focused on how exciting this is and your attempt to catch it is thwarted by a stick you trip on. Hopefully no one saw that!",
     "habitat": ["camp"],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "Fuzz in Mouse Clothing",
@@ -117,64 +132,63 @@
       "moor",
       "meadow",
       "pine",
-      "twolegplace",
-      "marsh"
+      "twolegplace"
     ],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "Fish Are Rude",
     "description": "You get low to the water in preparation to snag a fish as it swims by, but instead one jumps out of the water and smacks you in the face before quickly swimming away.",
     "habitat": ["river", "pond", "stream"],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "Poisoned Prey",
-    "description": "This prey ate something that it shouldn't have. Be careful if you choose to eat it!",
-    "habitat": ["twolegplace", "barn", "carrionplace"],
-    "category": "neg-hunt"
+    "description": "This prey ate something that it shouldn't have. If you decide to eat it, roll a 10 with `!roll 1d20` to not get sick!",
+    "habitat": ["twolegplace", "barn", "carrionplace", "thunderpath"],
+    "category": ["neg-hunt"]
   },
   {
     "title": "Snatched",
     "description": "A small mouse nibbles at some food nearby, focused entirely on what its doing and unaware of your approach. Seconds before you prepare to make your pounce, a large hawk swoops down and snatches it off the ground.",
     "habitat": ["forest", "marsh", "meadow", "moor", "pine", "rocky", "shore"],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "That's Not a Rabbit",
-    "description": "You run at a rabbit, but instead of running, it turns to face you. It turns out the rabbit is a hare, and its angry.",
-    "habitat": ["moor"],
-    "category": "neg-hunt"
+    "description": "You run at a rabbit, but instead of running, it turns to face you. It turns out the rabbit is a hare, and its angry!",
+    "habitat": ["moor", "tunnel"],
+    "category": ["neg-hunt"]
   },
   {
     "title": "All Caught Up",
     "description": "You chase a mouse into a patch of thick brambles, certain you can catch it. Instead, your fur gets tangled in the thorns and the mouse escapes while you struggle free.\nRoll a 10 or higher with `!roll 1d20` to avoid scratches and continue hunting. (ThunderClan can use `!roll 1d20+2`)",
     "habitat": ["forest"],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "Slip 'n Slide",
     "description": "You crouch beside the water, watching a fish glide under the surface. Just as you prepare to strike, your paw slips against a moss-covered stone.\nRoll a 12 or higher with `!roll 1d20` to avoid falling in. (RiverClan can use `!roll 1d20+2`)",
     "habitat": ["river", "stream", "pond"],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "A Deep Current",
     "description": "You wade farther into the river than usual while hunting. The current is stronger than you anticipated, pulling at your paws and making it difficult to stay balanced.\nRoll a 12 or higher with `!roll 1d20` to return safely to shore without incident.",
     "habitat": ["river"],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "Emboldened",
     "description": "You spot a plump looking hare and begin your chase. The hare is fast, and after a moment, it skids and turns around to face you and starts chasing you back!",
-    "habitat": ["moor"],
-    "category": "neg-hunt"
+    "habitat": ["moor", "tunnel"],
+    "category": ["neg-hunt"]
   },
   {
     "title": "Emboldened",
     "description": "You spot a plump looking squirrel and begin your chase. The squirrel is fast, and after a moment, it skids and turns around to face you and starts chasing you back!",
     "habitat": ["forest", "pine", "meadow", "twolegplace"],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "Changing Winds",
@@ -188,15 +202,16 @@
       "twolegplace",
       "marsh",
       "shore",
-      "barn"
+      "barn",
+      "thunderpath"
     ],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "Not Up to Code",
     "description": "You chase a rabbit across the open land and discover it has disappeared underground. You try to dig it out, but the loose earth begins collapsing around you.\nRoll an 11 or higher with `!roll 1d20` to avoid getting stuck. (WindClan can use `!roll 1d20+2`)",
     "habitat": ["moor", "meadow"],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "Gesundheit",
@@ -215,73 +230,73 @@
       "pond",
       "stream"
     ],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "A Balancing Act",
     "description": "You spot a robin resting high in a tree. You climb upward, carefully placing each paw, but the branch beneath you begins to bend.\nRoll an 12 or higher with `!roll 1d20` to make the jump safely. (SkyClan can use `!roll 1d20+2`)",
     "habitat": ["forest", "pine"],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "Ants Go Marching 1 by 1",
     "description": "You follow your nose to a delicious piece of food that's been left out, only to find it completely overrun by ants. Maybe it's worth risking a bite or two?",
     "habitat": ["twolegplace", "barn"],
-    "category": "neg-hunt"
+    "category": ["neg-hunt"]
   },
   {
     "title": "Shallow Pool",
     "description": "Some **young brown trout** have gotten stuck in a small pool of water and have nowhere to hide!\nUse `!roll 1d4` to see how many you catch.",
     "habitat": ["river", "stream", "pond"],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "Lucky Bucket",
     "description": "You find a container with two **young perch** sitting on the edge of the water along with some other Twoleg stuff. It looks like they left their prey for some reason? It smells fresh...",
     "habitat": ["pond", "river", "stream"],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "Rabbit Burrow",
     "description": "You come upon a small burrow of **young rabbits**, and the mother is away.\nUse `!roll 1d4` to see how many you catch!",
-    "habitat": ["moor", "meadow"],
-    "category": "pos-hunt"
+    "habitat": ["moor", "meadow", "tunnel"],
+    "category": ["pos-hunt"]
   },
   {
     "title": "Surprise",
     "description": "You are stalking a mouse when a **squirrel** falls out of the tree next to you and lands at your paws, scaring the mouse off. If you're quick, you can kill the squirrel before it realizes where it is!",
-    "habitat": ["forest", "pine", "marsh", "twolegplace"],
-    "category": "pos-hunt"
+    "habitat": ["forest", "pine", "twolegplace"],
+    "category": ["pos-hunt"]
   },
   {
     "title": "Jumping Fish",
     "description": "While watching the fish swim under the water, you miss a **brown trout** that swims quickly toward you. It jumps out of the water and lands on the shore next to you, flopping back and forth.",
     "habitat": ["river", "stream", "pond"],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "Salmon Run",
     "description": "A bunch of **young salmon** are tired from swimming upriver.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["river", "stream"],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "Frog Went a-Courting",
     "description": "**Young frogs** carelessly sing loudly, unaware of the danger of your presence.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["marsh", "shore"],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "It's Raining Leaves",
     "description": "A flurry of leaves fall from the sky.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["camp"],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "Unexpected Visitor",
     "description": "A couple dragonflies are hanging out nearby, seemingly unaware of your presence.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["camp"],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "Mouse Nest",
@@ -296,55 +311,63 @@
       "rocky",
       "carrionplace"
     ],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "Lizard Scramble",
     "description": "You find a bunch of **young lizards** sunning themselves on a rock.\nUse `!roll 1d4` to see how many you catch!",
-    "habitat": ["rocky"],
-    "category": "pos-hunt"
+    "habitat": ["rocky", "thunderpath"],
+    "category": ["pos-hunt"]
   },
   {
     "title": "A Feast",
     "description": "The Twolegs left **kittypet food** out for the loners in the area.\nUse `!roll 1d4` to see how much you find!",
     "habitat": ["barn", "twolegplace", "carrionplace"],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "Fallen Nest",
     "description": "A nest with **young finch** fell out of a tree nearby.\nUse `!roll 1d4` to see how many birds you find!",
     "habitat": ["forest", "twolegplace", "pine"],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "Rapid Currents",
     "description": "The water is moving quickly and a couple **young sunear** have accidentally jumped out.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["river", "stream"],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "Gust of Wind",
     "description": "A strong gust of wind knocked some **young chickadees** down.\nUse `!roll 1d4` to see how many you catch!",
     "habitat": ["moor", "meadow"],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "Easy Catch",
     "description": "A fat **squirrel** falls out of a tree right in front of you and is too stunned to realize you're there.",
     "habitat": ["pine", "twolegplace"],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "Easy Catch",
     "description": "A **young rabbit** bursts out of a bush near you runs into a rock, stunning itself.",
     "habitat": ["pine", "forest", "meadow", "moor"],
-    "category": "pos-hunt"
+    "category": ["pos-hunt"]
   },
   {
     "title": "Tangled",
     "description": "A **squirrel** is caught in some Twoleg garbage, making it difficult for it to run away.",
-    "habitat": ["forest", "marsh", "meadow", "moor", "pine", "rocky"],
-    "category": "pos-hunt"
+    "habitat": [
+      "forest",
+      "marsh",
+      "meadow",
+      "moor",
+      "pine",
+      "rocky",
+      "thunderpath"
+    ],
+    "category": ["pos-hunt"]
   },
   {
     "title": "Bombs Away",
@@ -358,33 +381,34 @@
       "pine",
       "rocky",
       "shore",
-      "carrionplace"
+      "carrionplace",
+      "thunderpath"
     ],
-    "category": "random"
+    "category": ["random", "vigil"]
   },
   {
     "title": "Angry Squirrels",
     "description": "An angry squirrel throws sticks and stones at you as you walk through the forest, alerting all other prey of your presence. Hopefully you didn't intend on hunting!",
-    "habitat": ["forest", "pine"],
-    "category": "random"
+    "habitat": ["forest", "pine", "thunderpath"],
+    "category": ["random", "vigil"]
   },
   {
     "title": "Tree Fort",
     "description": "Some twoleg kits are playing nearby, moving and bending twigs and branches to create a strange structure that stays up after they leave.",
     "habitat": ["forest", "pine"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Sheep Herding",
     "description": "The twolegs are moving the sheep to new grazing areas! There's a couple dogs barking and guiding them, but they seem focused on their work.",
     "habitat": ["moor", "barn", "meadow"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Colorful Skies",
     "description": "The twolegs seem to be running around holding strong cobweb attached to brightly-colored shapes that fly above in the sky.",
     "habitat": ["twolegplace", "meadow", "moor", "shore"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Whosits and Whatsits Galore",
@@ -396,15 +420,11 @@
       "marsh",
       "meadow",
       "moor",
-      "pine",
-      "river",
       "rocky",
-      "shore",
-      "stream",
       "twolegplace",
       "carrionplace"
     ],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Strange Treasures",
@@ -416,27 +436,22 @@
       "forest",
       "moor",
       "meadow",
-      "pine"
+      "pine",
+      "thunderpath"
     ],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Catnip Patch",
     "description": "You find a lush patch of intoxicating plants. You have an overwhelming desire to roll in them. You can feel your stress melting away. Wait, what were you doing again?",
     "habitat": ["twolegplace", "meadow", "moor"],
-    "category": "random"
-  },
-  {
-    "title": "Mayday",
-    "description": "A sparrow flies right into the clear ice on the side of twoleg den and falls.",
-    "habitat": ["twolegplace", "barn", "carrionplace"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Natural Treasures",
     "description": "You find a brightly colored shell that almost gleams in the sunlight, with an intricate swirl pattern.",
     "habitat": ["pond", "river", "stream"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Natural Treasures",
@@ -450,9 +465,9 @@
       "meadow",
       "pine",
       "twolegplace",
-      "marsh"
+      "thunderpath"
     ],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Inspiring Skies",
@@ -468,63 +483,64 @@
       "river",
       "rocky",
       "shore",
-      "stream"
+      "stream",
+      "thunderpath"
     ],
-    "category": "random"
+    "category": ["random", "vigil"]
   },
   {
     "title": "Mother Goose",
     "description": "These parents aren't happy about how close you are to their nest/hatchlings. They act hostile. Do you leave or try to get a meal? Roll a 15 or higher with `!roll 1d20` to get a hatchling and escape safely.",
     "habitat": ["pond", "shore", "meadow"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Buzz Off",
     "description": "You accidentally wander too close to a buzzing bee nest. The insects begin swarming around you.\nRoll a 12 or higher with `!roll 1d20` to escape without being stung. Roll a 16 or higher to snag a piece of honey safely.",
     "habitat": ["forest", "meadow", "pine"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Jane Doe",
     "description": "A young deer notices you and stares curiously instead of running away. It doesn't seem frightened, just interested.",
     "habitat": ["forest", "meadow", "pine"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Forgotten Cache",
     "description": "You stumble across an old prey cache tucked beneath grass and moss. It seems forgotten.\nRoll a 12 or higher with `!roll 1d20` to determine whether the prey is still fresh. If it is, make a hunting roll to determine what you find.",
     "habitat": ["forest", "pine", "meadow", "moor", "marsh"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Trash Bandit",
     "description": "You're not the only one looking for food here among the scents of discarded Twoleg delicacies and crowfood. You've interrupted a raccoon clutching a prize in its strange paws, and it chitters defensively at you.",
     "habitat": ["twolegplace", "barn", "carrionplace"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Squeaky Clean",
     "description": "A round creature is crouched by the water's edge when you get there. It seems like a raccoon is washing something it found to eat.",
     "habitat": ["river", "stream", "pond", "shore"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "All Aboard",
     "description": "An odd shape lumbers on nearby, and it take you a moment to realize what you're looking at. A mother possum is carrying her children on her back somewhere or another.",
     "habitat": ["forest", "twolegplace", "barn", "pine", "carrionplace"],
-    "category": "random"
+    "category": ["random"]
   },
   {
     "title": "Spooked",
     "description": "While sitting vigil, you hear the cracking of foliage. It's getting louder, closer, faster. Just when its about to reach you it suddenly stops. You don't hear it again.",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil"]
   },
   {
     "title": "Jumped",
     "description": "Its quiet, too quiet. You feel relaxed, that is until something jumps on your back! After reacting, you notice a frog jumping away in a hurry.",
-    "habitat": ["camp"],
-    "category": "vigil"
+    "habitat": ["camp", "marsh", "shore", "thunderpath"],
+    "category": ["vigil", "random"]
   },
   {
     "title": "Butterfly Swarm",
@@ -540,84 +556,132 @@
       "shore",
       "twolegplace"
     ],
-    "category": "vigil"
+    "category": ["vigil", "random"]
   },
   {
     "title": "Touched by a Firefly",
     "description": "A glowing firefly lands gently on your shoulder before drifting back into the night. It feels oddly magical.",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil"]
   },
   {
     "title": "StarClan's Blessing",
     "description": "A shooting star streaks across the sky, and an unexpected sense of peace washes over you. Perhaps your ancestors are watching.",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil"]
   },
   {
     "title": "Gentle Silence",
     "description": "The moon bathes the camp in silver light, and for several peaceful moments, nothing stirs except the leaves overhead. The silence is strangely comforting as you reflect on your new title.",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil"]
   },
   {
     "title": "A Gift in the Night",
     "description": "A feather drifts into camp, carried by the breeze. It lands neatly between your paws with a soft tickle.",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil", "random"]
   },
   {
     "title": "Rustling Bushes",
     "description": "Something moves just beyond the camp entrance. After several tense heartbeats, a mouse scurries harmlessly away into the darkness.",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil"]
   },
   {
     "title": "The Longest Night",
     "description": "The hours seem to crawl by. The excitement of your ceremony has faded, leaving only the challenge of staying alert until dawn. When was the last time that you were awake this long?",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil"]
   },
   {
     "title": "A Passing Owl",
     "description": "The silent shape of an owl glides over camp without stopping, disappearing into the forest beyond. You watch until it vanishes into the darkness. Hopefully it doesn't return.",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil"]
   },
   {
     "title": "Heavy Eyelids",
     "description": "The day's excitement catches up with you. Your eyes grow heavy, and it's becoming difficult to stay awake. Think of something to keep yourself from falling asleep!",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil"]
   },
   {
     "title": "Tail Twitch",
     "description": "Your tail flicks against a pebble, sending it skittering across camp. Thankfully no one seems to wake up - that you can tell.",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil"]
   },
   {
     "title": "Things That Go Bump in the Night",
     "description": "A loud crack echoes from beyond the camp walls. Your fur bristles as every possible explanation races through your mind.\nRoll an 11 or higher with `!roll 1d20` to determine whether it's harmless or worth leaving your post.",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil"]
   },
   {
     "title": "Flickering Shadows",
     "description": "Clouds drift across the moon, making the shadows around camp shift and dance. For a heartbeat, every stump and bush seems alive. It would be easy for a potential threat to sneak up on you.\nRoll a 9 or higher with `!roll 1d20` to avoid startling yourself.",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil"]
   },
   {
     "title": "Buzzing Mosquitoes",
     "description": "Mosquitoes seem determined to make your vigil miserable. One lands right on your ear, followed by another on your nose.\nRoll a 7 or higher with `!roll 1d20` to quietly ignore the irritation.",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil"]
   },
   {
     "title": "Distant Predator",
     "description": "A fox barks somewhere beyond the camp, but you can't tell if it's in the territory. Though it's far away, the sound sends a chill down your spine.\nRoll an 11 or higher with `!roll 1d20` to determine whether it's harmless or worth leaving your post.",
     "habitat": ["camp"],
-    "category": "vigil"
+    "category": ["vigil"]
+  },
+  {
+    "title": "Roaring",
+    "description": "A monster speeds down the thunderpath, making the loudest sound you've ever heard. You have plenty of time to get out of the way, but are left wondering why that one sounded so ferocious.",
+    "habitat": ["thunderpath"],
+    "category": ["random"]
+  },
+  {
+    "title": "Stunned Prey",
+    "description": "A monster races down the thunderpath and hits and hits an animal a few fox-lengths from where you are, stunning it. Use `!roll 1d4` to determine what prey it is before you kill it!\n1 = mouse\n2 = rat\n3 = young rabbit\n4 = finch",
+    "habitat": ["thunderpath", "twolegplace"],
+    "category": ["pos-hunt", "random"]
+  },
+  {
+    "title": "Lost in the Dark",
+    "description": "You've been here already. You're lost in the dark! Roll a 13 or higher with `!roll 1d20` to find your way out. (WindClan can use `!roll 1d20+2`, and WindClan Tunnelers can use `!roll 1d20+5`)",
+    "habitat": ["tunnel"],
+    "category": ["random"]
+  },
+  {
+    "title": "Cave-In",
+    "description": "You hear the shifting of dirt. A cave-in! Roll a 13 or higher with `!roll 1d20` to escape! (WindClan can use `!roll 1d20+2`, and WindClan Tunnelers can use `!roll 1d20+5`)",
+    "habitat": ["tunnel"],
+    "category": ["random"]
+  },
+  {
+    "title": "Underground River",
+    "description": "The muffled rain from above starts to sound more like a rushing river. The underground rivers are overflowing and the tunnel is flooding! Roll a 13 or higher with `!roll 1d20` to escape! (WindClan can use `!roll 1d20+2`, and WindClan Tunnelers can use `!roll 1d20+5`)\n*Note: If it is not raining, disregard and roll again.*",
+    "habitat": ["tunnel"],
+    "category": ["random"]
+  },
+  {
+    "title": "Dirt Bath",
+    "description": "Some dirt from the ceiling falls on your head, covering you in a fine layer of dirt. Now you're dirty AND need to clear the tunnel.",
+    "habitat": ["tunnel"],
+    "category": ["random"]
+  },
+  {
+    "title": "Impolite",
+    "description": "A mole nips your tail tip, mistaking it for a worm before retreating into it's own tunnel. Rude.",
+    "habitat": ["tunnel"],
+    "category": ["random"]
+  },
+  {
+    "title": "Nothingness",
+    "description": "There is nothing but silence and darkness. The only thing you can hear is your heartbeat.",
+    "habitat": ["tunnel"],
+    "category": ["random"]
   }
 ]
