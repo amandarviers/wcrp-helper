@@ -59,7 +59,7 @@ def find_prey(area):
 
   for animal, info in data[area]["prey"].items():
     if season_details[current_season]["hibernate"] and info["hibernate"]:
-      weight = info["weight"] - 5 - season_details[current_season]["prey_modifer"]
+      weight = info["weight"] - 5 - season_details[current_season]["prey_modifier"]
     else:
       weight = info["weight"] - season_details[current_season]["prey_modifier"]
     candidates.extend([animal] * weight)

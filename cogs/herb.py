@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import json
 import random
-import string
+import math
 import logging
 
 from util.logging_utils import log_command_usage
@@ -63,10 +63,22 @@ class Herb(commands.Cog):
         await ctx.send(embed=embed)
         return
 
+      # determine the candidates with the modifiers
+      candidates = herb_data[area]["herbs"].copy()
+      modifier_percentage = int(season_details[current_season]["herb_modifier"])/10
+      modifier_float = len(candidates) * modifier_percentage
+      modifier = math.ceil(modifier_float)
+      candidates.extend(["none"] * modifier)
+
+      logger.info(f"{interaction_id} - there are {len(candidates)} herb candidates")
+
       herbs_found = ""
       for _ in range(attempt_or_herb):
-        herb = random.choice(herb_data[area]["herbs"])
-        herbs_found += f"\n- {herb}"
+        herb = random.choice(candidates)
+        if herb == "none": 
+          herbs_found += f"\n- nothing found"
+        else:
+          herbs_found += f"\n- {herb}"
 
       herb_embed = discord.Embed(title="Herb Finder", description=f"{herbs_found}", color=discord.Color.dark_green())
       herb_embed.set_footer(text=f"{ctx.author.display_name} made {attempt_or_herb} attempts to find herbs", icon_url=ctx.author.display_avatar.url)

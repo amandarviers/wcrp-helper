@@ -2,7 +2,7 @@
   "spring": {
     "hibernate": false,
     "prey_modifier": 4,
-    "herb_modifier": 5
+    "herb_modifier": 4
   },
   "summer": {
     "hibernate": false,
