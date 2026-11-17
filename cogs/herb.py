@@ -84,11 +84,11 @@ class Herb(commands.Cog):
 
       roll = random.randint(1, 20)
       logger.info(f"{interaction_id} - rolled {roll} when searching for {attempt_or_herb}")
-      if roll >= 18:
+      if roll >= 19:
         msg = f"You found 3 {attempt_or_herb} in the {area}!"
-      elif roll >= 13:
+      elif roll >= 14:
         msg = f"You found 2 {attempt_or_herb} in the {area}!"
-      elif roll >= 5:
+      elif roll >= 8:
         msg = f"You found 1 {attempt_or_herb} in the {area}!"
       else:
         msg = f"You found no {attempt_or_herb} in the {area}."
