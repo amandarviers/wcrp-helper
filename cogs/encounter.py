@@ -26,10 +26,11 @@ with open("./data/encounters.json", "r") as f:
   encounter_data = json.load(f)
 
 # load valid categories
-valid_categories = []
-for encounter in encounter_data:
-  if encounter["category"] not in valid_categories:
-    valid_categories.append(encounter["category"])
+valid_categories = sorted({
+    tag
+    for encounter in encounter_data
+    for tag in encounter["category"]
+})
 
 class Encounter(commands.Cog):
   def __init__(self, bot):
