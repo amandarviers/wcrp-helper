@@ -24,7 +24,7 @@ areas = list(herb_data.keys())
 
 # load current season data
 with open("./data/current_season.txt", "r") as season_file:
-  current_season = (season_file.readlines()[0])
+  current_season = season_file.readline().strip()
 with open("./data/seasons.json", "r") as season_details_file:
   season_details = json.load(season_details_file)
 
@@ -43,11 +43,16 @@ class Herb(commands.Cog):
       return
 
   @commands.command()
-  async def herb(self, ctx, area, attempt_or_herb):
+  async def herb(self, ctx, area, *args):
     # normalize vars
     area = area.lower()
+    if not args:
+      embed = error_embed(f"Missing required information: `{command_guide}`")
+      await ctx.send(embed=embed)
+      return
+
     # get interaction info
-    interaction_id = log_command_usage(ctx, "herb", area=area, attempt_or_herb=attempt_or_herb)
+    interaction_id = log_command_usage(ctx, "herb", area=area, args=" ".join(args))
     # handle data errors
     if area not in areas:
       embed = error_embed(f"Invalid area. Choose from: { ', '.join(areas)}")
@@ -55,9 +60,9 @@ class Herb(commands.Cog):
       return
 
     # handle random searches
-    if attempt_or_herb.isdigit():
+    if args[0].isdigit():
+      attempt_or_herb = int(args[0])
       logger.info(f"{interaction_id} - attempt_or_herb is digit: {attempt_or_herb}")
-      attempt_or_herb = int(attempt_or_herb)
       if attempt_or_herb > 5 or attempt_or_herb == 0:
         embed = error_embed(f"Attempts must be between 1 and 5")
         await ctx.send(embed=embed)
@@ -75,8 +80,8 @@ class Herb(commands.Cog):
       herbs_found = ""
       for _ in range(attempt_or_herb):
         herb = random.choice(candidates)
-        if herb == "none": 
-          herbs_found += f"\n- nothing found"
+        if herb == "none":
+          herbs_found += "\n- nothing found"
         else:
           herbs_found += f"\n- {herb}"
 
@@ -85,28 +90,27 @@ class Herb(commands.Cog):
 
       await ctx.send(embed=herb_embed)
     else:
-      logger.info(f"{interaction_id} - attempt_or_herb is herb: {attempt_or_herb}")
+      herb_name = " ".join(args).lower()
+      logger.info(f"{interaction_id} - attempt_or_herb is herb: {herb_name}")
       # handle specific searches
-      attempt_or_herb = attempt_or_herb.lower()
-
-      if attempt_or_herb not in herb_data[area]["herbs"]:
+      if herb_name not in herb_data[area]["herbs"]:
           embed = error_embed(f"Invalid herb for {area}. Choose from: { ', '.join(herb_data[area]['herbs'])}")
           await ctx.send(embed=embed)
           return
 
       roll = random.randint(1, 20)
-      logger.info(f"{interaction_id} - rolled {roll} when searching for {attempt_or_herb}")
+      logger.info(f"{interaction_id} - rolled {roll} when searching for {herb_name}")
       if roll >= 19:
-        msg = f"You found 3 {attempt_or_herb} in the {area}!"
+        msg = f"You found 3 {herb_name} in the {area}!"
       elif roll >= 14:
-        msg = f"You found 2 {attempt_or_herb} in the {area}!"
+        msg = f"You found 2 {herb_name} in the {area}!"
       elif roll >= 8:
-        msg = f"You found 1 {attempt_or_herb} in the {area}!"
+        msg = f"You found 1 {herb_name} in the {area}!"
       else:
-        msg = f"You found no {attempt_or_herb} in the {area}."
+        msg = f"You found no {herb_name} in the {area}."
 
       herb_embed = discord.Embed(title="Herb Finder", description=f"{msg}", color=discord.Color.dark_green())
-      herb_embed.set_footer(text=f"{ctx.author.display_name} looked for {attempt_or_herb} in {area}", icon_url=ctx.author.display_avatar.url)
+      herb_embed.set_footer(text=f"{ctx.author.display_name} looked for {herb_name} in {area}", icon_url=ctx.author.display_avatar.url)
 
       await ctx.send(embed=herb_embed)
 
