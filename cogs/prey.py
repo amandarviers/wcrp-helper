@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import json
 import random
-import string
+import math
 import logging
 
 from util.logging_utils import log_command_usage
@@ -59,11 +59,14 @@ def find_prey(area):
 
   for animal, info in data[area]["prey"].items():
     if season_details[current_season]["hibernate"] and info["hibernate"]:
-      weight = info["weight"] - 5 - season_details[current_season]["prey_modifier"]
+      weight = info["weight"] - 5 - season_details[current_season]["prey_weight_modifier"]
     else:
-      weight = info["weight"] - season_details[current_season]["prey_modifier"]
+      weight = info["weight"] - season_details[current_season]["prey_weight_modifier"]
     candidates.extend([animal] * weight)
-  candidates.extend(["none"] * 10)
+
+  modifier_float = len(candidates) * season_details[current_season]["prey_scarcity_modifier"]
+  modifier = math.ceil(modifier_float)
+  candidates.extend(["none"] * modifier)
 
   return candidates
 
