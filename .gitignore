@@ -1,3 +1,4 @@
 .env
 unused
 data/piles/
+data/current_season.txt
