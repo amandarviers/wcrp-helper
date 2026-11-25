@@ -74,7 +74,7 @@ class Season(commands.Cog):
         await ctx.send(embed=embed)
         return
 
-    season_set_embed = discord.Embed(title=f"Season Changed", description=f"Season changed to: {season}", color=discord.Color.gold())
+    season_set_embed = discord.Embed(title=f"Season Changed", description=f"Season changed to: {season.capitalize()}", color=discord.Color.gold())
 
     season_set_embed.set_footer(text=f"{ctx.author.display_name} changed the current season", icon_url=ctx.author.display_avatar.url)
 
@@ -104,7 +104,7 @@ class Season(commands.Cog):
         description=f"**Prey Hibernation:** {hibernate}\n**Prey Type Modifier:** {prey_weight}\n**Prey Scarcity Modifier:** {prey_scarcity}\n**Herb Modifier:** {herb_modifier}", 
         color=discord.Color.gold())
 
-      season_view_embed.set_footer(text=f"{ctx.author.display_name} viewed {season} details", icon_url=ctx.author.display_avatar.url)
+      season_view_embed.set_footer(text=f"{ctx.author.display_name} viewed {season.capitalize()} details", icon_url=ctx.author.display_avatar.url)
 
       await ctx.send(embed=season_view_embed)
     else:
@@ -118,7 +118,7 @@ class Season(commands.Cog):
         description=f"**Prey Hibernation:** {hibernate}\n**Prey Type Modifier:** {prey_weight}\n**Prey Scarcity Modifier:** {prey_scarcity}\n**Herb Modifier:** {herb_modifier}", 
         color=discord.Color.gold())
       
-      season_view_embed.set_footer(text=f"{ctx.author.display_name} viewed {season} details", icon_url=ctx.author.display_avatar.url)
+      season_view_embed.set_footer(text=f"{ctx.author.display_name} viewed {season.capitalize()} details", icon_url=ctx.author.display_avatar.url)
 
       await ctx.send(embed=season_view_embed)
 
