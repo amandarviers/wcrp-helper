@@ -80,47 +80,47 @@ class Season(commands.Cog):
 
     await ctx.send(embed=season_set_embed)
 
-  # @season_group.command(name="view", aliases=["View", "VIEW"])
-  # async def season_view(self, ctx, season):
-  #   # normalize vars
-  #   season = season.lower()
+  @season_group.command(name="view", aliases=["View", "VIEW"])
+  async def season_view(self, ctx, season):
+    # normalize vars
+    season = season.lower()
 
-  #   #get interaction info
-  #   interaction_id = log_command_usage(ctx, "season view", season=season)
+    #get interaction info
+    interaction_id = log_command_usage(ctx, "season view", season=season)
 
-  #   if season != "current":
-  #     if season not in valid_seasons:
-  #       embed = error_embed(f"Invalid season. Choose from: { ', '.join(valid_seasons)}")
-  #       await ctx.send(embed=embed)
-  #       return
+    if season != "current":
+      if season not in valid_seasons:
+        embed = error_embed(f"Invalid season. Choose from: { ', '.join(valid_seasons)}")
+        await ctx.send(embed=embed)
+        return
 
-  #     hibernate = season_details[season]["hibernate"]
-  #     prey_weight = season_details[season]["prey_weight_modifier"]
-  #     prey_scarcity = season_details[season]["prey_scarcity_modifier"]
-  #     herb_modifier = season_details[season]["herb_modifier"]
+      hibernate = season_details[season]["hibernate"]
+      prey_weight = season_details[season]["prey_weight_modifier"]
+      prey_scarcity = season_details[season]["prey_scarcity_modifier"]
+      herb_modifier = season_details[season]["herb_modifier"]
 
-  #     season_view_embed = discord.Embed(
-  #       title=f"Season Details: {season.capitalize()}", 
-  #       description=f"Prey **{'is' if hibernate else 'is not'} hibernating**\nPrey weights **reduced by {prey_weight}**\nChance of finding prey is **{float(prey_scarcity) * 10}% lower**\nChance of finding herbs are **{float(herb_modifier) * 10}% lower**", 
-  #       color=discord.Color.gold())
+      season_view_embed = discord.Embed(
+        title=f"Season Details: {season.capitalize()}", 
+        description=f"**Prey Hibernation:** {hibernate}\n**Prey Type Modifier:** {prey_weight}\n**Prey Scarcity Modifier:** {prey_scarcity}\n**Herb Modifier:** {herb_modifier}", 
+        color=discord.Color.gold())
 
-  #     season_view_embed.set_footer(text=f"{ctx.author.display_name} viewed {season} details", icon_url=ctx.author.display_avatar.url)
+      season_view_embed.set_footer(text=f"{ctx.author.display_name} viewed {season} details", icon_url=ctx.author.display_avatar.url)
 
-  #     await ctx.send(embed=season_view_embed)
-  #   else:
-  #     season = current_season
-  #     hibernate = season_details[season]["hibernate"]
-  #     prey_weight = season_details[season]["prey_weight_modifier"]
-  #     prey_scarcity = season_details[season]["prey_scarcity_modifier"]
-  #     herb_modifier = season_details[season]["herb_modifier"]
-  #     season_view_embed = discord.Embed(
-  #       title=f"Current Season: {season.capitalize()}", 
-  #       description=f"Prey {'is' if hibernate else 'is not'} **hibernating**\nPrey species are {float(prey_weight) * 10}% less likely to appear\nOverall prey is reduced by {float(prey_scarcity) * 10}%\nHerbs are {float(herb_modifier) * 10}% less likely to appear", 
-  #       color=discord.Color.gold())
+      await ctx.send(embed=season_view_embed)
+    else:
+      season = current_season
+      hibernate = season_details[season]["hibernate"]
+      prey_weight = season_details[season]["prey_weight_modifier"]
+      prey_scarcity = season_details[season]["prey_scarcity_modifier"]
+      herb_modifier = season_details[season]["herb_modifier"]
+      season_view_embed = discord.Embed(
+        title=f"Current Season: {season.capitalize()}", 
+        description=f"**Prey Hibernation:** {hibernate}\n**Prey Type Modifier:** {prey_weight}\n**Prey Scarcity Modifier:** {prey_scarcity}\n**Herb Modifier:** {herb_modifier}", 
+        color=discord.Color.gold())
       
-  #     season_view_embed.set_footer(text=f"{ctx.author.display_name} viewed {season} details", icon_url=ctx.author.display_avatar.url)
+      season_view_embed.set_footer(text=f"{ctx.author.display_name} viewed {season} details", icon_url=ctx.author.display_avatar.url)
 
-  #     await ctx.send(embed=season_view_embed)
+      await ctx.send(embed=season_view_embed)
 
 async def setup(bot):
   await bot.add_cog(Season(bot))
